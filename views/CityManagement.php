@@ -80,7 +80,7 @@ Caravans
 <div id='rightUp'>
 </div>
 <div id='rightBottom'>
-<input type='button' value='End  of turn' name='EndOfTurn' class='pageButtons'/>
+<input type='button' value='End  of turn' name='EndOfTurn' class='pageButtons finishRound'/>
 <input type='button' value='Exit game' name='adminMenu' class='pageButtons link'/>
 </div>
 </div>

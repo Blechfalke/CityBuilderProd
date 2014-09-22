@@ -10,3 +10,8 @@ $(document).on('click', '.link', function(){
    pageName = "views/" + $(this).attr("name") + ".php";
   	$("#wrapper").load(pageName);
 });
+
+
+$(document).on('click', '.finishRound', function(){
+	alert("FINISH HIM");
+});
