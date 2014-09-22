@@ -1,0 +1,139 @@
+﻿/*///////////////////////Reset CSS */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*///////////////////////The layout*/
+#wrapper {
+	width: 1024px;
+	height: 768px;
+	background: url("images/background.jpg") no-repeat;
+	margin: 0 auto;
+}
+#leftContent {
+	width: 650px;
+	height: 550px;
+	float: left;
+	background-color: #FFD966;
+	border: 1px solid black;
+	margin: 20px 0 0 20px;
+}
+#rightContent {
+	width: 300px;
+	height: 550px;
+	float: right;
+	margin: 20px;
+}
+#rightUp {
+	height: 400px;
+	background-color: #FFF;
+	border: 1px solid black;
+}
+#rightBottom {
+	padding-top: 8px;
+}
+#header {
+	font-family: Papyrus;
+	font-size: 48px;
+	text-decoration: underline;
+	font-weight: 800;
+	width: 550px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+#mainButtonDiv {
+	width: 310px;
+	height: 300px;
+	margin: 0 auto;
+	padding: 100px 0 0 0;
+}
+/*//////////////////////////Controles*/
+.mainButtons {
+	font-family: Calibri;
+	font-size: 28px;
+	width: 300px;
+	height: 50px;
+	background-color: #FFD966;
+	border: 1px solid black;
+	margin: 20px 0;
+}
+.pageButtons {
+	font-family: Calibri;
+	font-size: 28px;
+	width: 300px;
+	height: 50px;
+	background-color: #FFD966;
+	border: 1px solid black;
+	margin: 20px 0 0 0;
+}
+.mainButtons:hover {
+	background-color: #EDBD2E;
+}
+.pageButtons:hover {
+	background-color: #EDBD2E;
+}
+#gameName {
+	font-family: Papyrus;
+	font-size: 48px;
+	text-decoration: underline;
+	font-weight: 800;
+}
+.label {
+	width: 150px;
+	height: 25px;
+	border: 1px solid black;
+	margin: 5px 9px 0 0;
+	float: left;
+	padding-left: 5px;
+}
+.editor {
+	float: right;
+	width: 80px;
+	height: 23px;
+	border: 1px solid black;
+	margin: 5px 0 0 0;
+	background-color: white;
+}
+.pairControl {
+	width: 250px;
+	margin-left: 20px;
+}
+/*CityManagement*/
+#Diagram {
+	float: right;
+	width: 340px;
+	height: 352px;
+	background-color: white;
+	border: 1px solid black;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+#Controles {
+	float: left;
+	width: 280px;
+}
