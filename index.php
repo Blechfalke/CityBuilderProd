@@ -8,11 +8,10 @@
 <script src="scripts/scripts.js"> </script>
 </head>
 <body>
-test
 <div id="wrapper">
 	
 </div>
-
+prout
 </body>
 
 </html>
