@@ -10,5 +10,5 @@ $(document).on('click', '.link', function(){
 });
 
 $(document).on('click', '.finishRound', function(){
-	$("#wrapper").load('view/CityManagement.php', {kings: , slaves: 3});
+	$("#wrapper").load('view/CityManagement.php', {kings: 3, slaves: 3});
 });
