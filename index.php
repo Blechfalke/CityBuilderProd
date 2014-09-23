@@ -1,11 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-  <?php 
-  //session_start();
-// require_once 'controller/class.GameController.php';
-// $gameController = new GameController();
+<?php 
+session_start();
+include 'common/ConfigOptions.php';
+require_once __ROOT__ . 'controller/class.GameController.php';
+$gameController = new GameController();
 
-// $_SESSION['GameController'] = serialize($gameController);
-// ?>
+$_SESSION['GameController'] = serialize($gameController);
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+  
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

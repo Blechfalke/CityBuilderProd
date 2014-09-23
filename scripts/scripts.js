@@ -9,7 +9,6 @@ $(document).on('click', '.link', function(){
   	$("#wrapper").load(pageName);
 });
 
-
 $(document).on('click', '.finishRound', function(){
-	alert("FINISH HIM");
+	$("#wrapper").load('view/CityManagement.php', {kings: , slaves: 3});
 });

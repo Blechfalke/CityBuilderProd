@@ -1,16 +1,33 @@
 ﻿<?php 
+session_start();
+require_once '../common/ConfigOptions.php';
+require_once __ROOT__ . 'controller/class.GameController.php';
+
+$gameController = unserialize($_SESSION['GameController']);
+
+$gameController->calculateRound();
+
+$totalPopulation = $gameController->getPopulation()->getTotalPopulation();
+$gameController->getPopulation()->setTotalPopulation(($totalPopulation+200));
+$gameController->nextRound();
+
+$_SESSION['GameController'] = serialize($gameController);
+
+if ($gameController->getRound() > 6) {
+	echo "<div>Game finished</div>";
+}else{
 echo "<div id='header'>
 Management of the city
 </div>
 <div id='leftContent'>
 <div style='width:500px; height:150px;'>
-</div>
+</div> 
 <div id='Controles'>
 <div class='pairControl'>
 <div style='background-color:white;' class='label'>
 Total population
 </div>
-<input type='text' class='editor' name='TotalPopulation' id='TotalPopulation'/>
+<input type='text' class='editor' name='TotalPopulation' id='TotalPopulation' value='$totalPopulation'/>
 </div>
 <div class='pairControl'>
 <div style='background-color:white;' class='label'>
@@ -86,5 +103,5 @@ Caravans
 </div>
 <div style='clear:both;'>
 </div>";
-
+}
 ?>
