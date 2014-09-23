@@ -1,13 +1,11 @@
 $(document).ready(function(){ 
-  var pageName = "views/adminMenu.php";
-  
+  var pageName = "view/adminMenu.php";
   $("#wrapper").load(pageName);
-   
 });
 
 // need to use delegation based event handlers here, because later links do not exisst in the DOM yet
 $(document).on('click', '.link', function(){
-   pageName = "views/" + $(this).attr("name") + ".php";
+   pageName = "view/" + $(this).attr("name") + ".php";
   	$("#wrapper").load(pageName);
 });
 
