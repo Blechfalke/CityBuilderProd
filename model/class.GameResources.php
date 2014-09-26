@@ -4,6 +4,7 @@ class GameResources {
 	private $food = 0;
 	private $caravans = 0;
 	private $unhappiness = true;
+	private $score = 1;
 	
 	public function getWealth() {
 		return $this->wealth;
@@ -20,6 +21,10 @@ class GameResources {
 	public function getUnhappiness() {
 		return $this->unhappiness;
 	}
+
+	public function getScore() {
+		return $this->score;
+	}
 	
 	public function setWealth($wealth) {
 		$this->wealth = $wealth;
@@ -32,10 +37,16 @@ class GameResources {
 	public function setCaravans($caravans) {
 		$this->caravans = $caravans;
 	}
+	public function incCaravans() {
+		$this->caravans++;
+	}
 	
 	public function setUnhappiness($unhappiness) {
 		$this->unhappiness = $unhappiness;
 	}
-	
+
+	public function setScore($score) {
+		$this->score = $score;
+	}
 }
 ?>

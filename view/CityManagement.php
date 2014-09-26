@@ -17,7 +17,7 @@ $soldiers = $population->getSoldiers();
 $peasants = $population->getPeasants();
 $slaves = $population->getSlaves();
 $caravans = $gameController->getGameResources()->getCaravans();
-$score = $gameController->calculateScore();
+$score = $gameController->getGameResources()->getScore();
 $availablePopulation = $totalPopulation - $kings -$priests - $craftsmen - $scribes - $soldiers - $peasants - $slaves;
 
 
