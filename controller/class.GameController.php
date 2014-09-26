@@ -57,6 +57,9 @@ class GameController{
 		
 		$this->nextRound();
 	}
+	function calculateScore(){
+		return 0;
+	}
 }
 
 ?>
