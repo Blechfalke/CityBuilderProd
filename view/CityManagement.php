@@ -24,12 +24,50 @@ $_SESSION['GameController'] = serialize($gameController);
 if ($gameController->getRound() > 6) {
 	echo "<div>Game finished</div>";
 } else {
-	echo "<div id='header'>
-	Management of the city
-	</div>
-	<div id='leftContent'>
-	<div style='width:500px; height:150px;'>
-	</div> 
+	echo "<div id='header'>Management of the city</div>
+
+        <div id='leftContent'>
+            <div style='width: 652px;'>
+                <div style='margin-top: 45px; margin-left: 25px;'>
+                    <div class='pairControl'>
+                        <div style='background-color: white;' class='labelScore'>Score</div>
+                        <div>
+                            <input type='text' class='editorScore' name='Score' id='Score' disabled value='$score'/>
+                        </div>
+		<div style='clear: both'></div>
+                    </div>
+                </div>
+                <div style='float: left; margin: 10px 0 0 35px;'>
+                    <div style='float: left; margin-right: 30px; margin-left: 30px;'>
+                        <div style='float: left; margin: 10px;'>Choose one technology per turn </div>
+                        <div style='float: right;'>
+                            <img src='css/images/arrow.png' width='40' /></div>
+                    </div>
+                    <div style='clear: both'></div>
+                    <div style='float: left; margin-right: 30px;'>
+                        <div style='float: left; margin: 10px 5px;'>Assign the citizen to a social class </div>
+                        <div style='float: right;'>
+                            <img src='css/images/arrowDown.png' height='40' /></div>
+                    </div>
+                </div>
+                <div style='float: right;'>
+
+                    <div class='imageCityManagement'>
+                        Writing
+                        <img src='css/images/writing.png' width='70' style='margin: 5px 30px 0 0;' />
+                    </div>
+                    <div class='imageCityManagement'>
+                        Granary
+                        <img src='css/images/granary.png' width='70' style='margin: 5px 30px 0 0;' />
+                    </div>
+                    <div  class='imageCityManagement' style='margin-right:0;'>
+                        Pottery
+                        <img src='css/images/pottery.png' width='70' style='margin-top: 5px;' />
+                    </div>
+                </div>
+		<div style='clear: both'></div>
+            </div>
+            <div style='clear: both'></div>
 	<div id='Controles'>
 	<div class='pairControl'>
 	<div style='background-color:white;' class='label'>
