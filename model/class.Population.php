@@ -72,5 +72,15 @@ class Population {
 	public function setSlaves($slaves) {
 		$this->slaves = $slaves;
 	}
+	
+	public function updatePopulation($kings, $priests, $craftsmen, $scribes, $soldiers, $peasants, $slaves){
+		$this->kings = $kings;
+		$this->priests = $priests;
+		$this->craftsmen = $craftsmen;
+		$this->scribes = $scribes;
+		$this->soldiers = $soldiers;
+		$this->peasants = $peasants;
+		$this->slaves = $slaves;
+	}
 }
 ?>

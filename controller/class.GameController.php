@@ -46,8 +46,16 @@ class GameController{
 	}
 	
 	function calculateRound(){
-		$_GET['kings'];
-		// do something useful
+		
+		$this->population->updatePopulation(isset($_POST['kings']) ? $_POST['kings'] : 0,
+											isset($_POST['priests']) ? $_POST['priests'] : 0,
+											isset($_POST['craftsmen']) ? $_POST['craftsmen'] : 0,
+											isset($_POST['scribes']) ? $_POST['scribes'] : 0,
+											isset($_POST['soldiers']) ? $_POST['soldiers'] : 0,
+											isset($_POST['peasants']) ? $_POST['peasants'] : 0,
+											isset($_POST['slaves']) ? $_POST['slaves'] : 0);
+		
+		$this->nextRound();
 	}
 }
 
