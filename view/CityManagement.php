@@ -7,7 +7,7 @@ $gameController = unserialize($_SESSION['GameController']);
 
 $gameController->calculateRound();
 $population = $gameController->getPopulation();
-
+$technology = $gameController->getTechnology();
 $totalPopulation = $population->getTotalPopulation();
 $kings = $population->getKings();
 $priests = $population->getPriests();
@@ -55,16 +55,25 @@ if ($gameController->getRound() > 6) {
                 <div style='float: right;'>
 
                     <div class='imageCityManagement'>
-                        Writing
-                        <img src='css/images/writing.png' width='70' style='margin: 5px 30px 0 0;' />
+                        Writing 
+                        <img class='checkmark' src='css/images/checkmark.png'/>
+                        <img id='writing' class='technology ";
+                        echo $technology->getWriting() ? "developed" : "clickable";
+                        echo "' src='css/images/writing.png' width='70' style='margin: 5px 30px 0 0;' />
                     </div>
                     <div class='imageCityManagement'>
                         Granary
-                        <img src='css/images/granary.png' width='70' style='margin: 5px 30px 0 0;' />
+                        <img class='checkmark' src='css/images/checkmark.png'/>
+                        <img id='granary' class='technology "; 
+                        echo $technology->getGranary() ? "developed" : "clickable";
+                        echo "' src='css/images/granary.png' width='70' style='margin: 5px 30px 0 0;' />
                     </div>
                     <div  class='imageCityManagement' style='margin-right:0;'>
                         Pottery
-                        <img src='css/images/pottery.png' width='70' style='margin-top: 5px;' />
+                        <img class='checkmark' src='css/images/checkmark.png'/>
+                        <img id='pottery' class='technology ";
+                        echo $technology->getPottery() ? "developed" : "clickable";
+                        echo "' src='css/images/pottery.png' width='70' style='margin-top: 5px;' />
                     </div>
                 </div>
 		<div style='clear: both'></div>
@@ -107,7 +116,7 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#9DC3E6;' class='label'>
 	Scribes
 	</div>
-	<input type='text' class='editor' name='Scribes' id='Scribes' value='$scribes'/>
+	<input type='text' class='editor' name='Scribes' id='Scribes' disabled value='$scribes'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FF5050;' class='label'>
@@ -150,6 +159,9 @@ if ($gameController->getRound() > 6) {
 	</div>
 	</div>
 	<div style='clear:both;'>
-	</div>";
+	</div>
+	<script>
+		updateTechnology();
+  	</script>";
 }
 ?>
