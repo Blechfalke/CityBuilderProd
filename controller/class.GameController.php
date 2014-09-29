@@ -38,9 +38,14 @@ class GameController {
 		
 	function calculateRound() {
 		$this->population->updatePopulation ( isset ( $_POST ['kings'] ) ? $_POST ['kings'] : 0, isset ( $_POST ['priests'] ) ? $_POST ['priests'] : 0, isset ( $_POST ['craftsmen'] ) ? $_POST ['craftsmen'] : 0, isset ( $_POST ['scribes'] ) ? $_POST ['scribes'] : 0, isset ( $_POST ['soldiers'] ) ? $_POST ['soldiers'] : 0, isset ( $_POST ['peasants'] ) ? $_POST ['peasants'] : 0, isset ( $_POST ['slaves'] ) ? $_POST ['slaves'] : 0 );
+		$this->technology->updateTechnology ( isset ( $_POST ['technology'])? $_POST['technology']:"");
+		
+		if(!$this->technology->getWriting())
+			$this->population->setScribes(0);
 		
 		if($this->round == 1){
-			$popT = $this->population->getTotalPopulation();
+			$popT = 2000;
+			$this->population->setTotalPopulation($popT);
 			$this->gameResources->setFood($popT/2);
 			$this->gameResources->setWealth($popT/4);
 			
@@ -52,20 +57,58 @@ class GameController {
 			$this->calcBuildings();
 			$this->calcFoodPop();
 			$this->calcScore();
+			
+			if ($this->population->getTotalPopulation() <= 0){
+				echo '!!!!!!!!!!!!!!!!!! you\'ve lost !!!!!!!!!!!!!!!!!';
+				$this->round= 1000;
+			}
 		}
 		$this->nextRound ();
 	}
 	function calcInvasion() {
 		if ($this->population->getSoldiers () / $this->population->getTotalPopulation () * 100 <= 2.5 / 100) {
 			// those two var will be saved in the db later
-			$LostPop = ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100;
+			$LostPop = ceil(((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100);
 			$LostWealth = ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100;
 			
 			$this->population->setTotalPopulation ( $this->population->getTotalPopulation () - $LostPop );
 			$this->gameResources->setWealth ( $this->gameResources->getWealth () - $LostPop );
 			echo 'invasion pop lost: '.$LostPop.' wealth lost: '.$LostWealth;
 			// TODO
+			$this->ClassesLossesFromInv($LostPop);
 		}
+	}
+	function ClassesLossesFromInv( $LostPop){
+		$array = array(
+				$this->population->getSoldiers(),
+				$this->population->getPeasants(),
+				$this->population->getSlaves(),
+				$this->population->getScribes(),
+				$this->population->getPriests(),
+				$this->population->getKings(),
+		);
+		$array = $this->ClassesLossesFromInvasion($array,0, $LostPop);
+		$this->population->setSoldiers($array[0]);
+		$this->population->setPeasants($array[1]);
+		$this->population->setSlaves($array[2]);
+		$this->population->setScribes($array[3]);
+		$this->population->setPriests($array[4]);
+		$this->population->setKings($array[5]);
+	}
+	function ClassesLossesFromInvasion($array, $class, $LostPop){
+
+		if ($array[$class]<$LostPop)
+		{
+			$LostPop = $LostPop-$array[$class];
+			$array[$class] = 0;
+			$class++;
+			if ($class < 6)
+				$array = $this->ClassesLossesFromInvasion($array, $class, $LostPop);
+		}
+		else{
+			$array[$class]=$array[$class]- $LostPop;
+		}
+		return $array;
 	}
 	function calcUnhappiness() {
 		$this->gameResources->setUnhappiness(false);
@@ -122,11 +165,11 @@ class GameController {
 			$this->gameResources->setFood($foodProd-$foodCons);
 
 		echo ' food remaining: '.$this->gameResources->getFood();
-		// POPULATION
+		// POPULATION VARIATION
 		if ($this->gameResources->getFood()>=0)
-			$this->population->setTotalPopulation($this->population->getTotalPopulation()+$foodProd*2);
+			$this->population->setTotalPopulation(ceil($this->population->getTotalPopulation()+$foodProd*2));
 		else
-			$this->population->setTotalPopulation($this->population->getTotalPopulation()+$this->gameResources->getFood()*2);
+			$this->population->setTotalPopulation(ceil($this->population->getTotalPopulation()+$this->gameResources->getFood()*2));
 
 		echo ' population: '. $this->population->getTotalPopulation();
 	}

@@ -27,6 +27,14 @@ class Technology{
 	public function setWriting($writing){
 		$this->writing = $writing;
 	}
+	public function updateTechnology($tech){
+		if($tech=="granary")
+			$this->granary = true;
+		else if ($tech=="writing")
+			$this->writing = true;
+		else if ($tech=="pottery")
+			$this->pottery = true;
+	}
 }
 
 ?>
