@@ -1,4 +1,4 @@
-﻿/*///////////////////////The layout*/
+/*///////////////////////The layout*/
 body {
 font-family:Calibri;
 }
@@ -145,4 +145,8 @@ margin: 0 auto;
     font-size: 20px; 
     font-weight: bold; 
     margin-right: 30px;
+}
+#dialog{
+	background-color:#FFE699;
+	
 }
