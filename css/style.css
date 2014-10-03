@@ -17,6 +17,15 @@ background: url("images/papy.png") no-repeat;
 border: 1px solid black;*/
 margin: 10px 0 0 5px;
 }
+#leftContentMap {
+width: 704px;
+height:587px;
+float: left;
+background: url("images/mapPap.png") no-repeat;
+/*background-color:#FFD966;
+border: 1px solid black;*/
+margin: 10px 0 0 5px;
+}
 #rightContent {
 width: 270px;
 height: 550px;
