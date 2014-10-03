@@ -61,28 +61,28 @@ $(document).ready(function(){
 	  i_technology = $(this).attr('id');
   });
   
-  $(document).on('mouseover', '.label', function(){
-	  switch (this.innerText){
+  $(document).on('mouseover', '.hover', function(){
+	  switch ($(this).attr('id')){
 	  case 'Kings':
-		  document.getElementById('rightUp').innerHTML = "Kings are the shit!";
+		  document.getElementById('rightUp').textContent = "Kings are the shit!";
 		  break;
 	  case 'Priests':
-		  document.getElementById('rightUp').innerHTML = "Priests do healing and Shit!";
+		  document.getElementById('rightUp').textContent = "Priests do healing and Shit!";
 		  break;
 	  case 'Craftsmen':
-		  document.getElementById('rightUp').innerHTML = "Craftsmen build Houses and Shit!";
+		  document.getElementById('rightUp').textContent = "Craftsmen build Houses and Shit!";
 		  break;
 	  case 'Scribes':
-		  document.getElementById('rightUp').innerHTML = "Scribes do writing and Shit!";
+		  document.getElementById('rightUp').textContent = "Scribes do writing and Shit!";
 		  break;
 	  case 'Soldiers':
-		  document.getElementById('rightUp').innerHTML = "Soldiers fight and shit!";
+		  document.getElementById('rightUp').textContent = "Soldiers fight and shit!";
 		  break;
 	  case 'Peasants':
-		  document.getElementById('rightUp').innerHTML = "Peasants are like you and me!";
+		  document.getElementById('rightUp').textContent = "Peasants are like you and me!";
 		  break;
 	  case 'Slaves':
-		  document.getElementById('rightUp').innerHTML = "Slaves are for Sex and Shit!";
+		  document.getElementById('rightUp').textContent = "Slaves are for Sex and Shit!";
 		  break;
 		  
 	  }
