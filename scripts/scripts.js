@@ -9,7 +9,6 @@ var i_slaves = 0;
 var i_total = 0;
 
 var backupValue;
-
 $(document).ready(function(){ 
   var pageName = "view/adminMenu.php";
   $("#wrapper").load(pageName);
@@ -36,7 +35,7 @@ $(document).ready(function(){
   	if (available >= 0) {
   		$('#AvailablePopulation').val(available);		
   	} else {
-  		alert('You can not assign any more people');
+  		project.alert('You can not assign any more people');
   		$(this).val(backupValue);
   	}
   	
@@ -61,30 +60,29 @@ $(document).ready(function(){
 	  i_technology = $(this).attr('id');
   });
   
-  $(document).on('mouseover', '.label', function(){
-	  switch (this.innerText){
-	  case 'Kings':
-		  document.getElementById('rightUp').innerHTML = "Kings are the shit!";
+  $(document).on('mouseover', '.hover', function(){
+	  switch ($(this).attr('id')){
+	  case 'lbl_Kings':
+		  document.getElementById('rightUp').textContent = "Kings are the shit!";
 		  break;
-	  case 'Priests':
-		  document.getElementById('rightUp').innerHTML = "Priests do healing and Shit!";
+	  case 'lbl_Priests':
+		  document.getElementById('rightUp').textContent = "Priests do healing and Shit!";
 		  break;
-	  case 'Craftsmen':
-		  document.getElementById('rightUp').innerHTML = "Craftsmen build Houses and Shit!";
+	  case 'lbl_Craftsmen':
+		  document.getElementById('rightUp').textContent = "Craftsmen build Houses and Shit!";
 		  break;
-	  case 'Scribes':
-		  document.getElementById('rightUp').innerHTML = "Scribes do writing and Shit!";
+	  case 'lbl_Scribes':
+		  document.getElementById('rightUp').textContent = "Scribes do writing and Shit!";
 		  break;
-	  case 'Soldiers':
-		  document.getElementById('rightUp').innerHTML = "Soldiers fight and shit!";
+	  case 'lbl_Soldiers':
+		  document.getElementById('rightUp').textContent = "Soldiers fight and shit!";
 		  break;
-	  case 'Peasants':
-		  document.getElementById('rightUp').innerHTML = "Peasants are like you and me!";
+	  case 'lbl_Peasants':
+		  document.getElementById('rightUp').textContent = "Peasants are like you and me!";
 		  break;
-	  case 'Slaves':
-		  document.getElementById('rightUp').innerHTML = "Slaves are for Sex and Shit!";
+	  case 'lbl_Slaves':
+		  document.getElementById('rightUp').textContent = "Slaves are for Sex and Shit!";
 		  break;
-		  
 	  }
   });
 });
@@ -105,4 +103,3 @@ function readInputs(){
 	i_peasants = $('#Peasants').val();
 	i_slaves = $('#Slaves').val();
 }
-

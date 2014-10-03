@@ -2,7 +2,7 @@
 
 <div  style='width:450px;margin:0 15px;' >
 <div>
-<div style='margin: 10px auto 10px auto;width:120px;border: 1px solid black;'><img src='css/images/palace.jpg' width='120' /></div>
+<div id='pic' style='margin: 10px auto 10px auto;width:150px;border: 1px solid black;'></div>
 </div>
 <div id='text' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >
 
@@ -13,9 +13,12 @@ Continue</div>
  <script>
  $(document).ready(function(){
 	 var text = localStorage.getItem('text');
+	 var pic = localStorage.getItem('pic');
+	 var imageUrl = 'css/images/dialogs/' + pic + '.png'
 	 $("#text").html(text);
-	 $('#continue').click(function(){		 
-		 $("#dialog").dialog('close');
+	 $("#pic").append('<img src="' + imageUrl +'" />');
+	 $('#continue').click(function(){	
+		 $(this).closest('.ui-dialog-content').dialog('close');
 	 })	
 })
  </script>
