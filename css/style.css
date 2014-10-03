@@ -24,10 +24,11 @@ float: right;
 margin: 20px;
 }
 #rightUp {
-height:400px;
-background: url("images/papVert.png") no-repeat;
-/*background-color:#FFF;
-border: 1px solid black;*/
+	height:400px;
+	background: url("images/papVert.png") no-repeat;
+	padding: 43px;
+	font-style: italic;
+	box-sizing: border-box;
 }
 #rightBottom {
     padding-top:8px;
@@ -145,12 +146,13 @@ margin: 0 auto;
     font-size: 20px; 
     font-weight: bold; 
     margin-right: 30px;
-<<<<<<< HEAD
+    position: relative;
+
 }
 #dialog{
 	background-color:#FFE699;
 	
-=======
+
     position: relative;
 }
 
@@ -165,5 +167,4 @@ margin: 0 auto;
 	left: 1;
 	z-index: 2;
 	visibility:hidden;
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
 }

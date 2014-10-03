@@ -61,6 +61,32 @@ $(document).ready(function(){
 	  i_technology = $(this).attr('id');
   });
   
+  $(document).on('mouseover', '.label', function(){
+	  switch (this.innerText){
+	  case 'Kings':
+		  document.getElementById('rightUp').innerHTML = "Kings are the shit!";
+		  break;
+	  case 'Priests':
+		  document.getElementById('rightUp').innerHTML = "Priests do healing and Shit!";
+		  break;
+	  case 'Craftsmen':
+		  document.getElementById('rightUp').innerHTML = "Craftsmen build Houses and Shit!";
+		  break;
+	  case 'Scribes':
+		  document.getElementById('rightUp').innerHTML = "Scribes do writing and Shit!";
+		  break;
+	  case 'Soldiers':
+		  document.getElementById('rightUp').innerHTML = "Soldiers fight and shit!";
+		  break;
+	  case 'Peasants':
+		  document.getElementById('rightUp').innerHTML = "Peasants are like you and me!";
+		  break;
+	  case 'Slaves':
+		  document.getElementById('rightUp').innerHTML = "Slaves are for Sex and Shit!";
+		  break;
+		  
+	  }
+  });
 });
 
 function updateTechnology(){
@@ -68,6 +94,7 @@ function updateTechnology(){
  		$(this).prev().css('visibility', 'visible');
 	});    
 }
+
 function readInputs(){
 	i_total = $('#TotalPopulation').val();
 	i_kings = $('#Kings').val();
@@ -78,3 +105,4 @@ function readInputs(){
 	i_peasants = $('#Peasants').val();
 	i_slaves = $('#Slaves').val();
 }
+
