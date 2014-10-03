@@ -46,6 +46,7 @@ width:310px;
 height:300px;
 margin:0 auto;
 padding:100px 0 0 0;
+cursor:pointer
 }
 /*//////////////////////////Controles*/
 .mainButtons {
@@ -56,6 +57,7 @@ height:50px;
 background-color:#FFD966;
 border: 1px solid black;
 margin:20px 0;
+cursor:pointer
 }
 .pageButtons {
 font-family:Calibri;
@@ -65,12 +67,15 @@ height:50px;
 background-color:#E4BF8F;
 border: 1px solid black;
 margin:20px 0 0 0 ;
+cursor:pointer
 }
 .mainButtons:hover {
  background-color:#EDBD2E;
+ cursor:pointer
 }
 .pageButtons:hover {
  background-color:#C7A77D;
+ cursor:pointer
 }
 #gameName {
 font-family:Papyrus;
@@ -145,12 +150,9 @@ margin: 0 auto;
     font-size: 20px; 
     font-weight: bold; 
     margin-right: 30px;
-<<<<<<< HEAD
 }
 #dialog{
 	background-color:#FFE699;
-	
-=======
     position: relative;
 }
 
@@ -165,5 +167,7 @@ margin: 0 auto;
 	left: 1;
 	z-index: 2;
 	visibility:hidden;
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
+}
+#writing, #granary, #pottery, #continue{	
+	cursor:pointer
 }
