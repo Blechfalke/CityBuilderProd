@@ -36,7 +36,7 @@ $(document).ready(function(){
   	if (available >= 0) {
   		$('#AvailablePopulation').val(available);		
   	} else {
-  		alert('You can not assign any more people');
+  		project.alert('You can not assign any more people');
   		$(this).val(backupValue);
   	}
   	
@@ -105,4 +105,7 @@ function readInputs(){
 	i_peasants = $('#Peasants').val();
 	i_slaves = $('#Slaves').val();
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
