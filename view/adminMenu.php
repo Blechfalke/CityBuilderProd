@@ -12,7 +12,7 @@ echo "
 <script>
 $(document).ready(function(){
 	$("#gameModes").click(function(){
-		project.createDialog('view/dialog.html', 'Your workers have finished the construction of the palace. It will be your home and the center of your government.', 'caravan', 520, 320);	
+		project.createDialog('view/dialog.html', 'Your workers have finished the construction of the palace. It will be your home and the center of your government.', 'caravan', 520, 360);	
 		$("#dialog").parent().find(".ui-dialog-titlebar").hide();
 		})
 })
