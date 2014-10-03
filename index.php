@@ -26,10 +26,12 @@ $_SESSION['GameController'] = serialize($gameController);
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/project.js"> </script>
 <script src="scripts/scripts.js"> </script>
 <script src="scripts/jquery-ui.js"></script>
 <script src="scripts/lib/highchart.js"></script>
 <script src="scripts/pyramid.js"></script>
 <script src="http://code.highcharts.com/modules/funnel.js"></script>
+
 </body>
 </html>

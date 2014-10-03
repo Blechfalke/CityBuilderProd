@@ -36,7 +36,7 @@ $(document).ready(function(){
   	if (available >= 0) {
   		$('#AvailablePopulation').val(available);		
   	} else {
-  		alert('You can not assign any more people');
+  		project.alert('You can not assign any more people');
   		$(this).val(backupValue);
   	}
   	
