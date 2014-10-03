@@ -95,25 +95,25 @@ if ($gameController->getRound() > 6) {
 	<div style='clear:both;width:30px; height:20px;'>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#FFF2CC;' class='label hover' id='Kings'>
+	<div style='background-color:#FFF2CC;' class='label hover' id='lbl_Kings'>
 	Kings
 	</div>
 	<input type='text' class='editor' name='Kings' id='Kings' value='$kings'/>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#CC99FF;' class='label hover' id='Priests'>
+	<div style='background-color:#CC99FF;' class='label hover' id='lbl_Priests'>
 	Priests
 	</div>
 	<input type='text' class='editor' name='Priests' id='Priests' value='$priests'/>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#FBE5D6;' class='label hover' id='Craftsmen'>
+	<div style='background-color:#FBE5D6;' class='label hover' id='lbl_Craftsmen'>
 	Craftsmen
 	</div>
 	<input type='text' class='editor' name='Craftsmen' id='Craftsmen' value='$craftsmen'/>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#9DC3E6;' class='label hover' id='Scribes'>
+	<div style='background-color:#9DC3E6;' class='label hover' id='lbl_Scribes'>
 	Scribes
 	</div>
     <input type='text' class='editor' name='Scribes' id='Scribes' ";
@@ -121,19 +121,19 @@ if ($gameController->getRound() > 6) {
 	echo "value='$scribes'/>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#FF5050;' class='label hover' id='Soldiers'>
+	<div style='background-color:#FF5050;' class='label hover' id='lbl_Soldiers'>
 	Soldiers
 	</div>
 	<input type='text' class='editor' name='Soldiers' id='Soldiers' value='$soldiers'/>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#C5E0B4;' class='label hover' id='Peasants'>
+	<div style='background-color:#C5E0B4;' class='label hover' id='lbl_Peasants'>
 	Peasants
 	</div>
 	<input type='text' class='editor' name='Peasants' id='Peasants' value='$peasants'/>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#DBDBDB;' class='label hover' id='Slaves'>
+	<div style='background-color:#DBDBDB;' class='label hover' id='lbl_Slaves'>
 	Slaves
 	</div>
 	<input type='text' class='editor' name='Slaves' id='Slaves' value='$slaves'/>
@@ -141,7 +141,7 @@ if ($gameController->getRound() > 6) {
 	<div style='clear:both;width:30px; height:20px;'>
 	</div>
 	<div class='pairControl'>
-	<div style='background-color:#FFFFFF;' class='label hover' id='Caravans'>
+	<div style='background-color:#FFFFFF;' class='label hover' id='lbl_Caravans'>
 	Caravans
 	</div>
 	<input type='text' class='editor' name='Caravans' id='Caravans' disabled value='$caravans'/>

@@ -9,7 +9,6 @@ var i_slaves = 0;
 var i_total = 0;
 
 var backupValue;
-
 $(document).ready(function(){ 
   var pageName = "view/adminMenu.php";
   $("#wrapper").load(pageName);
@@ -63,28 +62,27 @@ $(document).ready(function(){
   
   $(document).on('mouseover', '.hover', function(){
 	  switch ($(this).attr('id')){
-	  case 'Kings':
+	  case 'lbl_Kings':
 		  document.getElementById('rightUp').textContent = "Kings are the shit!";
 		  break;
-	  case 'Priests':
+	  case 'lbl_Priests':
 		  document.getElementById('rightUp').textContent = "Priests do healing and Shit!";
 		  break;
-	  case 'Craftsmen':
+	  case 'lbl_Craftsmen':
 		  document.getElementById('rightUp').textContent = "Craftsmen build Houses and Shit!";
 		  break;
-	  case 'Scribes':
+	  case 'lbl_Scribes':
 		  document.getElementById('rightUp').textContent = "Scribes do writing and Shit!";
 		  break;
-	  case 'Soldiers':
+	  case 'lbl_Soldiers':
 		  document.getElementById('rightUp').textContent = "Soldiers fight and shit!";
 		  break;
-	  case 'Peasants':
+	  case 'lbl_Peasants':
 		  document.getElementById('rightUp').textContent = "Peasants are like you and me!";
 		  break;
-	  case 'Slaves':
+	  case 'lbl_Slaves':
 		  document.getElementById('rightUp').textContent = "Slaves are for Sex and Shit!";
 		  break;
-		  
 	  }
   });
 });
@@ -105,7 +103,3 @@ function readInputs(){
 	i_peasants = $('#Peasants').val();
 	i_slaves = $('#Slaves').val();
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd

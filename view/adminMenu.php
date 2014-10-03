@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 <?php 
-=======
-﻿<?php 
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
-
 echo "
         <div id='mainButtonDiv'>
         <h2 id='gameName'>City builders</h2>
