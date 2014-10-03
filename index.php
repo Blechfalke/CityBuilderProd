@@ -14,9 +14,21 @@ $_SESSION['GameController'] = serialize($gameController);
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>City Builder</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css" />
+=======
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+ <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css" />
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd.git
  
+<<<<<<< HEAD
 
+=======
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/scripts.js"> </script>
+<script src="scripts/jquery-ui.js"></script>
+<script src="scripts/project.js"></script>
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd.git
 </head>
 <body>
 <div id="wrapper">

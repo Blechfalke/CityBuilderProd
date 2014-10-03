@@ -1,4 +1,4 @@
-﻿<?php 
+﻿﻿<?php 
 session_start();
 require_once '../common/ConfigOptions.php';
 require_once __ROOT__ . 'controller/class.GameController.php';
