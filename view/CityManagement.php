@@ -162,6 +162,7 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<script>
 		updateTechnology();
+		createPyramid();
   	</script>";
 }
 ?>

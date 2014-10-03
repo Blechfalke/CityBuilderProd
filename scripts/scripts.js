@@ -40,6 +40,8 @@ $(document).ready(function(){
   		$(this).val(backupValue);
   	}
   	
+  	updatePyramid(i_slaves,i_peasants,i_soldiers,i_scribes,i_craftsmen,i_priests, i_kings);
+  	
   	
   });
 
