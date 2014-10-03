@@ -67,11 +67,9 @@ Highcharts.theme = {
       }
    },
    tooltip: {
-	  borderWidth: 0,
-	  shadow: false,
-      backgroundColor: 'rgba(0, 0, 0, 0)',
+      backgroundColor: 'rgba(0, 0, 0, 0.85)',
       style: {
-         color: 'rgba(0, 0, 0, 0)'
+         color: '#F0F0F0'
       }
    },
    plotOptions: {
@@ -218,7 +216,6 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 	scribes = oneCheck(scribes);
 	priests = oneCheck(priests);
 	kings = oneCheck(kings);
-	
 	    $('#Diagram').highcharts({
 	        chart: {
 	            type: 'pyramid',
@@ -245,6 +242,6 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 	        }]
 	    });
 }
+
 function oneCheck(test){
-	return (test <1)?1:test;
-}
+	return (test <1)?1:test;}
