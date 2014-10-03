@@ -116,7 +116,9 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#9DC3E6;' class='label'>
 	Scribes
 	</div>
-	<input type='text' class='editor' name='Scribes' id='Scribes' disabled value='$scribes'/>
+    <input type='text' class='editor' name='Scribes' id='Scribes' ";
+	echo $technology->getWriting() ? "" : "disabled ";
+	echo "value='$scribes'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FF5050;' class='label'>
@@ -162,6 +164,8 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<script>
 		updateTechnology();
+		createPyramid();
+		updatePyramid($slaves, $peasants, $soldiers, $craftsmen, $scribes, $priests, $kings);
   	</script>";
 }
 ?>
