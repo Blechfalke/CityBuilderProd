@@ -223,7 +223,7 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 	            enabled: false
 	        },
 	        series: [{
-	            name: 'Pyramid game',
+	            name: 'Population',
 	            data: [ 
 	            	['Slaves',   Number(slaves)],
 	                ['Peasants',       Number(peasants)],
