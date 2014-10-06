@@ -63,25 +63,64 @@ $(document).ready(function(){
   $(document).on('mouseover', '.hover', function(){
 	  switch ($(this).attr('id')){
 	  case 'lbl_Kings':
-		  document.getElementById('rightUp').textContent = "Kings are the shit!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/pharaon_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"In Egypt, the king was called Pharaoh.<br>" +
+	  													   	"He was considered as a god and possessed absolute power " +
+	  													   	"over the land.";
 		  break;
 	  case 'lbl_Priests':
-		  document.getElementById('rightUp').textContent = "Priests do healing and Shit!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/priest_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"The priests take care of the cult of the numerous divinities " +
+		  													"of the egyptian religion.";
 		  break;
 	  case 'lbl_Craftsmen':
-		  document.getElementById('rightUp').textContent = "Craftsmen build Houses and Shit!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/craftsmen_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"From argile, stone, ivory, bones, wood and metal, the artisanal " +
+		  													"production of ancient egypt shows a great quality and allow for a " +
+		  													"very florishing trading.";
 		  break;
 	  case 'lbl_Scribes':
-		  document.getElementById('rightUp').textContent = "Scribes do writing and Shit!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/scribes_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"Specialists of writing in the antiquity, the role of scribes was " +
+		  													"primordial for the optimization of the production in antic societies.";
 		  break;
 	  case 'lbl_Soldiers':
-		  document.getElementById('rightUp').textContent = "Soldiers fight and shit!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/soldier_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"Being a soldier wasn’t very popular in Egypt. The egyptians were mostly " +
+		  													"peasants. But in order to defend their recolts, they created an army " +
+		  													"that would soon become a professional one.";
 		  break;
 	  case 'lbl_Peasants':
-		  document.getElementById('rightUp').textContent = "Peasants are like you and me!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/peasants_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"The peasants in antic egypt, like those of the rest of the world, " +
+		  													"had the essential task to exploit the soil to feed the population.";
 		  break;
 	  case 'lbl_Slaves':
-		  document.getElementById('rightUp').textContent = "Slaves are for Sex and Shit!";
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/slave_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"Slavery is a condition in which an individual has his freedom taken " +
+		  													"from him. He becomes the possession of another individual who can make " +
+		  													"him work without pay or sell him.";
+		  break;
+	  case 'granary':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/granary_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"A granary is used to stock grains. It appeared around the neolithic " +
+		  													"revolution, 14,000 years before Christ.";
+		  break;
+	  case 'writing':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/writing_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"Writing appeared around the fourth millenial before Jesus Christ. " +
+		  													"First used for accounting, writing eventually became a mean for " +
+		  													"communication and thinking.";
+		  break;
+	  case 'pottery':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/pottery_desc.png');
+		  document.getElementById('flavourText').innerHTML = 	"The invention of pottery comes from prehistory and would have happened " +
+	  														"in China around 20,000 years before Christ. Its use was mostly domestic " +
+	  														"and culinary.";
+		  break;
+	  case 'lbl_Caravans':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/caravan_desc.png');
+		  document.getElementById('flavourText').innerHTML = "The egyptians had a very developped trading activity. They would exchange their manufactured products against raw materials from neighbooring cities. Those trades ensured Egypt prosperity.";
 		  break;
 	  }
   });

@@ -61,7 +61,7 @@ class GameController {
 			if ($this->population->getTotalPopulation() <= 0){
 				// LOSING EVENT
 				echo '!!!!!!!!!!!!!!!!!! you\'ve lost !!!!!!!!!!!!!!!!!';
-				$this->round= 1000;
+				$this->round = 1000;
 			}
 		}
 		$this->nextRound ();
@@ -177,7 +177,9 @@ class GameController {
 			$scribesInfulence=0.0277777778;
 		$foodProd = floor($this->population->getPeasants() * (($this->gameResources->getUnhappiness())?3/4:1) * (1.111111111 + $scribesInfulence));
 
-		echo ' food produced: '.$foodProd;
+		echo ' food produced: ' . $foodProd; 
+		echo "<script>project.alert('Food Produced: $foodProd');</script>";
+		
 		// FOOD CONSUMPTION
 		$foodCons = $this->population->getTotalPopulation();
 

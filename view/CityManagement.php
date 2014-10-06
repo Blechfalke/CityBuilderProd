@@ -57,21 +57,21 @@ if ($gameController->getRound() > 6) {
                     <div class='imageCityManagement'>
                         Writing 
                         <img class='checkmark' src='css/images/checkmark.png'/>
-                        <img id='writing' class='technology ";
+                        <img id='writing' class='technology hover ";
                         echo $technology->getWriting() ? "developed" : "clickable";
                         echo "' src='css/images/writing.png' width='70' style='margin: 5px 30px 0 0;' />
                     </div>
                     <div class='imageCityManagement'>
                         Granary
                         <img class='checkmark' src='css/images/checkmark.png'/>
-                        <img id='granary' class='technology "; 
+                        <img id='granary' class='technology hover "; 
                         echo $technology->getGranary() ? "developed" : "clickable";
                         echo "' src='css/images/granary.png' width='70' style='margin: 5px 30px 0 0;' />
                     </div>
                     <div  class='imageCityManagement' style='margin-right:0;'>
                         Pottery
                         <img class='checkmark' src='css/images/checkmark.png'/>
-                        <img id='pottery' class='technology ";
+                        <img id='pottery' class='technology hover ";
                         echo $technology->getPottery() ? "developed" : "clickable";
                         echo "' src='css/images/pottery.png' width='70' style='margin-top: 5px;' />
                     </div>
@@ -98,25 +98,25 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#FFF2CC;' class='label hover' id='lbl_Kings'>
 	Kings
 	</div>
-	<input type='text' class='editor' name='Kings' id='Kings' value='$kings'/>
+	<input type='number' min='0' class='editor' name='Kings' id='Kings' value='$kings'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#CC99FF;' class='label hover' id='lbl_Priests'>
 	Priests
 	</div>
-	<input type='text' class='editor' name='Priests' id='Priests' value='$priests'/>
+	<input type='number' min='0' class='editor' name='Priests' id='Priests' value='$priests'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FBE5D6;' class='label hover' id='lbl_Craftsmen'>
 	Craftsmen
 	</div>
-	<input type='text' class='editor' name='Craftsmen' id='Craftsmen' value='$craftsmen'/>
+	<input type='number' min='0' class='editor' name='Craftsmen' id='Craftsmen' value='$craftsmen'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#9DC3E6;' class='label hover' id='lbl_Scribes'>
 	Scribes
 	</div>
-    <input type='text' class='editor' name='Scribes' id='Scribes' ";
+    <input type='number' min='0' class='editor' name='Scribes' id='Scribes' ";
 	echo $technology->getWriting() ? "" : "disabled ";
 	echo "value='$scribes'/>
 	</div>
@@ -124,19 +124,19 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#FF5050;' class='label hover' id='lbl_Soldiers'>
 	Soldiers
 	</div>
-	<input type='text' class='editor' name='Soldiers' id='Soldiers' value='$soldiers'/>
+	<input type='number' min='0' class='editor' name='Soldiers' id='Soldiers' value='$soldiers'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#C5E0B4;' class='label hover' id='lbl_Peasants'>
 	Peasants
 	</div>
-	<input type='text' class='editor' name='Peasants' id='Peasants' value='$peasants'/>
+	<input type='number' min='0' class='editor' name='Peasants' id='Peasants' value='$peasants'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#DBDBDB;' class='label hover' id='lbl_Slaves'>
 	Slaves
 	</div>
-	<input type='text' class='editor' name='Slaves' id='Slaves' value='$slaves'/>
+	<input type='number' min='0' class='editor' name='Slaves' id='Slaves' value='$slaves'/>
 	</div>
 	<div style='clear:both;width:30px; height:20px;'>
 	</div>
@@ -154,6 +154,8 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<div id='rightContent'>
 	<div id='rightUp'>
+		<img id='flavourImage' style='width:180px; height:150px;'/>
+		<p id='flavourText'> </p>
 	</div>
 	<div id='rightBottom'>
 	<input type='button' value='End  of turn' name='EndOfTurn' class='pageButtons finishRound'/>
