@@ -160,21 +160,12 @@ margin: 0 auto;
     width: 70px; 
     text-align: center; 
     font-size: 20px; 
-<<<<<<< HEAD
-    font-weight: bold;
-=======
     font-weight: bold; 
-    margin-right: 30px;
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
     margin-right: 30px;
     position: relative;
 }
 #dialog{
 	background-color:#FFE699;
-<<<<<<< HEAD
-=======
-	background-color:#FFE699;
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
     position: relative;
 }
 
@@ -191,9 +182,17 @@ margin: 0 auto;
 	visibility:hidden;
 }
 #writing, #granary, #pottery, #continue{	
-<<<<<<< HEAD
 	cursor:pointer;
-=======
-	cursor:pointer
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
+}
+.ui-dialog-buttonpane{
+	width:500px;	
+}
+.ui-dialog-buttonset{
+	margin-right:auto;
+	margin-left:auto;
+	float:none !important;
+	width:300px;
+}
+.ui-button {
+    width:300px;
 }

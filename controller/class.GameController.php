@@ -141,7 +141,7 @@ class GameController {
 				if ($this->population->getSlaves () / $this->population->getTotalPopulation () * 100 <= 2 / 100) {
 					$this->gameResources->setUnhappiness ( true );
 					// TODO POPUP TEXT
-					echo "<script>alert('Unhappiness POPUP');</script>";
+					echo "<script>project.alert('Unhappiness POPUP');</script>";
 					// TODO ONLY FOR TESTING
 					echo ' the population is angry ';
 				}
@@ -163,7 +163,7 @@ class GameController {
 			$this->gameResources->incCaravans ();
 			
 			// TODO POPUP TEXT
-			echo "<script>alert('CARAVAN POPUP');</script>";
+			echo "<script>project.alert('CARAVAN POPUP');</script>";
 			// TODO ONLY FOR TESTING
 			echo ' caravan sent';
 		}
