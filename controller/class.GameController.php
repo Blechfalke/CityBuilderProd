@@ -214,9 +214,9 @@ class GameController {
 		echo ' food remaining: ' . $this->gameResources->getFood ();
 		// POPULATION VARIATION
 		if ($this->gameResources->getFood () >= 0)
-			$this->population->setTotalPopulation ( ceil ( $this->population->getTotalPopulation () + $foodProd * 2 ) );
+			$this->population->setTotalPopulation ( floor ( $this->population->getTotalPopulation () + $foodProd * 2 ) );
 		else {
-			$LostPop = ceil ( $this->gameResources->getFood () * 2 );
+			$LostPop = floor ( $this->gameResources->getFood () * 2 );
 			$this->population->setTotalPopulation ( $this->population->getTotalPopulation () + $LostPop );
 			$this->ClassesLossesFromFood ( - ($LostPop) );
 		}
