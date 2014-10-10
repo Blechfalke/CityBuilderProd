@@ -57,14 +57,14 @@ class GameController {
 				// LOSING EVENT
 				
 				// TODO POPUP TEXT
-				echo "<script>alert('LOST POPUP');</script>";
+				echo "<script>project.alert('LOST POPUP');</script>";
 				// TODO ONLY FOR TESTING
 				echo '!!!!!!!!!!!!!!!!!! you\'ve lost !!!!!!!!!!!!!!!!!';
 				$this->round = 1000;
 			}
 			if ($this->round >= 6) {
 				// TODO POPUP TEXT
-				echo "<script>alert('WIN POPUP');</script>";
+				echo "<script>project.alert('WIN POPUP');</script>";
 			}
 		}
 		$this->nextRound ();
@@ -73,7 +73,7 @@ class GameController {
 		// INVASION
 		if ($this->population->getSoldiers () / $this->population->getTotalPopulation () * 100 <= 2.5 / 100) {
 			// TODO POPUP TEXT
-			echo "<script>alert('Invasion POPUP');</script>";
+			echo "<script>project.alert('Invasion POPUP');</script>";
 			$LostPop = ceil ( ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100 );
 			$LostWealth = ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100;
 			
@@ -173,21 +173,21 @@ class GameController {
 		if ($this->population->getPriests () >= 10 & $this->gameResources->getWealth () >= 550 & $this->population->getPeasants () >= 1000) {
 			$this->buildings->buildTemple ();
 			// TODO POPUP TEXT
-			echo "<script>alert('temple POPUP');</script>";
+			echo "<script>project.alert('temple POPUP');</script>";
 			// TODO ONLY FOR TESTING
 			echo ' temple built';
 		}
 		if ($this->gameResources->getWealth () >= 850 & $this->population->getPeasants () >= 1500) {
 			$this->buildings->buildPalace ();
 			// TODO POPUP TEXT
-			echo "<script>alert('palace POPUP');</script>";
+			echo "<script>project.alert('palace POPUP');</script>";
 			// TODO ONLY FOR TESTING
 			echo ' palace built';
 		}
 		if ($this->gameResources->getWealth () >= 1150 & $this->population->getPeasants () >= 1900) {
 			$this->buildings->buildMonuments ();
 			// TODO POPUP TEXT
-			echo "<script>alert('monument POPUP');</script>";
+			echo "<script>project.alert('monument POPUP');</script>";
 			// TODO ONLY FOR TESTING
 			echo ' monuments built';
 		}
