@@ -105,7 +105,3 @@ function readInputs(){
 	i_peasants = $('#Peasants').val();
 	i_slaves = $('#Slaves').val();
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
