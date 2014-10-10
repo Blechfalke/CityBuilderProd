@@ -100,6 +100,8 @@ border: 1px solid black;
 margin: 5px 10px 0 0;
 float:left;
 padding-left:5px;
+box-sizing: border-box;
+padding-top: 2px;
 }
 .labelScore {
 float: left;
@@ -120,7 +122,7 @@ float:right;
 .editor{
 float: right;
 width:80px;
-height: 23px;
+height: 25px;
 border: 1px solid black;
 margin: 5px 0 0 0;
 background-color:white;
@@ -158,12 +160,21 @@ margin: 0 auto;
     width: 70px; 
     text-align: center; 
     font-size: 20px; 
+<<<<<<< HEAD
     font-weight: bold;
+=======
+    font-weight: bold; 
+    margin-right: 30px;
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
     margin-right: 30px;
     position: relative;
 }
 #dialog{
 	background-color:#FFE699;
+<<<<<<< HEAD
+=======
+	background-color:#FFE699;
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
     position: relative;
 }
 
@@ -180,5 +191,9 @@ margin: 0 auto;
 	visibility:hidden;
 }
 #writing, #granary, #pottery, #continue{	
+<<<<<<< HEAD
 	cursor:pointer;
+=======
+	cursor:pointer
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
 }
