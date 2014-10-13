@@ -2,6 +2,7 @@
 session_start();
 require_once 'config.php';
 require_once LOCATOR . '/controller/class.GameController.php';
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
   

@@ -239,3 +239,14 @@ margin: 10px 0 0 5px;
 .ui-button {
     width:300px;
 }
+
+#errorMSG{
+	color: red;
+	background-color: #FFD966;
+	width: 300px;
+	border: 1px solid black;
+	height: 50px;
+	line-height: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+}

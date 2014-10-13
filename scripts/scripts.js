@@ -36,9 +36,16 @@ $(document).ready(function(){
 
   $(document).on('click', '.login', function(){
 	     pageName = "controller/class.loginController.php";
-	    	$("#wrapper").load(pageName, {
+	    	$("#wrapper").load(pageName, { 
 	    		username: $('#username').val(),
 	    		password: $('#password').val()
+	    	});
+  });
+  
+  $(document).on('click', '.gameMode', function(){
+	     pageName = "controller/class.gameModeController.php";
+	    	$("#wrapper").load(pageName, {
+	    		newMode: $(this).attr("id")
 	    	});
   });
   
@@ -156,3 +163,16 @@ function readInputs(){
 	i_peasants = $('#Peasants').val();
 	i_slaves = $('#Slaves').val();
 }
+
+//window.onbeforeunload = function (e) {
+//    e = e || window.event;
+//
+//    // For IE and Firefox prior to version 4
+//    if (e) {
+//        e.returnValue = 'Sure?';
+//    }
+//
+//    // For Safari
+//    return 'Sure?';
+//};
+

@@ -1,6 +1,7 @@
 <?php
 session_start();
-include ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+session_unset();
+require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.User.php';
 
@@ -9,37 +10,35 @@ $username = $_POST ['username'];
 $password = $_POST ['password'];
 
 try {
-	$result = validateData ( $username, $password );
-
+	$result = validateData($username, $password);
 	
-	if ($result != null){
-		$_SESSION['User'] = serialize($result);
+	if ($result != null) {
+		$_SESSION ['User'] = serialize($result);
 		
-		$location = LOCATOR . "/view/startMenu.php";
-		header ("location: ../view/startMenu.php");
-		exit;
+		header("location: ../view/startMenu.php");
+		exit();
 	}
-
-} catch ( Exception $e ) {
-		header ('location:../index.php?msg=' . $e->getMessage() );
-	exit ();
+} catch (Exception $e) {
+	$_SESSION ['msg'] = $e->getMessage();
+	header('location:../index.php');
+	exit();
 }
 
 function validateData() {
-	if (empty ($GLOBALS['username']))
-		throw new Exception ( 'Username is empty!' );
+	if (empty($GLOBALS ['username']))
+		throw new Exception('Username is empty!');
 	
-	if (empty ( $GLOBALS['password'] )) 
-		throw new Exception ( 'Password is empty!' );
-	
-	// check credentials
+	if (empty($GLOBALS ['password']))
+		throw new Exception('Password is empty!');
+		
+		// check credentials
 	$conn = new MySQLConnector();
 	
-	$result = $conn->checkCredentials($GLOBALS['username'], $GLOBALS['password'] );
+	$result = $conn->checkCredentials($GLOBALS ['username'], $GLOBALS ['password']);
 	
-	if (!$result)
+	if (! $result)
 		throw new Exception('Wrong username or password!');
-
+	
 	return $result;
 }
 

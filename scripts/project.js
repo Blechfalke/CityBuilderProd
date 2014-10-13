@@ -69,8 +69,8 @@ project.alert = function (text) {
             }
         }
     };
-    $('a').css('cursor', 'progress');
-    $('body').css('cursor', 'progress');
+//    $('a').css('cursor', 'progress');
+//    $('body').css('cursor', 'progress');
 	    var inside = "<div  style='width:450px;margin:0 15px;' >" +
 		"<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >" + text +
 		"</div> </div>"
@@ -90,15 +90,3 @@ project.alert = function (text) {
     return createdDialog;
 };
 }(window.project = window.project || {}, jQuery));
-
-window.onbeforeunload = function (e) {
-    e = e || window.event;
-
-    // For IE and Firefox prior to version 4
-    if (e) {
-        e.returnValue = 'Sure?';
-    }
-
-    // For Safari
-    return 'Sure?';
-};
