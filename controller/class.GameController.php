@@ -151,7 +151,7 @@ class GameController {
 					// TODO POPUP TEXT
 					echo "<script>project.alert('Unhappiness POPUP');</script>";
 					// TODO ONLY FOR TESTING
-					echo ' the population is angry '. $this->population->getPriests () / $this->population->getTotalPopulation () * 100 . ' ' . $this->population->getSlaves () / $this->population->getTotalPopulation () * 100;
+					echo ' the population is angry ';
 				}
 	}
 	public function calcWealth() {
@@ -243,12 +243,14 @@ class GameController {
 		if ($this->technology->getWriting ())
 			$score += 0.5;
 			// WEALTH
-		$score += ceil ( ($this->gameResources->getWealth () / 500.0 * 0.25) * 2 ) / 2;
+		$WealthScore = ceil ( ($this->gameResources->getWealth () / 500.0 * 0.2) * 2 ) / 2;
+		$score += ($WealthScore > 1)?1:$WealthScore;
 		// BUILDING
 		$buildingScore = ($this->buildings->getTemple () + $this->buildings->getPalace () + $this->buildings->getMonuments ()) * 0.125;
 		$score += ($buildingScore > 0.5) ? 0.5 : $buildingScore;
 		// POP
-		$score += $this->population->getTotalPopulation () / 50 * 0.03125;
+		$popScore = $this->population->getTotalPopulation () / 50 * 0.03125;
+		$score += ($popScore > 1.5)?1.5:$popScore;
 		// UNHAPPINESS
 		$score += ($this->gameResources->getUnHappiness ()) ? 0 : 0.5;
 		$this->gameResources->setScore ( $score );
