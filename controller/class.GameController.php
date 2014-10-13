@@ -73,7 +73,7 @@ class GameController {
 	}
 	public function calcInvasion() {
 		// INVASION
-		if ($this->population->getSoldiers () / $this->population->getTotalPopulation () * 100 <= 2.5 / 100) {
+		if (($this->population->getSoldiers () / $this->population->getTotalPopulation () * 100.0) <= (2.5)) {
 			// TODO POPUP TEXT
 			echo "<script>project.alert('Invasion POPUP');</script>";
 			$LostPop = ceil ( ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100 );
@@ -92,6 +92,7 @@ class GameController {
 				$this->population->getSoldiers (),
 				$this->population->getPeasants (),
 				$this->population->getSlaves (),
+				$this->population->getCraftsmen (),
 				$this->population->getScribes (),
 				$this->population->getPriests (),
 				$this->population->getKings () 
@@ -100,15 +101,17 @@ class GameController {
 		$this->population->setSoldiers ( $array [0] );
 		$this->population->setPeasants ( $array [1] );
 		$this->population->setSlaves ( $array [2] );
-		$this->population->setScribes ( $array [3] );
-		$this->population->setPriests ( $array [4] );
-		$this->population->setKings ( $array [5] );
+		$this->population->setCraftsmen ( $array [3] );
+		$this->population->setScribes ( $array [4] );
+		$this->population->setPriests ( $array [5] );
+		$this->population->setKings ( $array [6] );
 	}
 	public function ClassesLossesFromFood($LostPop) {
 		// STARVATION CALC
 		$array = array (
 				$this->population->getSlaves (),
 				$this->population->getPeasants (),
+				$this->population->getCraftsmen (),
 				$this->population->getScribes (),
 				$this->population->getPriests (),
 				$this->population->getSoldiers (),
@@ -117,10 +120,11 @@ class GameController {
 		$array = $this->ClassesLosses ( $array, 0, $LostPop );
 		$this->population->setSlaves ( $array [0] );
 		$this->population->setPeasants ( $array [1] );
-		$this->population->setScribes ( $array [2] );
-		$this->population->setPriests ( $array [3] );
-		$this->population->setSoldiers ( $array [4] );
-		$this->population->setKings ( $array [5] );
+		$this->population->setCraftsmen ( $array [2] );
+		$this->population->setScribes ( $array [3] );
+		$this->population->setPriests ( $array [4] );
+		$this->population->setSoldiers ( $array [5] );
+		$this->population->setKings ( $array [6] );
 	}
 	private function ClassesLosses($array, $class, $LostPop) {
 		// Class losses algorithm
@@ -138,14 +142,16 @@ class GameController {
 	public function calcUnhappiness() {
 		// UNHAPPINESS
 		$this->gameResources->setUnhappiness ( false );
-		if ($this->population->getKings () != 1)
-			if ($this->population->getPriests () / $this->population->getTotalPopulation () * 100 <= 0.25 / 100)
-				if ($this->population->getSlaves () / $this->population->getTotalPopulation () * 100 <= 2 / 100) {
+		if (
+				($this->population->getKings () != 1)
+				OR ($this->population->getPriests () / $this->population->getTotalPopulation () * 100.0 <= 0.25)
+				OR ($this->population->getSlaves () / $this->population->getTotalPopulation () * 100.0 <= 2.0)
+		) {
 					$this->gameResources->setUnhappiness ( true );
 					// TODO POPUP TEXT
 					echo "<script>project.alert('Unhappiness POPUP');</script>";
 					// TODO ONLY FOR TESTING
-					echo ' the population is angry ';
+					echo ' the population is angry '. $this->population->getPriests () / $this->population->getTotalPopulation () * 100 . ' ' . $this->population->getSlaves () / $this->population->getTotalPopulation () * 100;
 				}
 	}
 	public function calcWealth() {
@@ -172,21 +178,21 @@ class GameController {
 	}
 	public function calcBuildings() {
 		// BUILDING
-		if ($this->population->getPriests () >= 10 & $this->gameResources->getWealth () >= 550 & $this->population->getPeasants () >= 1000) {
+		if ($this->population->getPriests () >= 10 && $this->gameResources->getWealth () >= 550 && $this->population->getPeasants () >= 1000) {
 			$this->buildings->buildTemple ();
 			// TODO POPUP TEXT
 			echo "<script>project.alert('temple POPUP');</script>";
 			// TODO ONLY FOR TESTING
 			echo ' temple built';
 		}
-		if ($this->gameResources->getWealth () >= 850 & $this->population->getPeasants () >= 1500) {
+		if ($this->gameResources->getWealth () >= 850 && $this->population->getPeasants () >= 1500) {
 			$this->buildings->buildPalace ();
 			// TODO POPUP TEXT
 			echo "<script>project.alert('palace POPUP');</script>";
 			// TODO ONLY FOR TESTING
 			echo ' palace built';
 		}
-		if ($this->gameResources->getWealth () >= 1150 & $this->population->getPeasants () >= 1900) {
+		if ($this->gameResources->getWealth () >= 1150 && $this->population->getPeasants () >= 1900) {
 			$this->buildings->buildMonuments ();
 			// TODO POPUP TEXT
 			echo "<script>project.alert('monument POPUP');</script>";
