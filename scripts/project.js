@@ -23,8 +23,8 @@
              }*/
          }
      };
-     $('a').css('cursor', 'progress');
-     $('body').css('cursor', 'progress');
+     //$('a').css('cursor', 'progress');
+     //$('body').css('cursor', 'progress');
      var createdDialog = dialog.dialog(options);
      var urlWithParams = url;
      localStorage.setItem('text', text);
