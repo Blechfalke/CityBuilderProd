@@ -196,10 +196,10 @@ class GameController {
 	}
 	public function calcFoodPop() {
 		// FOOD PRODUCTION
-		$scribesInfulence = (0.0277777778 * 5 / 100 * $this->population->getScribes ());
-		if ($scribesInfulence > 0.0277777778)
+		$scribesInfulence = (0.0277777778 * 100 * ($this->population->getScribes () / $this->population->getTotalPopulation () * 100));
+		if ($scribesInfulence < 0.0277777778)
 			$scribesInfulence = 0.0277777778;
-		$foodProd = floor ( $this->population->getPeasants () * (($this->gameResources->getUnhappiness ()) ? 3 / 4 : 1) * (1.111111111 + $scribesInfulence) );
+		$foodProd = floor ( $this->population->getPeasants () * (($this->gameResources->getUnhappiness ()) ? 0.75 : 1) * (1.111111111 + $scribesInfulence) );
 		// TODO ONLY FOR TESTING
 		echo ' food produced: ' . $foodProd;
 		
@@ -215,13 +215,15 @@ class GameController {
 			// TODO ONLY FOR TESTING
 		echo ' food remaining: ' . $this->gameResources->getFood ();
 		// POPULATION VARIATION
-		if ($this->gameResources->getFood () >= 0)
-			$this->population->setTotalPopulation ( floor ( $this->population->getTotalPopulation () + $foodProd * 2 ) );
-		else {
-			$LostPop = floor ( $this->gameResources->getFood () * 2 );
-			$this->population->setTotalPopulation ( $this->population->getTotalPopulation () + $LostPop );
-			$this->ClassesLossesFromFood ( - ($LostPop) );
-		}
+		$PopVar = floor ( $this->gameResources->getFood () * 2 );
+		$NewPop = $this->population->getTotalPopulation () + $PopVar ;
+ 		if ($this->gameResources->getFood () < 0){
+	 		if ($NewPop <= 0.5 * $this->population->getTotalPopulation ())
+	 			$NewPop = ceil(0.5 * $this->population->getTotalPopulation ());
+			$LostPop = $this->population->getTotalPopulation () - $NewPop;
+	 		$this->ClassesLossesFromFood ($LostPop );
+ 		}
+ 		$this->population->setTotalPopulation ($NewPop);
 		echo ' population: ' . $this->population->getTotalPopulation ();
 	}
 	public function calcScore() {
