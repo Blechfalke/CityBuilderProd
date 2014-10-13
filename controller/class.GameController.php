@@ -1,8 +1,10 @@
 <?php
-require_once __ROOT__ . 'model/class.Building.php';
-require_once __ROOT__ . 'model/class.GameResources.php';
-require_once __ROOT__ . 'model/class.Population.php';
-require_once __ROOT__ . 'model/class.Technology.php';
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once LOCATOR . '/model/class.Building.php';
+require_once LOCATOR . '/model/class.GameResources.php';
+require_once LOCATOR . '/model/class.Population.php';
+require_once LOCATOR . '/model/class.Technology.php';
+
 class GameController {
 	private $round;
 	private $buildings;

@@ -1,12 +1,18 @@
 <?php
-require_once '../model/class.User.php';
+require_once '../config.php';
+require_once LOCATOR . '/model/class.User.php';
 
 class MySQLConnector {
-	const HOST = 'localhost';
-	const PORT = '8889';
-	const DBNAME = 'pyramidgame';
-	const USER = 'pyramidgame';
-	const PWD = 'test123';
+// 	const HOST = 'localhost';
+// 	const PORT = '8889';
+// 	const DBNAME = 'pyramidgame';
+// 	const USER = 'pyramidgame';
+// 	const PWD = 'test123';
+	const HOST = 'db4free.net';
+	const PORT = '3306';
+	const DBNAME = 'pyramiddb';
+	const USER = 'pyramidaccess';
+	const PWD = 'pyramidAccess605';
 	private $_conn;
 	
 	public function __construct() {
@@ -23,26 +29,8 @@ class MySQLConnector {
 		return false;	
 	}
 	
-	public function getUsers(){
-		$users = array();
-		$query = "SELECT * FROM user;";
-		$result = $this->_conn->query($query);
-		
-		if ($this->getError()) {
-			trigger_error($this->getError());
-		}
-		
-		while ($row = $result->fetch()){
-			$user = new User($row['firstname'],$row['lastname'],$row['username'],$row['password']);
-			$user->createdAt = $row['createdAt'];
-			$users[$row['id']] = $user;	
-		}
-		
-		return $users;
-	}
-	
 	public function checkCredentials($username, $password){
-		$query = "SELECT * FROM user WHERE username='". $username. "' AND password='".sha1($password)."';";
+		$query = "SELECT * FROM Users WHERE username='". $username. "' AND password='".sha1($password)."';";
 		$result = $this->_conn->query($query);
 		
 		if ($this->getError())
@@ -52,12 +40,10 @@ class MySQLConnector {
 		
 		if (!$row) return false;
 		
-		$user = new User($row['firstname'],
-							$row['lastname'],
-							$row['username'],
-							$row['password']);
-		$user->id = $row['id'];
-		$user->createdAt = $row['createdAt'];
+		$user = new User(	$row['username'],
+							$row['password'],
+							$row['admin']);
+							$user->id_user = $row['id_user'];
 		return $user;
 	}
 }

@@ -1,16 +1,27 @@
 <?php
-
-require_once '../dal/class.MySQLConnector.php';
+session_start();
+include ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once LOCATOR . '/dal/class.MySQLConnector.php';
+require_once LOCATOR . '/model/class.User.php';
 
 // Retrieve login information from form
-$username = $_POST ['Username'];
-$password = $_POST ['Password'];
+$username = $_POST ['username'];
+$password = $_POST ['password'];
 
 try {
 	$result = validateData ( $username, $password );
-	echo 'Hello ' . $result->username;
+
+	
+	if ($result != null){
+		$_SESSION['User'] = serialize($result);
+		
+		$location = LOCATOR . "/view/startMenu.php";
+		header ("location: ../view/startMenu.php");
+		exit;
+	}
+
 } catch ( Exception $e ) {
-	header ( 'Location:../index.php?msg=' . $e->getMessage() );
+		header ('location:../index.php?msg=' . $e->getMessage() );
 	exit ();
 }
 

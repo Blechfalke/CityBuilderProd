@@ -1,11 +1,7 @@
 <?php 
 session_start();
-include 'common/ConfigOptions.php';
-require_once __ROOT__ . 'controller/class.GameController.php';
-$gameController = new GameController();
-
-$_SESSION['GameController'] = serialize($gameController);
-
+require_once 'config.php';
+require_once LOCATOR . '/controller/class.GameController.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
   

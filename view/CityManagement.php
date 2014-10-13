@@ -1,9 +1,13 @@
-﻿﻿<?php 
-session_start();
-require_once '../common/ConfigOptions.php';
-require_once __ROOT__ . 'controller/class.GameController.php';
+﻿﻿<?php session_start();
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once LOCATOR . '/controller/class.GameController.php';
 
-$gameController = unserialize($_SESSION['GameController']);
+if (isset($_SESSION['GameController'])) {
+	$gameController = unserialize($_SESSION['GameController']);
+} else {
+	$gameController = new GameController();
+}
+
 
 $gameController->calculateRound();
 $population = $gameController->getPopulation();
@@ -159,7 +163,7 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<div id='rightBottom'>
 	<input type='button' value='End  of turn' name='EndOfTurn' class='pageButtons finishRound'/>
-	<input type='button' value='Exit game' name='adminMenu' class='pageButtons link'/>
+	<input type='button' value='Exit game' name='startMenu' class='pageButtons link'/>
 	</div>
 	</div>
 	<div style='clear:both;'>

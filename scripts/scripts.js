@@ -10,11 +10,12 @@ var i_total = 0;
 
 var backupValue;
 $(document).ready(function(){ 
-  var pageName = "view/adminMenu.php";
+  // This will be the starting page of the Application
+  var pageName = "view/login.php";
   $("#wrapper").load(pageName);
   
   
-//need to use delegation based event handlers here, because later links do not exist in the DOM yet
+  //need to use delegation based event handlers here, because later links do not exist in the DOM yet
   $(document).on('click', '.link', function(){
      pageName = "view/" + $(this).attr("name") + ".php";
     	$("#wrapper").load(pageName);
@@ -23,11 +24,24 @@ $(document).ready(function(){
   $(document).on('click', '.finishRound', function(){
   	readInputs();
   	
-  	$("#wrapper").load('view/CityManagement.php', {	kings: i_kings, priests: i_priests, craftsmen: i_craftsmen, 
-  													scribes: i_scribes, soldiers: i_soldiers, peasants: i_peasants,
-  													slaves: i_slaves, technology: i_technology});
+  	$("#wrapper").load('view/CityManagement.php', {	kings: i_kings, 
+  													priests: i_priests, 
+  													craftsmen: i_craftsmen, 
+  													scribes: i_scribes, 
+  													soldiers: i_soldiers, 
+  													peasants: i_peasants,
+  													slaves: i_slaves, 
+  													technology: i_technology});
   });
 
+  $(document).on('click', '.login', function(){
+	     pageName = "controller/class.loginController.php";
+	    	$("#wrapper").load(pageName, {
+	    		username: $('#username').val(),
+	    		password: $('#password').val()
+	    	});
+  });
+  
   $(document).on('change', '.editor', function() {
   	readInputs();
   	var available = i_total - i_kings - i_priests - i_craftsmen - i_scribes - i_soldiers - i_peasants - i_slaves;
