@@ -19,7 +19,19 @@ body {
 border: 1px solid black;*/
 	margin: 10px 0 0 5px;
 }
+<<<<<<< HEAD
 
+=======
+#leftContentMap {
+width: 704px;
+height:587px;
+float: left;
+background: url("images/mapPap.png") no-repeat;
+/*background-color:#FFD966;
+border: 1px solid black;*/
+margin: 10px 0 0 5px;
+}
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd.git
 #rightContent {
 	width: 270px;
 	height: 550px;
@@ -175,6 +187,7 @@ border: 1px solid black;*/
 }
 
 .imageCityManagement {
+<<<<<<< HEAD
 	float: left;
 	width: 70px;
 	text-align: center;
@@ -183,12 +196,27 @@ border: 1px solid black;*/
 	margin-right: 30px;
 	margin-right: 30px;
 	position: relative;
+=======
+    float: left; 
+    width: 70px; 
+    text-align: center; 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-right: 30px;
+    position: relative;
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd.git
 }
+<<<<<<< HEAD
 
 #dialog {
 	background-color: #FFE699;
 	background-color: #FFE699;
 	position: relative;
+=======
+#dialog{
+	background-color:#FFE699;
+    position: relative;
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd.git
 }
 
 .technology {
@@ -204,7 +232,25 @@ border: 1px solid black;*/
 	z-index: 2;
 	visibility: hidden;
 }
+<<<<<<< HEAD
 
 #writing, #granary, #pottery, #continue {
 	cursor: pointer
 }
+=======
+#writing, #granary, #pottery, #continue{	
+	cursor:pointer;
+}
+.ui-dialog-buttonpane{
+	width:500px;	
+}
+.ui-dialog-buttonset{
+	margin-right:auto;
+	margin-left:auto;
+	float:none !important;
+	width:300px;
+}
+.ui-button {
+    width:300px;
+}
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd.git

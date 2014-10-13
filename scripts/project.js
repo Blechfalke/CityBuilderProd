@@ -60,13 +60,23 @@ project.alert = function (text) {
        	 my: "center", at: "center", of: window        	 
         },
         width: 500,
-        height: 150,
+        height: 190,
         draggable: false,
-        resizable: false       
+        resizable: false   ,
+        buttons: {
+            'Continue': function () {
+                $(this).dialog('close');
+            }
+        }
     };
     $('a').css('cursor', 'progress');
     $('body').css('cursor', 'progress');
+	    var inside = "<div  style='width:450px;margin:0 15px;' >" +
+		"<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >" + text +
+		"</div> </div>"
+    dialog.html(inside);
     var createdDialog = dialog.dialog(options);
+    /*
     var urlWithParams = 'view/alert.html';
     localStorage.setItem('alert', text);
     dialog.load(
@@ -76,7 +86,19 @@ project.alert = function (text) {
             $('a').css('cursor', 'pointer');
             $('body').css('cursor', 'auto');
         }
-    );
+    );*/
     return createdDialog;
 };
 }(window.project = window.project || {}, jQuery));
+
+window.onbeforeunload = function (e) {
+    e = e || window.event;
+
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'Sure?';
+    }
+
+    // For Safari
+    return 'Sure?';
+};

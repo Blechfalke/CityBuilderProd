@@ -10,7 +10,7 @@ require_once LOCATOR . '/controller/class.GameController.php';
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>City Builder</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+<link rel="shortcut icon" href="css/images/fav.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css" />
@@ -20,6 +20,7 @@ require_once LOCATOR . '/controller/class.GameController.php';
 <div id="wrapper">
 	
 </div>
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="scripts/project.js"> </script>
