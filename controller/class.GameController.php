@@ -92,6 +92,7 @@ class GameController {
 				// TODO ONLY FOR TESTING
 				echo '!!!!!!!!!!!!!!!!!! you\'ve lost !!!!!!!!!!!!!!!!!';
 				$this->round = 1000;
+				
 			}
 			if ($this->round >= 6) {
 				// TODO POPUP TEXT
