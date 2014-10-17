@@ -1,6 +1,6 @@
 (function (project, $, undefined){
 	 project.createDialog = function (url, text, picture, width, height) {
-		 var dialogId = 'dialog_' + project.guid();
+	 var dialogId = 'dialog-' + project.guid();
      var dialog = $('#' + dialogId);
      if ($('#' + dialogId).length == 0) {
          dialog = $('<div id="' + dialogId + '" style="display:none;"></div>').appendTo('body');
@@ -16,21 +16,13 @@
          width: width,
          height: height,
          resizable: false,
-         draggable: false,
-         buttons: {
-            /* 'Continue': function () {
-                 $(this).dialog('close');
-             }*/
-         }
+         draggable: false
      };
-     //$('a').css('cursor', 'progress');
-     //$('body').css('cursor', 'progress');
      var createdDialog = dialog.dialog(options);
-     var urlWithParams = url;
      localStorage.setItem('text', text);
      localStorage.setItem('pic', picture);
      dialog.load(
-         urlWithParams,
+    		 url,
          function () {
              $('.ui-dialog :button').blur();
              $('a').css('cursor', 'pointer');
@@ -39,6 +31,7 @@
      );
      return createdDialog;
 };
+//http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
 	project.guid = function () {
 	    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
 	        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -46,7 +39,7 @@
 	    });
 	};
 project.alert = function (text) {
-	var dialogId = 'dialog_' + project.guid();
+	var dialogId = 'dialog-' + project.guid();
     var dialog = $('#' + dialogId);
     if ($('#' + dialogId).length == 0) {
         dialog = $('<div id="' + dialogId + '" style="display:none;"></div>').appendTo('body');
@@ -69,24 +62,11 @@ project.alert = function (text) {
             }
         }
     };
-//    $('a').css('cursor', 'progress');
-//    $('body').css('cursor', 'progress');
 	    var inside = "<div  style='width:450px;margin:0 15px;' >" +
 		"<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >" + text +
 		"</div> </div>"
     dialog.html(inside);
     var createdDialog = dialog.dialog(options);
-    /*
-    var urlWithParams = 'view/alert.html';
-    localStorage.setItem('alert', text);
-    dialog.load(
-        urlWithParams,
-        function () {
-            $('.ui-dialog :button').blur();
-            $('a').css('cursor', 'pointer');
-            $('body').css('cursor', 'auto');
-        }
-    );*/
     return createdDialog;
 };
 }(window.project = window.project || {}, jQuery));
