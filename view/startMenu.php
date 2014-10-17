@@ -23,5 +23,5 @@ $user = unserialize($_SESSION ['User']);
 		echo "<div style='height:50px;margin:20px 0;'></div>";
 	}
 	?>
-	<input type='button' value='Exit game' name='ExitGame' id='ExitGame' class='mainButtons link' />
+	<input type='button' value='Exit game' name='ExitGame' class='mainButtons logout' />
 </div>
