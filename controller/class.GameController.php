@@ -43,7 +43,18 @@ class GameController {
 		if (! $this->technology->getWriting ())
 			$this->population->setScribes ( 0 );
 		if ($this->round == 1) {
-			$popT = 2000;
+			// Zone infulence
+			switch ($_POST ['zone']) {
+				case 'zone_1':
+					$popT = 2000;
+					break;
+				case 'zone_2':
+					$popT = 1500;
+					break;
+				case 'zone_3':
+					$popT = 1200;
+					break;
+			}
 			$this->population->setTotalPopulation ( $popT );
 			$this->gameResources->setFood ( $popT / 2 );
 			$this->gameResources->setWealth ( $popT / 4 );
