@@ -20,7 +20,7 @@ try {
 	}
 } catch (Exception $e) {
 	$_SESSION ['msg'] = $e->getMessage();
-	header('location:../index.php');
+	header('location:../view/login.php');
 	exit();
 }
 

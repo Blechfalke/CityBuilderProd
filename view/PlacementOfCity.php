@@ -28,7 +28,7 @@
 </div>
 <div id="rightContent">
 	<div id='rightUp'>
-		<img id='flavourImage' style='width: 180px; height: 150px;' />
+		<img id='flavourImage' src='css/images/blank.png' style='width: 180px; height: 150px;' />
 		<p id='flavourText'></p>
 	</div>
 
