@@ -4,6 +4,8 @@ require_once LOCATOR . '/model/class.Building.php';
 require_once LOCATOR . '/model/class.GameResources.php';
 require_once LOCATOR . '/model/class.Population.php';
 require_once LOCATOR . '/model/class.Technology.php';
+require_once LOCATOR . '/model/class.SingleGameHistoric.php';
+require_once LOCATOR . '/model/class.Turn.php';
 
 class GameController {
 	private $round;
@@ -11,12 +13,14 @@ class GameController {
 	private $gameResources;
 	private $population;
 	private $technology;
+	private $singleGameHistoric;
 	public function __construct() {
-		$this->round = 1;
+		$this->round = 0;
 		$this->buildings = new Building ();
 		$this->gameResources = new GameResources ();
 		$this->population = new Population ();
 		$this->technology = new Technology ();
+		$this->singleGameHistoric = new SingleGameHistoric();
 	}
 	public function getRound() {
 		return $this->round;
@@ -39,10 +43,15 @@ class GameController {
 	public function calculateRound() {
 		$this->population->updatePopulation ( isset ( $_POST ['kings'] ) ? $_POST ['kings'] : 0, isset ( $_POST ['priests'] ) ? $_POST ['priests'] : 0, isset ( $_POST ['craftsmen'] ) ? $_POST ['craftsmen'] : 0, isset ( $_POST ['scribes'] ) ? $_POST ['scribes'] : 0, isset ( $_POST ['soldiers'] ) ? $_POST ['soldiers'] : 0, isset ( $_POST ['peasants'] ) ? $_POST ['peasants'] : 0, isset ( $_POST ['slaves'] ) ? $_POST ['slaves'] : 0 );
 		$this->technology->updateTechnology ( isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "" );
-		
+
 		if (! $this->technology->getWriting ())
 			$this->population->setScribes ( 0 );
-		if ($this->round == 1) {
+		
+		if ($this->round == 0) {
+			// INITALISATION ROUND
+			//historic registration of the zone
+			$this->singleGameHistoric->setMapZone($_POST ['zone']);
+			// TODO WE MAY WANT TO REGISTER THE GAMEMODE THERE TOO
 			// Zone infulence
 			switch ($_POST ['zone']) {
 				case 'zone_1':
@@ -58,7 +67,15 @@ class GameController {
 			$this->population->setTotalPopulation ( $popT );
 			$this->gameResources->setFood ( $popT / 2 );
 			$this->gameResources->setWealth ( $popT / 4 );
+			
 		} else {
+			// EVERY OTHER ROUNDS
+
+			
+			// historic registration (before the calculation, we want to register the choices of the user
+			$this->singleGameHistoric->appendTurn(new Turn( clone $this->population, clone $this->technology));
+			// echo 'GameHistoric'.$this->singleGameHistoric->getTurns()[0]->getPopulation()->getKings();
+			// echo print_r($this->singleGameHistoric->getTurns());
 			$this->calcInvasion ();
 			$this->calcUnhappiness ();
 			$this->calcWealth ();
@@ -66,6 +83,7 @@ class GameController {
 			$this->calcBuildings ();
 			$this->calcFoodPop ();
 			$this->calcScore ();
+			
 			if ($this->population->getTotalPopulation () <= 0) {
 				// LOSING EVENT
 				
@@ -143,7 +161,7 @@ class GameController {
 			$LostPop = $LostPop - $array [$class];
 			$array [$class] = 0;
 			$class ++;
-			if ($class < 6)
+			if ($class < count($array))
 				$array = $this->ClassesLosses ( $array, $class, $LostPop );
 		} else {
 			$array [$class] = $array [$class] - $LostPop;
