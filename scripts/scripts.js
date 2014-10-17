@@ -57,19 +57,7 @@ $(document).ready(function(){
   });
     
   $(document).on('change', '.editor', function() {
-  	readInputs();
-  	var available = i_total - i_kings - i_priests - i_craftsmen - i_scribes - i_soldiers - i_peasants - i_slaves;
-  	
-  	if (available >= 0) {
-  		$('#AvailablePopulation').val(available);		
-  	} else {
-  		project.alert('You can not assign any more people');
-  		$(this).val(backupValue);
-  	}
-  	
-  	updatePyramid(i_slaves,i_peasants,i_soldiers,i_scribes,i_craftsmen,i_priests, i_kings);
-  	
-  	
+	  updateAvailablePopulation();
   });
 
   $(document).on('focus', '.editor', function(){
@@ -84,8 +72,14 @@ $(document).ready(function(){
   
   $(document).on('click', '.technology.clickable', function(){
 	  $('.technology.clickable').css('border','none');
-	  $(this).css('border','2px solid black'); 
-	  i_technology = $(this).attr('id');
+	  if (i_technology == $(this).attr('id')) {
+		$(this).css('border', 'none');
+		i_technology = null;
+	  } else{
+		$(this).css('border','2px solid black'); 
+		i_technology = $(this).attr('id');  
+	  }
+	  
   });
   
   $(document).on('mouseover', '.hover', function(){
@@ -170,6 +164,22 @@ function updateTechnology(){
 	$('.developed').each(function(){
  		$(this).prev().css('visibility', 'visible');
 	});    
+}
+
+function updateAvailablePopulation(idOfModifiedInputField){
+	readInputs();
+  	var available = i_total - i_kings - i_priests - i_craftsmen - i_scribes - i_soldiers - i_peasants - i_slaves;
+  	var id = '#'+ idOfModifiedInputField;
+  	if (available >= 0) {
+  		$('#AvailablePopulation').val(available);		
+  	} else {
+  		//project.alert('You can not assign any more people');
+  		var maximum = available + Number($(id).val());
+  		$(id).val(maximum);
+  		$('#AvailablePopulation').val(0);
+  	}
+  	
+  	updatePyramid(i_slaves,i_peasants,i_soldiers,i_scribes,i_craftsmen,i_priests, i_kings);
 }
 
 function readInputs(){

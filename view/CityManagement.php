@@ -102,25 +102,25 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#FFF2CC;' class='label hover' id='lbl_Kings'>
 	Kings
 	</div>
-	<input type='number' min='0' class='editor' name='Kings' id='Kings' value='$kings'/>
+	<input type='number' min='0' class='editor' name='Kings' id='Kings' oninput='updateAvailablePopulation(\"Kings\")' value='$kings'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#CC99FF;' class='label hover' id='lbl_Priests'>
 	Priests
 	</div>
-	<input type='number' min='0' class='editor' name='Priests' id='Priests' value='$priests'/>
+	<input type='number' min='0' class='editor' name='Priests' id='Priests' oninput='updateAvailablePopulation(\"Priests\")' value='$priests'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FBE5D6;' class='label hover' id='lbl_Craftsmen'>
 	Craftsmen
 	</div>
-	<input type='number' min='0' class='editor' name='Craftsmen' id='Craftsmen' value='$craftsmen'/>
+	<input type='number' min='0' class='editor' name='Craftsmen' id='Craftsmen' oninput='updateAvailablePopulation(\"Craftsmen\")' value='$craftsmen'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#9DC3E6;' class='label hover' id='lbl_Scribes'>
 	Scribes
 	</div>
-    <input type='number' min='0' class='editor' name='Scribes' id='Scribes' ";
+    <input type='number' min='0' class='editor' name='Scribes' id='Scribes' oninput='updateAvailablePopulation(\"Scribes\")' ";
 	echo $technology->getWriting() ? "" : "disabled ";
 	echo "value='$scribes'/>
 	</div>
@@ -128,19 +128,19 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#FF5050;' class='label hover' id='lbl_Soldiers'>
 	Soldiers
 	</div>
-	<input type='number' min='0' class='editor' name='Soldiers' id='Soldiers' value='$soldiers'/>
+	<input type='number' min='0' class='editor' name='Soldiers' id='Soldiers' oninput='updateAvailablePopulation(\"Soldiers\")' value='$soldiers'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#C5E0B4;' class='label hover' id='lbl_Peasants'>
 	Peasants
 	</div>
-	<input type='number' min='0' class='editor' name='Peasants' id='Peasants' value='$peasants'/>
+	<input type='number' min='0' class='editor' name='Peasants' id='Peasants' oninput='updateAvailablePopulation(\"Peasants\")' value='$peasants'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#DBDBDB;' class='label hover' id='lbl_Slaves'>
 	Slaves
 	</div>
-	<input type='number' min='0' class='editor' name='Slaves' id='Slaves' value='$slaves'/>
+	<input type='number' min='0' class='editor' name='Slaves' id='Slaves' oninput='updateAvailablePopulation(\"Slaves\")' value='$slaves'/>
 	</div>
 	<div style='clear:both;width:30px; height:20px;'>
 	</div>
@@ -148,7 +148,7 @@ if ($gameController->getRound() > 6) {
 	<div style='background-color:#FFFFFF;' class='label hover' id='lbl_Caravans'>
 	Caravans
 	</div>
-	<input type='text' class='editor' name='Caravans' id='Caravans' disabled value='$caravans'/>
+	<input type='text' class='editor' name='Caravans' id='Caravans' disabled oninput='updateAvailablePopulation()' value='$caravans'/>
 	</div>
 	<div style='clear:both'>
 	</div>
