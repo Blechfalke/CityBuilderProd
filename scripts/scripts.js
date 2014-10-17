@@ -48,7 +48,14 @@ $(document).ready(function(){
 	    		newMode: $(this).attr("id")
 	    	});
   });
-  
+
+  $(document).on('click', '.cityCircle', function(){
+	     pageName = "view/CityManagement.php";
+	    	$("#wrapper").load(pageName, {
+	    		zone: $(this).attr("id")
+	    	});
+  });
+    
   $(document).on('change', '.editor', function() {
   	readInputs();
   	var available = i_total - i_kings - i_priests - i_craftsmen - i_scribes - i_soldiers - i_peasants - i_slaves;
@@ -143,6 +150,18 @@ $(document).ready(function(){
 		  $('#flavourImage').attr('src', 'css/images/flavourImages/caravan_desc.png');
 		  document.getElementById('flavourText').innerHTML = "The egyptians had a very developped trading activity. They would exchange their manufactured products against raw materials from neighbooring cities. Those trades ensured Egypt prosperity.";
 		  break;
+	  case 'zone_1':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/caravan_desc.png');
+		  document.getElementById('flavourText').innerHTML = "This place is very fertile due to the river that flows through it.";
+		  break;
+	  case 'zone_2':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/pottery_desc.png');
+		  document.getElementById('flavourText').innerHTML = "An arid desert lays for miles and miles away.";
+		  break;
+	  case 'zone_3':
+		  $('#flavourImage').attr('src', 'css/images/flavourImages/writing_desc.png');
+		  document.getElementById('flavourText').innerHTML = "A desertic chain of mountains.";
+		  break;  
 	  }
   });
 });

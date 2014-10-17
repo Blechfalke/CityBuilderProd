@@ -8,6 +8,7 @@ body {
 	height: 768px;
 	background: url("images/background.jpg") no-repeat;
 	margin: 0 auto;
+	position:relative;
 }
 
 #leftContent {
@@ -19,14 +20,15 @@ body {
 }
 
 #leftContentMap {
-width: 704px;
-height:587px;
-float: left;
-background: url("images/mapPap.png") no-repeat;
-/*background-color:#FFD966;
+	width: 704px;
+	height: 587px;
+	float: left;
+	background: url("images/mapPap.png") no-repeat;
+	/*background-color:#FFD966;
 border: 1px solid black;*/
-margin: 10px 0 0 5px;
+	margin: 10px 0 0 5px;
 }
+
 #rightContent {
 	width: 270px;
 	height: 550px;
@@ -154,6 +156,18 @@ margin: 10px 0 0 5px;
 	padding: 5px;
 }
 
+.cityCircle {
+	background: red;
+	border-radius: 100%;
+	border: 4px solid white;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+}
+.cityCircle:hover{
+	cursor:pointer;
+	background: #CF0000;
+}
 /*CityManagement*/
 #Diagram {
 	float: right;
@@ -190,21 +204,21 @@ margin: 10px 0 0 5px;
 	margin-right: 30px;
 	margin-right: 30px;
 	position: relative;
-    float: left; 
-    width: 70px; 
-    text-align: center; 
-    font-size: 20px; 
-    font-weight: bold; 
-    margin-right: 30px;
-    position: relative;
+	float: left;
+	width: 70px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 30px;
+	position: relative;
 }
 
 #dialog {
 	background-color: #FFE699;
 	background-color: #FFE699;
 	position: relative;
-	background-color:#FFE699;
-    position: relative;
+	background-color: #FFE699;
+	position: relative;
 }
 
 .technology {
@@ -224,23 +238,27 @@ margin: 10px 0 0 5px;
 #writing, #granary, #pottery, #continue {
 	cursor: pointer
 }
-#writing, #granary, #pottery, #continue{	
-	cursor:pointer;
-}
-.ui-dialog-buttonpane{
-	width:500px;	
-}
-.ui-dialog-buttonset{
-	margin-right:auto;
-	margin-left:auto;
-	float:none !important;
-	width:300px;
-}
-.ui-button {
-    width:300px;
+
+#writing, #granary, #pottery, #continue {
+	cursor: pointer;
 }
 
-#errorMSG{
+.ui-dialog-buttonpane {
+	width: 500px;
+}
+
+.ui-dialog-buttonset {
+	margin-right: auto;
+	margin-left: auto;
+	float: none !important;
+	width: 300px;
+}
+
+.ui-button {
+	width: 300px;
+}
+
+#errorMSG {
 	color: red;
 	background-color: #FFD966;
 	width: 300px;
