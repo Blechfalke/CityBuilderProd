@@ -40,7 +40,8 @@ $(document).ready(function() {
 		pageName = "controller/class.loginController.php";
 		$("#wrapper").load(pageName, {
 			username : $('#username').val(),
-			password : $('#password').val()
+			password : $('#password').val(),
+			locale : $('.locale').val()
 		});
 	});
 

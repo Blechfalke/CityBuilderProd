@@ -168,6 +168,11 @@ border: 1px solid black;*/
 	cursor:pointer;
 	background: #CF0000;
 }
+
+.locale{
+	float:right; 
+	margin-right:10px;
+}
 /*CityManagement*/
 #Diagram {
 	float: right;

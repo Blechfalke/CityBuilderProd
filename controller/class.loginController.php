@@ -1,7 +1,6 @@
 <?php
-session_start();
+require_once $_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php';
 session_unset();
-require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.User.php';
 
@@ -14,6 +13,11 @@ try {
 	
 	if ($result != null) {
 		$_SESSION ['User'] = serialize($result);
+		
+		// Set the Language
+		if (isset($_POST['locale'])) {
+			$_SESSION['locale'] = $_POST['locale'];			
+		}
 		
 		header("location: ../view/startMenu.php");
 		exit();

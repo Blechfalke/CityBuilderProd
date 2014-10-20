@@ -1,7 +1,16 @@
 <?php
+session_start();
 // We need to define an absolute path here, because else there are problems
 // referencing the classes of the GameController from different sources
 define('LOCATOR', $_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd');
+
+if (isset($_SESSION['locale'])) {
+	$locale = $_SESSION['locale'];
+	putenv("LC_ALL=$locale");
+	setlocale(LC_ALL, $locale);
+	bindtextdomain("test", LOCATOR . "/gettext/i18n");
+	textdomain("test");
+}
 
 // enable debugOutput
 ini_set('display_startup_errors',1);
