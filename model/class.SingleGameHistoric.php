@@ -2,7 +2,7 @@
 class SingleGameHistoric {
 	private $playerName;
 	private $mapZone;
-	private $gameMode;
+	private $gameModeId;
 	private $turns;
 
 	public function appendTurn(Turn $turn){
@@ -15,8 +15,8 @@ class SingleGameHistoric {
 	public function getMapZone() {
 		return $this->mapZone;
 	}
-	public function getGameMode() {
-		return $this->gameMode;
+	public function getGameModeId() {
+		return $this->gameModeId;
 	}
 	public function getTurns(){
 		return $this->turns;
@@ -27,8 +27,8 @@ class SingleGameHistoric {
 	public function setMapZone($mapZone) {
 		$this->mapZone = $mapZone;
 	}
-	public function setGameMode($gameMode) {
-		$this->gameMode = $gameMode;
+	public function setGameModeId($gameModeId) {
+		$this->gameModeId = $gameModeId;
 	}
 	public function setTurns($turns){
 		$this->turns = $turns;

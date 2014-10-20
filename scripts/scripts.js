@@ -213,17 +213,17 @@ function updateFlavourText(caller) {
 		break;
 	case 'zone_1':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/caravan_desc.png');
+				'css/images/flavourImages/fertile_desc.png');
 		document.getElementById('flavourText').innerHTML = "This place is very fertile due to the river that flows through it.";
 		break;
 	case 'zone_2':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/pottery_desc.png');
+				'css/images/flavourImages/desert_desc.png');
 		document.getElementById('flavourText').innerHTML = "An arid desert lays for miles and miles away.";
 		break;
 	case 'zone_3':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/writing_desc.png');
+				'css/images/flavourImages/mountains_desc.png');
 		document.getElementById('flavourText').innerHTML = "A desertic chain of mountains.";
 		break;
 	}

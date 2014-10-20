@@ -1,6 +1,7 @@
 <?php
 require_once '../config.php';
 require_once LOCATOR . '/model/class.User.php';
+require_once LOCATOR . '/model/class.SingleGameHistoric.php';
 class MySQLConnector {
 	// const HOST = 'localhost';
 	// const PORT = '8889';
@@ -44,6 +45,20 @@ class MySQLConnector {
 		$user->id_user = $row ['id_user'];
 		return $user;
 	}
+	public function getIdByUsername($username) {
+		$query = "SELECT id_user FROM Users WHERE username='" . $username . "';";
+		$result = $this->_conn->query($query);
+	
+		if ($this->getError())
+			trigger_error($this->getError());
+	
+		$row = $result->fetch();
+	
+		if (! $row)
+			return false;
+	
+		return $user->id_user;
+	}
 
 	public function setGameMode($newGameMode) {		
 		$query = "UPDATE CurrentGameMode 
@@ -57,5 +72,43 @@ class MySQLConnector {
 			trigger_error($this->getError());
 		
 		return true;
+	}
+	
+	public function insertHistory(SingleGameHistoric $singleGameHistoric) {
+		$query = "INSERT INTO Game(city_type, id_gamemodes, user_id) VALUES(?, ?, ?);";
+		
+		
+		$city_type = $singleGameHistoric->getmapZone();
+		$gameMode = $singleGameHistoric->getGameMode();
+		$user_id = $this->getIdByUsername($singleGameHistoric->getPlayerName());
+		
+		$q = $this->_conn->prepare($query);
+		$q->execute(array($city_type,$gameMode,$user_id));
+
+		if ($this->getError())
+			trigger_error($this->getError());
+		
+		//EXECUTE QUERY FOR THE GAME AND RETRIVE THE ID
+		$techstate = array( 'pottery'=>0,'granary'=>0,'writing'=>0);
+		foreach($singleGameHistoric->getTurns() as $t){
+			//QUERY FOR EACH TURNS
+			$popTotal = $t->getPopulation()->getTotalPopulation();
+			$popKings = $t->getPopulation()->getKings();
+			$popPriests = $t->getPopulation()->getPriests();
+			$popCraftsmen = $t->getPopulation()->getCraftsmen();
+			$popScribes = $t->getPopulation()->getScribes();
+			$popSoldiers = $t->getPopulation()->getSoldiers();
+			$popPeasants = $t->getPopulation()->getPeasants();
+			$popSlaves = $t->getPopulation()->getSlaves();
+			$technology ='';
+			if($techstate['pottery']==0 && $t->getTechnology()->getPottery()){
+				$technology = 'pottery';$techstate['pottery']=1;}
+			elseif($techstate['granary']==0 && $t->getTechnology()->getGranary()){
+				$technology = 'granary';$techstate['granary']=1;}
+			elseif($techstate['writing']==0 && $t->getTechnology()->getGranary()){
+				$technology = 'writing';$techstate['writing']=1;}
+				
+			// EXECUTE QUERY FOR THE TURN
+		}
 	}
 }
