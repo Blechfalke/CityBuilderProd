@@ -1,5 +1,6 @@
 <?php
-require_once '../config.php';
+require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+
 require_once LOCATOR . '/model/class.User.php';
 
 if (isset($_SESSION ['GameController']))
@@ -13,7 +14,7 @@ $user = unserialize($_SESSION ['User']);
 	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='PlacementOfCity' class='mainButtons link' /> 
 	<input type='button' value='<?php echo gettext('Rules');?>' name='Rules' class='mainButtons link' /> 
 	<?php
-	
+	gettext('test');
 	if ($user->admin == 1) {
 		echo "<input type='button'
 			value='" . gettext('Game Modes') . "' name='GameModes' id='gameModes'
