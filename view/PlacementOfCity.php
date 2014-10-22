@@ -1,4 +1,6 @@
-﻿
+﻿<?php 
+require_once '../config.php';
+?>
 <div id="header">Placement of the city</div>
 <div id="leftContentMap">
 	<img src="css/images/mapPap.png" border="0" width="704" height="587"

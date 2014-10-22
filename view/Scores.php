@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
 require_once LOCATOR . '/controller/class.GameController.php';
 
@@ -21,28 +21,28 @@ $score= $gameController->getGameResources()->getScore();
 
 	<div id="Controles">
 		<div class="pairControl">
-			<div style="background-color: white;" class="label">Technology</div>
+			<div style="background-color: white;" class="label"><?php echo gettext('Technology')?></div>
 			<div class="editor"><?php $technology ?></div>
 		</div>
 		<div class="pairControl">
-			<div style="background-color: white;" class="label">Wealth</div>
+			<div style="background-color: white;" class="label"><?php echo gettext('Wealth')?></div>
 			<div class="editor"><?php $wealth ?></div>
 		</div>
 		<div class="pairControl">
-			<div style="background-color: white;" class="label">Buildings</div>
+			<div style="background-color: white;" class="label"><?php echo gettext('Buildings')?></div>
 			<div class="editor"><?php $buildings ?></div>
 		</div>
 		<div class="pairControl">
-			<div style="background-color: white;" class="label">Population</div>
+			<div style="background-color: white;" class="label"><?php echo gettext('Population')?></div>
 			<div class="editor"><?php $population ?></div>
 		</div>
 		<div class="pairControl">
-			<div style="background-color: white;" class="label">Happiness</div>
+			<div style="background-color: white;" class="label"><?php echo gettext('Happiness')?></div>
 			<div class="editor"><?php $happiness ?></div>
 		</div>
 		<div style="clear: both; width: 30px; height: 20px;"></div>
 		<div class="pairControl">
-			<div style="background-color: white;" class="label">Total score</div>
+			<div style="background-color: white;" class="label"><?php echo gettext('Total score')?></div>
 			<div class="editor"><?php $score ?></div>
 		</div>
 		<div style="clear: both"></div>

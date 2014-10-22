@@ -1,4 +1,4 @@
-﻿﻿<?php session_start();
+﻿﻿<?php 
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
 require_once LOCATOR . '/controller/class.GameController.php';
 
@@ -30,7 +30,7 @@ $_SESSION['GameController'] = serialize($gameController);
 if ($gameController->getRound() > 6) {
 	echo "<div>Game finished</div>";
 } else {
-	echo "<div id='header'>Management of the city</div>
+	echo "<div id='header'>". gettext('Management of the city') ."</div>
 
         <div id='leftContent'>
             <div style='width: 652px;'>
@@ -45,13 +45,13 @@ if ($gameController->getRound() > 6) {
                 </div>
                 <div style='float: left; margin: 10px 0 0 35px;'>
                     <div style='float: left; margin-right: 30px; margin-left: 30px;'>
-                        <div style='float: left; margin: 10px;'>Choose one technology per turn </div>
+                        <div style='float: left; margin: 10px;'>". gettext('Choose one technology per turn')."</div>
                         <div style='float: right;'>
                             <img src='css/images/arrow.png' width='40' /></div>
                     </div>
                     <div style='clear: both'></div>
                     <div style='float: left; margin-right: 30px;'>
-                        <div style='float: left; margin: 10px 5px;'>Assign the citizen to a social class </div>
+                        <div style='float: left; margin: 10px 5px;'>". gettext('Assign the citizen to a social class'). "</div>
                         <div style='float: right;'>
                             <img src='css/images/arrowDown.png' height='40' /></div>
                     </div>
@@ -59,21 +59,21 @@ if ($gameController->getRound() > 6) {
                 <div style='float: right;'>
 
                     <div class='imageCityManagement'>
-                        Writing 
+                        ". gettext('Writing')." 
                         <img class='checkmark' src='css/images/checkmark.png'/>
                         <img id='writing' class='technology hover ";
                         echo $technology->getWriting() ? "developed" : "clickable";
                         echo "' src='css/images/writing.png' width='70' style='margin: 5px 30px 0 0;' />
                     </div>
                     <div class='imageCityManagement'>
-                        Granary
+                        ". gettext('Granary')."
                         <img class='checkmark' src='css/images/checkmark.png'/>
                         <img id='granary' class='technology hover "; 
                         echo $technology->getGranary() ? "developed" : "clickable";
                         echo "' src='css/images/granary.png' width='70' style='margin: 5px 30px 0 0;' />
                     </div>
                     <div  class='imageCityManagement' style='margin-right:0;'>
-                        Pottery
+                        ". gettext('Pottery')."
                         <img class='checkmark' src='css/images/checkmark.png'/>
                         <img id='pottery' class='technology hover ";
                         echo $technology->getPottery() ? "developed" : "clickable";
@@ -86,13 +86,13 @@ if ($gameController->getRound() > 6) {
 	<div id='Controles'>
 	<div class='pairControl'>
 	<div style='background-color:white;' class='label'>
-	Total population
+	". gettext('Total population')."
 	</div>
 	<input type='text' class='editor' name='TotalPopulation' id='TotalPopulation' disabled value='$totalPopulation'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:white;' class='label'>
-	Available population
+	". gettext('Available population')."
 	</div>
 	<input type='text' class='editor' name='AvailablePopulation' id='AvailablePopulation' disabled value='$availablePopulation'/>
 	</div>
@@ -100,25 +100,25 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FFF2CC;' class='label hover' id='lbl_Kings'>
-	Kings
+	". gettext('Kings')."
 	</div>
 	<input type='number' min='0' class='editor' name='Kings' id='Kings' oninput='updateAvailablePopulation($(this))' value='$kings'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#CC99FF;' class='label hover' id='lbl_Priests'>
-	Priests
+	". gettext('Priests')."
 	</div>
 	<input type='number' min='0' class='editor' name='Priests' id='Priests' oninput='updateAvailablePopulation($(this))' value='$priests'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FBE5D6;' class='label hover' id='lbl_Craftsmen'>
-	Craftsmen
+	". gettext('Craftsmen')."
 	</div>
 	<input type='number' min='0' class='editor' name='Craftsmen' id='Craftsmen' oninput='updateAvailablePopulation($(this))' value='$craftsmen'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#9DC3E6;' class='label hover' id='lbl_Scribes'>
-	Scribes
+	". gettext('Scribes')."
 	</div>
     <input type='number' min='0' class='editor' name='Scribes' id='Scribes' oninput='updateAvailablePopulation($(this))' ";
 	echo $technology->getWriting() ? "" : "disabled ";
@@ -126,19 +126,19 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FF5050;' class='label hover' id='lbl_Soldiers'>
-	Soldiers
+	". gettext('Soldiers')."
 	</div>
 	<input type='number' min='0' class='editor' name='Soldiers' id='Soldiers' oninput='updateAvailablePopulation($(this))' value='$soldiers'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#C5E0B4;' class='label hover' id='lbl_Peasants'>
-	Peasants
+	". gettext('Peasants')."
 	</div>
 	<input type='number' min='0' class='editor' name='Peasants' id='Peasants' oninput='updateAvailablePopulation($(this))' value='$peasants'/>
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#DBDBDB;' class='label hover' id='lbl_Slaves'>
-	Slaves
+	". gettext('Slaves')."
 	</div>
 	<input type='number' min='0' class='editor' name='Slaves' id='Slaves' oninput='updateAvailablePopulation($(this))' value='$slaves'/>
 	</div>
@@ -146,7 +146,7 @@ if ($gameController->getRound() > 6) {
 	</div>
 	<div class='pairControl'>
 	<div style='background-color:#FFFFFF;' class='label hover' id='lbl_Caravans'>
-	Caravans
+	". gettext('Caravans')."
 	</div>
 	<input type='text' class='editor' name='Caravans' id='Caravans' disabled oninput='updateAvailablePopulation()' value='$caravans'/>
 	</div>
