@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once '../config.php';
 require_once LOCATOR . '/model/class.User.php';
 
 if (isset($_SESSION ['GameController']))

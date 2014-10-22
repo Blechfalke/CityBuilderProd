@@ -1,4 +1,6 @@
-﻿<div id="mainButtonDiv">
+﻿<?php 
+require_once '../config.php';?>
+<div id="mainButtonDiv">
 	<h2 id="gameName">Game modes</h2>
 	<input type="button" value="Block game" name="startMenu" class="mainButtons gameMode" id="1"/> 
 	<input type="button" value="Placement only"	name="startMenu" class="mainButtons gameMode" id="2" /> 
