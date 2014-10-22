@@ -265,5 +265,6 @@ function oneCheck(test, total){
 		//alert('result:'+0.62+', total:'+valReturn);
 	}
 	//alert(result);
-	return valReturn * 10000;
+	
+	return (valReturn == 0)?valReturn * 10000:1;
 	}
