@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-22 14:55+0100\n"
-"PO-Revision-Date: 2014-10-22 15:02+0100\n"
+"POT-Creation-Date: 2014-10-22 16:13+0100\n"
+"PO-Revision-Date: 2014-10-22 16:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -14,11 +14,120 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/git/CityBuilderProd\n"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:5
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:4
 msgid ""
 "In Egypt, the king was called Pharaoh. He was considered as a god and "
 "possessed absolute power over the land."
-msgstr "Hello Erci"
+msgstr ""
+"En Égypte, le roi est appelé pharaon, considéré comme un dieu, il détient un "
+"pouvoir absolu."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:6
+msgid ""
+"The priests take care of the cult of the numerous divinities of the egyptian "
+"religion."
+msgstr ""
+"Les prêtres assurent le culte des nombreuses divinités de la religion "
+"égyptienne."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:8
+msgid ""
+"From argile, stone, ivory, bones, wood and metal, the artisanal production "
+"of ancient egypt shows a great quality and allow for a very florishing "
+"trading."
+msgstr ""
+"De l&#39;argile, des pierres dures et tendres, de l&#39;ivoire, de l&#39;os, "
+"du bois, du métal, les productions artisanales de l&#39;Égypte ancienne "
+"marquent d&#39;emblée par leur qualité d&#39;exécution et permettent un "
+"commerce florissant."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:11
+msgid ""
+"Specialists of writing in the antiquity, the role of scribes was primordial "
+"for the optimization of the production in antic societies."
+msgstr ""
+"Spécialiste de l&#39;écriture dans l&#39;antiquité, son rôle est primordial "
+"dans le bon fonctionnement des premières sociétés."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:13
+msgid ""
+"Being a soldier wasn&#39;t very popular in Egypt. The egyptians were mostly "
+"peasants. But in order to defend their recolts, they created an army that "
+"would soon become a professional one."
+msgstr ""
+"Le métier de soldat n&#39;est pas très populaire en Égypte. Les Égyptiens "
+"sont plutôt des paysans. Mais pour défendre leur récolte, ils créent une "
+"armée très tôt qui deviendra une armée de métier."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:16
+msgid ""
+"The peasants in antic egypt, like those of the rest of the world, had the "
+"essential task to exploit the soil to feed the population."
+msgstr ""
+"Le paysan de l&#39;Égypte antique, comme ceux de toutes les parties du "
+"monde, a pour tâche de cultiver le sol et de nourrir la population."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:18
+msgid ""
+"Slavery is a condition in which an individual has his freedom taken from "
+"him. He becomes the possession of another individual who can make him work "
+"without pay or sell him."
+msgstr ""
+"L&#39;esclavage est la condition d&#39;un individu privé de sa liberté, qui "
+"devient la propriété, exploitable et négociable comme un bien matériel, "
+"d&#39;une autre personne."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:21
+msgid ""
+"A granary is used to stock grains. It appeared around the neolithic "
+"revolution, 14,000 years before Christ."
+msgstr ""
+"Local hors-sol destiné au stockage du grain, il est apparu aux environs de "
+"la révolution néolithique, soit vers 14 000 av. J.-C."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:23
+msgid ""
+"Writing appeared around the fourth millenial before Jesus Christ. First used "
+"for accounting, writing eventually became a mean for communication and "
+"thinking."
+msgstr ""
+"L&#39;invention de l&#39;écriture date du Ive millénaire av. J.-C. D&#39;"
+"abord utilisée à des fins de comptabilité, elle finit par devenir un moyen "
+"de communication et de pensée."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:26
+msgid ""
+"The invention of pottery comes from prehistory and would have happened in "
+"China around 20,000 years before Christ. Its use was mostly domestic and "
+"culinary."
+msgstr ""
+"L&#39;invention de la poterie date de la préhistoire et serait apparue en "
+"Chine vers 20 000 av. J.- C. Son usage est essentiellement domestique ou "
+"culinaire."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:29
+msgid ""
+"The egyptians had a very developped trading activity. They would exchange "
+"their manufactured products against raw materials from neighbooring cities. "
+"Those trades ensured Egypt prosperity."
+msgstr ""
+"Les Egyptiens ont eu un commerce aussi développé que celui d&#39;un pays "
+"moderne; ils échangeaient leurs produits manufacturés contre les matières "
+"premières des contrées voisines, moins civilisées. Le commerce du tissage et "
+"de la teinture des étoffes de lin, de coton et de laine, des bijoux, des "
+"objets de bronze, enrichissaient l&#39;Égypte."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:32
+msgid "This place is very fertile due to the river that flows through it."
+msgstr "Cette région est fertile grâce au fleuve qui y coule."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:33
+msgid "An arid desert lays for miles and miles away."
+msgstr "Un désert aride s&#39;étend à perte de vue."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:34
+msgid "A desertic chain of mountains."
+msgstr "Une chaîne de montagnes désertique."
 
 #: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:33
 msgid "Management of the city"
@@ -89,6 +198,7 @@ msgid "End  of turn"
 msgstr "Fin de tour"
 
 #: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:166
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/PlacementOfCity.php:39
 msgid "Exit game"
 msgstr "Sortir du jeu"
 

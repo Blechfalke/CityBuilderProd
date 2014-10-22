@@ -20,22 +20,13 @@ $(document).ready(function() {
 		pageName = "view/" + $(this).attr("name") + ".php";
 		$("#wrapper").load(pageName);
 	});
-	
-	$(document).on('click', '.finishRound', function() {
-		readInputs();
 
-		$("#wrapper").load('view/CityManagement.php', {
-			kings : i_kings,
-			priests : i_priests,
-			craftsmen : i_craftsmen,
-			scribes : i_scribes,
-			soldiers : i_soldiers,
-			peasants : i_peasants,
-			slaves : i_slaves,
-			technology : i_technology
+
+		$(document).on('click', '#endTheTurn', function() {
+		project.confirm('Unhappiness POPUP', 'End the turn', 'Cancel');
+		
 		});
-	});
-
+		
 	$(document).on('click', '.login', function() {
 		pageName = "controller/class.loginController.php";
 		$("#wrapper").load(pageName, {
@@ -188,29 +179,27 @@ function updateFlavourText(caller) {
 	case 'pottery':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/pottery_desc.png');
-		document.getElementById('flavourText').innerHTML = "The invention of pottery comes from prehistory and would have happened "
-				+ "in China around 20,000 years before Christ. Its use was mostly domestic "
-				+ "and culinary.";
+		document.getElementById('flavourText').innerHTML = world_flavour_pottery;
 		break;
 	case 'lbl_Caravans':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/caravan_desc.png');
-		document.getElementById('flavourText').innerHTML = "The egyptians had a very developped trading activity. They would exchange their manufactured products against raw materials from neighbooring cities. Those trades ensured Egypt prosperity.";
+		document.getElementById('flavourText').innerHTML = world_flavour_lbl_Caravans;
 		break;
 	case 'zone_1':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/fertile_desc.png');
-		document.getElementById('flavourText').innerHTML = "This place is very fertile due to the river that flows through it.";
+		document.getElementById('flavourText').innerHTML = world_flavour_zone1;
 		break;
 	case 'zone_2':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/desert_desc.png');
-		document.getElementById('flavourText').innerHTML = "An arid desert lays for miles and miles away.";
+		document.getElementById('flavourText').innerHTML = world_flavour_zone2;
 		break;
 	case 'zone_3':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/mountains_desc.png');
-		document.getElementById('flavourText').innerHTML = "A desertic chain of mountains.";
+		document.getElementById('flavourText').innerHTML = world_flavour_zone3;
 		break;
 	}
 
