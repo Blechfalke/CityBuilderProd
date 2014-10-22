@@ -137,67 +137,53 @@ function updateFlavourText(caller) {
 	case 'Kings':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/pharaon_desc.png');
-		document.getElementById('flavourText').innerHTML = "In Egypt, the king was called Pharaoh.<br>"
-				+ "He was considered as a god and possessed absolute power "
-				+ "over the land.";
+		document.getElementById('flavourText').innerHTML = word_flavour_king;
 		break;
 	case 'lbl_Priests':
 	case 'Priests':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/priest_desc.png');
-		document.getElementById('flavourText').innerHTML = "The priests take care of the cult of the numerous divinities "
-				+ "of the egyptian religion.";
+		document.getElementById('flavourText').innerHTML = word_flavour_priest;
 		break;
 	case 'lbl_Craftsmen':
 	case 'Craftsmen':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/craftsmen_desc.png');
-		document.getElementById('flavourText').innerHTML = "From argile, stone, ivory, bones, wood and metal, the artisanal "
-				+ "production of ancient egypt shows a great quality and allow for a "
-				+ "very florishing trading.";
+		document.getElementById('flavourText').innerHTML = word_flavour_craftsmen;
 		break;
 	case 'lbl_Scribes':
 	case 'Scribes':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/scribes_desc.png');
-		document.getElementById('flavourText').innerHTML = "Specialists of writing in the antiquity, the role of scribes was "
-				+ "primordial for the optimization of the production in antic societies.";
+		document.getElementById('flavourText').innerHTML = word_flavour_scribes;
 		break;
 	case 'lbl_Soldiers':
 	case 'Soldiers':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/soldier_desc.png');
-		document.getElementById('flavourText').innerHTML = "Being a soldier wasn’t very popular in Egypt. The egyptians were mostly "
-				+ "peasants. But in order to defend their recolts, they created an army "
-				+ "that would soon become a professional one.";
+		document.getElementById('flavourText').innerHTML = word_flavour_soldiers;
 		break;
 	case 'lbl_Peasants':
 	case 'Peasants':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/peasants_desc.png');
-		document.getElementById('flavourText').innerHTML = "The peasants in antic egypt, like those of the rest of the world, "
-				+ "had the essential task to exploit the soil to feed the population.";
+		document.getElementById('flavourText').innerHTML = word_flavour_peasants;
 		break;
 	case 'lbl_Slaves':
 	case 'Slaves':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/slave_desc.png');
-		document.getElementById('flavourText').innerHTML = "Slavery is a condition in which an individual has his freedom taken "
-				+ "from him. He becomes the possession of another individual who can make "
-				+ "him work without pay or sell him.";
+		document.getElementById('flavourText').innerHTML = word_flavour_slaves;
 		break;
 	case 'granary':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/granary_desc.png');
-		document.getElementById('flavourText').innerHTML = "A granary is used to stock grains. It appeared around the neolithic "
-				+ "revolution, 14,000 years before Christ.";
+		document.getElementById('flavourText').innerHTML = word_flavour_granary;
 		break;
 	case 'writing':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/writing_desc.png');
-		document.getElementById('flavourText').innerHTML = "Writing appeared around the fourth millenial before Jesus Christ. "
-				+ "First used for accounting, writing eventually became a mean for "
-				+ "communication and thinking.";
+		document.getElementById('flavourText').innerHTML = word_flavour_writing;
 		break;
 	case 'pottery':
 		$('#flavourImage').attr('src',
