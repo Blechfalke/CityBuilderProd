@@ -52,8 +52,8 @@ project.alert = function (text) {
         position: {
        	 my: "center", at: "center", of: window        	 
         },
-        width: 500,
-        height: 190,
+        width: 'auto',
+        height: 'auto',
         draggable: false,
         resizable: false   ,
         buttons: {
@@ -62,6 +62,79 @@ project.alert = function (text) {
             }
         }
     };
+	    var inside = "<div  style='width:450px;margin:0 15px;' >" +
+		"<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >" + text +
+		"</div> </div>"
+    dialog.html(inside);
+    var createdDialog = dialog.dialog(options);
+    return createdDialog;
+};
+project.confirm = function (text, buttonYes, buttonNo) {
+	var dialogId = 'dialog-' + project.guid();
+    var dialog = $('#' + dialogId);
+    if ($('#' + dialogId).length == 0) {
+        dialog = $('<div id="' + dialogId + '" style="display:none;"></div>').appendTo('body');
+    }
+    var options = {
+        close: function (event, ui) {
+            dialog.remove();
+        },
+        modal: true,
+        position: {
+       	 my: "center", at: "center", of: window        	 
+        },
+        width: 'auto',
+        height: 'auto',
+        draggable: false,
+        resizable: false,
+        buttons: [
+                  {
+                      text: buttonYes,
+                      click: function() {
+                    	  readInputs();
+
+                  		$("#wrapper").load('view/CityManagement.php', {
+                  			kings : i_kings,
+                  			priests : i_priests,
+                  			craftsmen : i_craftsmen,
+                  			scribes : i_scribes,
+                  			soldiers : i_soldiers,
+                  			peasants : i_peasants,
+                  			slaves : i_slaves,
+                  			technology : i_technology
+                  		});                  		
+                  		$(this).dialog( "close" );
+                  		$("#endTheTurn").prop('disabled', true);
+                		/*setTimeout(function() {
+                			$("#endTheTurn").prop('disabled', false);
+                		}, 5000);*/
+                        }
+                  },
+                  {
+                      text: buttonNo,
+                      click: function() {
+                  		$(this).dialog( "close" );
+                        }
+                  }
+              ]
+    };
+  /*  $(dialog).dialog({ buttons: [ { text: buttonYes, click: function() { 
+    	readInputs();
+
+		$("#wrapper").load('view/CityManagement.php', {
+			kings : i_kings,
+			priests : i_priests,
+			craftsmen : i_craftsmen,
+			scribes : i_scribes,
+			soldiers : i_soldiers,
+			peasants : i_peasants,
+			slaves : i_slaves,
+			technology : i_technology
+		});
+		$(this).dialog( "close" );
+ }} , 
+                                  { text: buttonNo, click: function() { $( this ).dialog( "close" ); } } ] });*/
+
 	    var inside = "<div  style='width:450px;margin:0 15px;' >" +
 		"<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >" + text +
 		"</div> </div>"
