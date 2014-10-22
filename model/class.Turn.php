@@ -12,7 +12,7 @@ class Turn {
 		return $this->population;
 	}
 	public function getTechnology() {
-		return $this->population;
+		return $this->technology;
 	}
 	
 	public function setPopulation(Population $population) {

@@ -1,5 +1,6 @@
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.Building.php';
 require_once LOCATOR . '/model/class.GameResources.php';
 require_once LOCATOR . '/model/class.Population.php';
@@ -41,6 +42,8 @@ class GameController {
 		return $this->technology;
 	}
 	public function calculateRound() {
+
+		$conn = new MySQLConnector();
 		$this->population->updatePopulation ( isset ( $_POST ['kings'] ) ? $_POST ['kings'] : 0, isset ( $_POST ['priests'] ) ? $_POST ['priests'] : 0, isset ( $_POST ['craftsmen'] ) ? $_POST ['craftsmen'] : 0, isset ( $_POST ['scribes'] ) ? $_POST ['scribes'] : 0, isset ( $_POST ['soldiers'] ) ? $_POST ['soldiers'] : 0, isset ( $_POST ['peasants'] ) ? $_POST ['peasants'] : 0, isset ( $_POST ['slaves'] ) ? $_POST ['slaves'] : 0 );
 		$this->technology->updateTechnology ( isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "" );
 
@@ -50,7 +53,10 @@ class GameController {
 		if ($this->round == 0) {
 			// INITALISATION ROUND
 			//historic registration of the zone
+			$user = unserialize($_SESSION['User']);
 			$this->singleGameHistoric->setMapZone($_POST ['zone']);
+			$this->singleGameHistoric->setPlayerName($user->username);
+			$this->singleGameHistoric->setGameModeId($conn->getGameMode());
 			// TODO WE MAY WANT TO REGISTER THE GAMEMODE THERE TOO
 			// Zone infulence
 			switch ($_POST ['zone']) {
@@ -97,6 +103,9 @@ class GameController {
 			if ($this->round >= 6) {
 				// TODO POPUP TEXT
 				echo "<script>project.alert('WIN POPUP');</script>";
+				
+	
+				$conn->insertHistory(clone $this->singleGameHistoric);
 			}
 		}
 		$this->nextRound ();
@@ -174,8 +183,8 @@ class GameController {
 		$this->gameResources->setUnhappiness ( false );
 		if (
 				($this->population->getKings () != 1)
-				OR ($this->population->getPriests () / $this->population->getTotalPopulation () * 100.0 <= 0.25)
-				OR ($this->population->getSlaves () / $this->population->getTotalPopulation () * 100.0 <= 2.0)
+				OR ($this->population->getPriests() / $this->population->getTotalPopulation () * 100.0 <= 0.25)
+				OR ($this->population->getSlaves() / $this->population->getTotalPopulation () * 100.0 <= 2.0)
 		) {
 					$this->gameResources->setUnhappiness ( true );
 					// TODO POPUP TEXT
@@ -262,6 +271,7 @@ class GameController {
  		$this->population->setTotalPopulation ($NewPop);
 		echo ' population: ' . $this->population->getTotalPopulation ();
 	}
+	
 	public function calcScore() {
 		// SCORE CALCULATION
 		$score = 1;
@@ -272,7 +282,8 @@ class GameController {
 			$score += 0.5;
 		if ($this->technology->getWriting ())
 			$score += 0.5;
-			// WEALTH
+		
+		// WEALTH
 		$WealthScore = ceil ( ($this->gameResources->getWealth () / 500.0 * 0.2) * 2 ) / 2;
 		$score += ($WealthScore > 1)?1:$WealthScore;
 		// BUILDING
