@@ -1,20 +1,138 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-20 15:48+0100\n"
-"PO-Revision-Date: 2014-10-20 15:53+0100\n"
+"POT-Creation-Date: 2014-10-22 14:55+0100\n"
+"PO-Revision-Date: 2014-10-22 15:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.10\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 "X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/git/CityBuilderProd\n"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/login.php:17
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.php:5
+msgid ""
+"In Egypt, the king was called Pharaoh. He was considered as a god and "
+"possessed absolute power over the land."
+msgstr "Hello Erci"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:33
+msgid "Management of the city"
+msgstr "Gestion de la ville"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:48
+msgid "Choose one technology per turn"
+msgstr "Choisissez une technologie"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:54
+msgid "Assign the citizen to a social class"
+msgstr "Assigner un citoyen par classe sociale"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:62
+msgid "Writing"
+msgstr "Ecriture"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:69
+msgid "Granary"
+msgstr "Ferme"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:76
+msgid "Pottery"
+msgstr "Poterie"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:89
+msgid "Total population"
+msgstr "Population totale"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:95
+msgid "Available population"
+msgstr "Population disponible"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:103
+msgid "Kings"
+msgstr "Rois"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:109
+msgid "Priests"
+msgstr "Prêtre"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:115
+msgid "Craftsmen"
+msgstr "Forgerons"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:121
+msgid "Scribes"
+msgstr "Scribes"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:129
+msgid "Soldiers"
+msgstr "Soldat"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:135
+msgid "Peasants"
+msgstr "Paysans"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:141
+msgid "Slaves"
+msgstr "Esclave"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:149
+msgid "Caravans"
+msgstr "Caravane"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:165
+msgid "End  of turn"
+msgstr "Fin de tour"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:166
+msgid "Exit game"
+msgstr "Sortir du jeu"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:25
+msgid "Technology"
+msgstr "Technologie"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:29
+msgid "Wealth"
+msgstr "Argent"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:33
+msgid "Buildings"
+msgstr "Bâtiment"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:37
+msgid "Population"
+msgstr "Population"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:41
+msgid "Happiness"
+msgstr "Bonheur"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:46
+msgid "Total score"
+msgstr "Score total"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:6
+msgid "Block game"
+msgstr "Jeux bloqué"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:7
+msgid "Placement only"
+msgstr "Placement uniquement"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:8
+msgid "5 turns mode"
+msgstr "Mode en 5 tours"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:9
+msgid "Infinite turns mode"
+msgstr "Tours infini"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/login.php:16
 msgid "Login"
 msgstr "Connecté"
 
@@ -26,13 +144,13 @@ msgstr "Lancer le jeu"
 msgid "Rules"
 msgstr "Règles"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:20
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:19
 msgid "Game Modes"
 msgstr "Mode de jeu"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:26
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:25
 msgid "Exit Game"
 msgstr "Sortir du jeu"
 
-msgid "Launch"
-msgstr "Spiel starten"
+#~ msgid "Launch"
+#~ msgstr "Spiel starten"

@@ -162,8 +162,8 @@ if ($gameController->getRound() > 6) {
 		<p id='flavourText'> </p>
 	</div>
 	<div id='rightBottom'>
-	<input type='button' value='End  of turn' name='EndOfTurn' class='pageButtons finishRound'/>
-	<input type='button' value='Exit game' name='startMenu' class='pageButtons link'/>
+	<input type='button' value='" . gettext('End  of turn') . "' name='EndOfTurn' class='pageButtons finishRound'/>
+	<input type='button' value='" . gettext('Exit game') . "' name='startMenu' class='pageButtons link'/>
 	</div>
 	</div>
 	<div style='clear:both;'>
