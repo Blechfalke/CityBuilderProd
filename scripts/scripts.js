@@ -20,22 +20,13 @@ $(document).ready(function() {
 		pageName = "view/" + $(this).attr("name") + ".php";
 		$("#wrapper").load(pageName);
 	});
-	
-	$(document).on('click', '.finishRound', function() {
-		readInputs();
 
-		$("#wrapper").load('view/CityManagement.php', {
-			kings : i_kings,
-			priests : i_priests,
-			craftsmen : i_craftsmen,
-			scribes : i_scribes,
-			soldiers : i_soldiers,
-			peasants : i_peasants,
-			slaves : i_slaves,
-			technology : i_technology
+
+		$(document).on('click', '#endTheTurn', function() {
+		project.confirm('Unhappiness POPUP', 'End the turn', 'Cancel');
+		
 		});
-	});
-
+		
 	$(document).on('click', '.login', function() {
 		pageName = "controller/class.loginController.php";
 		$("#wrapper").load(pageName, {
