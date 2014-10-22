@@ -253,6 +253,7 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 }
 
 function oneCheck(test, total){
+	test = (test != 0.0)?test:1
 	var result = (test / total)
 	
 	var valReturn = result;
@@ -265,5 +266,6 @@ function oneCheck(test, total){
 		//alert('result:'+0.62+', total:'+valReturn);
 	}
 	//alert(result);
+	
 	return valReturn * 10000;
 	}
