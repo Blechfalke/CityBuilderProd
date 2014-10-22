@@ -1,6 +1,7 @@
 ﻿<?php 
 require_once '../config.php';
 ?><div id="mainButtonDiv">
+<div id="mainButtonDiv">
 	<h2 id="gameName">Game modes</h2>
 	<input type="button" value=<?php echo gettext('Block game');?> name="startMenu" class="mainButtons gameMode" id="1"/> 
 	<input type="button" value=<?php echo gettext('Placement only');?>	name="startMenu" class="mainButtons gameMode" id="2" /> 
