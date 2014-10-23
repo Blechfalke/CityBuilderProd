@@ -19,6 +19,8 @@ $(document).ready(function() {
 	$(document).on('click', '.link', function() {
 		pageName = "view/" + $(this).attr("name") + ".php";
 		$("#wrapper").load(pageName);
+		// disable other buttons once we clicked on something to avoid bugs
+		$(".mainButtons").prop('disabled', true);
 	});
 
 
@@ -34,6 +36,8 @@ $(document).ready(function() {
 			password : $('#password').val(),
 			locale : $('.locale').val()
 		});
+		// disable other buttons once we clicked on something to avoid bugs
+		$(".mainButtons").prop('disabled', true);
 	});
 
 	$(document).on('click', '.logout', function() {
@@ -53,6 +57,8 @@ $(document).ready(function() {
 		$("#wrapper").load(pageName, {
 			zone : $(this).attr("id")
 		});
+		// disable other buttons once we clicked on something to avoid bugs
+  		$(".cityCircle").prop('disabled', true);
 	});
 
 	$(document).on('change', '.editor', function() {
