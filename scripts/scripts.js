@@ -34,6 +34,7 @@ $(document).ready(function() {
 			password : $('#password').val(),
 			locale : $('.locale').val()
 		});
+		LazyLoad.js("scripts/js_lang.js.php", "");
 	});
 
 	$(document).on('click', '.logout', function() {
@@ -179,27 +180,27 @@ function updateFlavourText(caller) {
 	case 'pottery':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/pottery_desc.png');
-		document.getElementById('flavourText').innerHTML = world_flavour_pottery;
+		document.getElementById('flavourText').innerHTML = word_flavour_pottery;
 		break;
 	case 'lbl_Caravans':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/caravan_desc.png');
-		document.getElementById('flavourText').innerHTML = world_flavour_lbl_Caravans;
+		document.getElementById('flavourText').innerHTML = word_flavour_caravans;
 		break;
 	case 'zone_1':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/fertile_desc.png');
-		document.getElementById('flavourText').innerHTML = world_flavour_zone1;
+		document.getElementById('flavourText').innerHTML = word_flavour_zone1;
 		break;
 	case 'zone_2':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/desert_desc.png');
-		document.getElementById('flavourText').innerHTML = world_flavour_zone2;
+		document.getElementById('flavourText').innerHTML = word_flavour_zone2;
 		break;
 	case 'zone_3':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/mountains_desc.png');
-		document.getElementById('flavourText').innerHTML = world_flavour_zone3;
+		document.getElementById('flavourText').innerHTML = word_flavour_zone3;
 		break;
 	}
 

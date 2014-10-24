@@ -9,7 +9,7 @@ echo "<form>
     <input type='text' name='Username' id='username' class='loginForm' placeholder='Username' value='maurice'/>
     <input type='password' name='Password' id='password' class='loginForm' placeholder='Password' value='test123'/>
     <select class='locale' name='locale' id='langdropdown'>
-		<option value='de_DE.UTF-8'>Deutsch</option>
+		<!--<option value='de_DE.UTF-8'>Deutsch</option>-->
     	<option value='fr_CH.UTF-8'>Français</option>
     	<option value='en_GB.UTF-8'>English</option>
     </select>
@@ -17,5 +17,4 @@ echo "<form>
     	if ($msg != '')
     		echo "<p id='errorMSG'>$msg</p>";
     
-    echo "</div>
-</form> ";
+echo "</div></form> ";
