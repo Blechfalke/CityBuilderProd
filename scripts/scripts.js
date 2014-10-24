@@ -24,10 +24,9 @@ $(document).ready(function() {
 	});
 
 
-		$(document).on('click', '#endTheTurn', function() {
-		project.confirm('Unhappiness POPUP', 'End the turn', 'Cancel');
-		
-		});
+	$(document).on('click', '#endTheTurn', function() {
+		project.confirm(word_confirm_end_turn, word_yes, word_cancel);		
+	});
 		
 	$(document).on('click', '.login', function() {
 		pageName = "controller/class.loginController.php";
@@ -46,6 +45,13 @@ $(document).ready(function() {
 		$("#wrapper").load(pageName);
 	});
 	
+	$(document).on('click', '.startGame', function() {
+		pageName = "controller/class.StartGameController.php";
+		$("#wrapper").load(pageName, {
+			source: 'startMenu'
+		});
+	});
+	
 	$(document).on('click', '.gameMode', function() {
 		pageName = "controller/class.gameModeController.php";
 		$("#wrapper").load(pageName, {
@@ -54,8 +60,9 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '.cityCircle', function() {
-		pageName = "view/CityManagement.php";
+		pageName = "controller/class.StartGameController.php"; // "view/CityManagement.php";
 		$("#wrapper").load(pageName, {
+			source : 'placement',
 			zone : $(this).attr("id")
 		});
 		// disable other buttons once we clicked on something to avoid bugs

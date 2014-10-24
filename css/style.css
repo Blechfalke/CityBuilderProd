@@ -24,8 +24,6 @@ body {
 	height: 587px;
 	float: left;
 	background: url("images/mapPap.png") no-repeat;
-	/*background-color:#FFD966;
-border: 1px solid black;*/
 	margin: 10px 0 0 5px;
 }
 
@@ -60,7 +58,6 @@ border: 1px solid black;*/
 
 #mainButtonDiv {
 	width: 310px;
-	height: 300px;
 	margin: 0 auto;
 	padding: 100px 0 0 0;
 }
@@ -260,6 +257,9 @@ border: 1px solid black;*/
 	width: 300px;
 }
 
+#flavourText{
+	font-size:13px;	
+}
 #errorMSG {
 	color: red;
 	background-color: #FFD966;

@@ -54,12 +54,12 @@ class GameController {
 			// INITALISATION ROUND
 			//historic registration of the zone
 			$user = unserialize($_SESSION['User']);
-			$this->singleGameHistoric->setMapZone($_POST ['zone']);
+			$this->singleGameHistoric->setMapZone($_GET ['zone']);
 			$this->singleGameHistoric->setPlayerName($user->username);
 			$this->singleGameHistoric->setGameModeId($conn->getGameMode());
 			// TODO WE MAY WANT TO REGISTER THE GAMEMODE THERE TOO
 			// Zone infulence
-			switch ($_POST ['zone']) {
+			switch ($_GET ['zone']) {
 				case 'zone_1':
 					$popT = 2000;
 					break;

@@ -32,4 +32,7 @@ echo "var word_flavour_caravans = '" .gettext('The egyptians had a very developp
 echo "var word_flavour_zone1 = '" . gettext('This place is very fertile due to the river that flows through it.') . "';";
 echo "var word_flavour_zone2 = '" . gettext('An arid desert lays for miles and miles away.') . "';";
 echo "var word_flavour_zone3 = '" . gettext('A desertic chain of mountains.') . "';";
+echo "var word_confirm_end_turn = '" . gettext('Are you sure?') . "';";
+echo "var word_yes = '" . gettext('Yes') . "';";
+echo "var word_cancel = '" . gettext('Cancel') . "';";
 ?>
