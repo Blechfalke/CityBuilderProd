@@ -253,7 +253,7 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 }
 
 function oneCheck(test, total){
-	test = (test != 0.0)?test:1
+	test = (test != 0.0)?test:0.0001;
 	var result = (test / total)
 	
 	var valReturn = result;
