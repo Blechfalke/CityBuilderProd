@@ -21,7 +21,7 @@ $soldiers = $population->getSoldiers();
 $peasants = $population->getPeasants();
 $slaves = $population->getSlaves();
 $caravans = $gameController->getGameResources()->getCaravans();
-$score = $gameController->getGameResources()->getScore();
+$wealth = $gameController->getGameResources()->getWealth();
 $availablePopulation = $totalPopulation - $kings -$priests - $craftsmen - $scribes - $soldiers - $peasants - $slaves;
 
 
@@ -38,7 +38,7 @@ if ($gameController->getRound() > 6) {
                     <div class='pairControl'>
                         <div style='background-color: white;' class='labelScore'>Score</div>
                         <div>
-                            <input type='text' class='editorScore' name='Score' id='Score' disabled value='$score'/>
+                            <input type='text' class='editorScore' name='Score' id='Score' disabled value='$wealth'/>
                         </div>
 		<div style='clear: both'></div>
                     </div>

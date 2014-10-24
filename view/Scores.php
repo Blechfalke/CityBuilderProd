@@ -1,19 +1,23 @@
-<?php require_once '../config.php';
+<?php
+
+require_once '../config.php';
 
 require_once LOCATOR . '/controller/class.GameController.php';
 
-if (isset($_SESSION['GameController'])) {
-	$gameController = unserialize($_SESSION['GameController']);
+if (isset ( $_SESSION ['GameController'] )) {
+	$gameController = unserialize ( $_SESSION ['GameController'] );
 } else {
-	$gameController = new GameController();
+	$gameController = new GameController ();
 }
+$score = $gameController->getGameResources ()->getScore ();
+$technology = $score["tech"];
 
-$technology = $gameController->getTechnology();
-$wealth = $gameController->getGameResources()->getWealth();
-$buildings= "TOBECALCULATED";
-$population= $gameController->getPopulation();
-$happiness= "TOBECALCULATED";
-$score= $gameController->getGameResources()->getScore();
+//$technology = $gameController->getGameResources ()->getScore ()["tech"];
+$wealth = $gameController->getGameResources ()->getScore ()["wealth"];
+$buildings = $gameController->getGameResources ()->getScore ()["building"];
+$population = $gameController->getGameResources ()->getScore ()["population"];
+$happiness = $gameController->getGameResources ()->getScore ()["happiness"];
+$score = 1+$gameController->getGameResources ()->getScore ()["tech"] + $gameController->getGameResources ()->getScore ()["wealth"] + $gameController->getGameResources ()->getScore ()["building"] + $gameController->getGameResources ()->getScore ()["population"] + $gameController->getGameResources ()->getScore ()["happiness"];
 ?>
 <div id="header" style="width: 300px;">Scores</div>
 
@@ -22,28 +26,28 @@ $score= $gameController->getGameResources()->getScore();
 	<div id="Controles">
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Technology')?></div>
-			<div class="editor"><?php $technology ?></div>
+			<div class="editor"><?php echo $technology ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Wealth')?></div>
-			<div class="editor"><?php $wealth ?></div>
+			<div class="editor"><?php echo $wealth ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Buildings')?></div>
-			<div class="editor"><?php $buildings ?></div>
+			<div class="editor"><?php echo $buildings ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Population')?></div>
-			<div class="editor"><?php $population ?></div>
+			<div class="editor"><?php echo $population ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Happiness')?></div>
-			<div class="editor"><?php $happiness ?></div>
+			<div class="editor"><?php echo $happiness ?></div>
 		</div>
 		<div style="clear: both; width: 30px; height: 20px;"></div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Total score')?></div>
-			<div class="editor"><?php $score ?></div>
+			<div class="editor"><?php echo $score ?></div>
 		</div>
 		<div style="clear: both"></div>
 	</div>
