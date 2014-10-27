@@ -1,19 +1,24 @@
-<?php require_once '../config.php';
+<?php
+
+require_once '../config.php';
 
 require_once LOCATOR . '/controller/class.GameController.php';
+require_once LOCATOR . '/controller/class.HistoryController.php';
 
-if (isset($_SESSION['GameController'])) {
-	$gameController = unserialize($_SESSION['GameController']);
+if (isset ( $_SESSION ['GameController'] )) {
+	$gameController = unserialize ( $_SESSION ['GameController'] );
 } else {
-	$gameController = new GameController();
+	$gameController = new GameController ();
 }
+$history = new HistoryController($gameController->getSingleGameHistoric());
 
-$technology = $gameController->getTechnology();
-$wealth = $gameController->getGameResources()->getWealth();
-$buildings= "TOBECALCULATED";
-$population= $gameController->getPopulation();
-$happiness= "TOBECALCULATED";
-$score= $gameController->getGameResources()->getScore();
+$textHistory = $history->getTextHistory();
+$technology = $history->getScTechnology();
+$wealth = $history->getScWealth();
+$buildings = $history->getScBuildings() ;
+$population = $history->getScPopulation();
+$happiness= $history->getScHappiness();
+$score= $history->getScTotal();
 ?>
 <div id="header" style="width: 300px;">Scores</div>
 
@@ -22,32 +27,34 @@ $score= $gameController->getGameResources()->getScore();
 	<div id="Controles">
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Technology')?></div>
-			<div class="editor"><?php $technology ?></div>
+			<div class="editor"><?php echo $technology ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Wealth')?></div>
-			<div class="editor"><?php $wealth ?></div>
+			<div class="editor"><?php echo $wealth ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Buildings')?></div>
-			<div class="editor"><?php $buildings ?></div>
+			<div class="editor"><?php echo $buildings ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Population')?></div>
-			<div class="editor"><?php $population ?></div>
+			<div class="editor"><?php echo $population ?></div>
 		</div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Happiness')?></div>
-			<div class="editor"><?php $happiness ?></div>
+			<div class="editor"><?php echo $happiness ?></div>
 		</div>
 		<div style="clear: both; width: 30px; height: 20px;"></div>
 		<div class="pairControl">
 			<div style="background-color: white;" class="label"><?php echo gettext('Total score')?></div>
-			<div class="editor"><?php $score ?></div>
+			<div class="editor"><?php echo $score ?></div>
 		</div>
 		<div style="clear: both"></div>
 	</div>
-	<div id="Diagram" style="height: 204px;"></div>
+	<div id="Diagram" style="height: 204px;">
+		<?php echo $textHistory; ?>
+	</div>
 </div>
 <div id="rightContent">
 	<div id="rightUp">
@@ -55,9 +62,9 @@ $score= $gameController->getGameResources()->getScore();
 			<!-- text for small right block here -->
 		</div>
 	</div>
+	
 	<div id="rightBottom">
-		<input type="button" value="Exit game" name="ExitGame"
-			class="pageButtons" style="margin-top: 90px;" />
+		<input type='button' value='<?php echo gettext('Exit game');?>' name='startMenu' class='pageButtons link' style="margin-top: 90px;" />
 	</div>
 </div>
 <div style="clear: both;"></div>
