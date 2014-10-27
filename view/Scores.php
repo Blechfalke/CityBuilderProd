@@ -53,7 +53,7 @@ $score= $history->getScTotal();
 		<div style="clear: both"></div>
 	</div>
 	<div id="Diagram" style="height: 204px;">
-		<?php echo $textHistory; ?>
+		<?php echo gettext('Good Ending'); echo gettext('Medium Ending'); echo gettext('Bad Ending');?>
 	</div>
 </div>
 <div id="rightContent">
