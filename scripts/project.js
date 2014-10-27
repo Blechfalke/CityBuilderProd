@@ -102,7 +102,8 @@ project.confirm = function (text, buttonYes, buttonNo) {
                   			peasants : i_peasants,
                   			slaves : i_slaves,
                   			technology : i_technology
-                  		});                  		
+                  		});   
+                  	    i_technology = null;               		
                   		$(this).dialog( "close" );
                   		$("#endTheTurn").prop('disabled', true);
                 		/*setTimeout(function() {
