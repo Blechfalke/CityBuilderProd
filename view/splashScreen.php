@@ -86,5 +86,19 @@
 	function imagesLoaded() {
 // 		var pageName = "view/login.php";
 // 		$("#wrapper").load(pageName);
+		$.ajax({
+		    type: 'GET',
+		    url: 'view/login.php',
+		    dataType: 'html',
+		    async: false,
+		    timeout: 30000,
+		    success: function(h){ 
+			    $("#wrapper").html(h) 
+			},
+			error: function(h){
+				alert('an Error occured')
+			}
+		});
+		
 	}
 </script>

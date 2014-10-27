@@ -12,6 +12,8 @@ if (isset($_SESSION['locale'])) {
 	textdomain("test");
 }
 
+ini_set("session.cookie_lifetime","3600");
+
 // enable debugOutput
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);

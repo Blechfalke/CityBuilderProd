@@ -13,7 +13,7 @@ $(document).ready(function() {
 	// This will be the starting page of the Application
 	var pageName = "view/splashScreen.php";
 	$("#wrapper").load(pageName);
-
+	
 	// need to use delegation based event handlers here, because later links do
 	// not exist in the DOM yet
 	$(document).on('click', '.link', function() {
