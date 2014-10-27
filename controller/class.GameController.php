@@ -15,6 +15,7 @@ class GameController {
 	private $technology;
 	private $singleGameHistoric;
 	private $nextRoundPopupText;
+	private $maxTurn;
 	
 	public function __construct() {
 		$this->round = 0;
@@ -24,6 +25,7 @@ class GameController {
 		$this->technology = new Technology ();
 		$this->singleGameHistoric = new SingleGameHistoric ();
 		$this->nextRoundPopupText;
+		$this->maxTurn = 6;
 	}
 	public function getRound() {
 		return $this->round;
@@ -63,6 +65,24 @@ class GameController {
 			$this->singleGameHistoric->setMapZone ( $_GET ['zone'] );
 			$this->singleGameHistoric->setPlayerName ( $user->username );
 			$this->singleGameHistoric->setGameModeId ( $conn->getGameMode () );
+			//  1: Block 2: map only 3: 5 turn 4: infinite
+			switch ($this->singleGameHistoric->getGameModeId()){
+				case 1 :
+					header ( 'Location: ../view/startMenu.php' );
+					break;
+				case 2 :
+					header ( 'Location: ../view/startMenu.php' );
+					break;
+				case 3 :
+					$this->maxTurn = 6;
+					break;
+				case 4 :
+					$this->maxTurn = 999;
+					break;
+				default:
+					header ( 'Location: ../view/startMenu.php' );
+					break;					
+			}
 			// Zone infulence
 			switch ($_GET ['zone']) {
 				case 'zone_1' :
@@ -73,6 +93,9 @@ class GameController {
 					break;
 				case 'zone_3' :
 					$popT = 1200;
+					break;
+				default:
+					$popT = 2000;
 					break;
 			}
 			$this->population->setTotalPopulation ( $popT );
@@ -104,7 +127,7 @@ class GameController {
 				echo '!!!!!!!!!!!!!!!!!! you\'ve lost !!!!!!!!!!!!!!!!!';
 				$this->round = 1000;
 			}
-			if ($this->round >= 6) {
+			if ($this->round >= $this->maxTurn) {
 				// TODO POPUP TEXT
 				echo "<script>project.alert('WIN POPUP');</script>";
 				

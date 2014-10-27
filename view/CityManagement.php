@@ -27,9 +27,9 @@ $availablePopulation = $totalPopulation - $kings -$priests - $craftsmen - $scrib
 
 $_SESSION['GameController'] = serialize($gameController);
 
-if ($gameController->getRound() > 6) {
-	echo "<div>Game finished</div>";
-} else {
+// if ($gameController->getRound() > 6) {
+// 	echo "<div>Game finished</div>";
+// } else {
 	echo "<div id='header'>". gettext('Management of the city') ."</div>
 
         <div id='leftContent'>
@@ -173,5 +173,5 @@ if ($gameController->getRound() > 6) {
 		createPyramid();
 		updatePyramid($slaves, $peasants, $soldiers, $craftsmen, $scribes, $priests, $kings);
   	</script>";
-}
+// }
 ?>
