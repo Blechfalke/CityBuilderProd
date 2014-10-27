@@ -20,7 +20,9 @@ $(document).ready(function() {
 		pageName = "view/" + $(this).attr("name") + ".php";
 		$("#wrapper").load(pageName);
 		// disable other buttons once we clicked on something to avoid bugs
-		$(".mainButtons").prop('disabled', true);
+	});
+	$(document).on('click', '.mainButtons', function() {
+	$(".mainButtons").prop('disabled', true);
 	});
 
 
@@ -37,7 +39,6 @@ $(document).ready(function() {
 		});
 		LazyLoad.js("scripts/js_lang.js.php", "");
 		// disable other buttons once we clicked on something to avoid bugs
-		$(".mainButtons").prop('disabled', true);
 	});
 
 	$(document).on('click', '.logout', function() {

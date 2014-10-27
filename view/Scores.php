@@ -3,21 +3,22 @@
 require_once '../config.php';
 
 require_once LOCATOR . '/controller/class.GameController.php';
+require_once LOCATOR . '/controller/class.HistoryController.php';
 
 if (isset ( $_SESSION ['GameController'] )) {
 	$gameController = unserialize ( $_SESSION ['GameController'] );
 } else {
 	$gameController = new GameController ();
 }
-$score = $gameController->getGameResources ()->getScore ();
-$technology = $score["tech"];
+$history = new HistoryController($gameController->getSingleGameHistoric());
 
-//$technology = $gameController->getGameResources ()->getScore ()["tech"];
-$wealth = $gameController->getGameResources ()->getScore ()["wealth"];
-$buildings = $gameController->getGameResources ()->getScore ()["building"];
-$population = $gameController->getGameResources ()->getScore ()["population"];
-$happiness = $gameController->getGameResources ()->getScore ()["happiness"];
-$score = 1+$gameController->getGameResources ()->getScore ()["tech"] + $gameController->getGameResources ()->getScore ()["wealth"] + $gameController->getGameResources ()->getScore ()["building"] + $gameController->getGameResources ()->getScore ()["population"] + $gameController->getGameResources ()->getScore ()["happiness"];
+$textHistory = $history->getTextHistory();
+$technology = $history->getScTechnology();
+$wealth = $history->getScWealth();
+$buildings = $history->getScBuildings() ;
+$population = $history->getScPopulation();
+$happiness= $history->getScHappiness();
+$score= $history->getScTotal();
 ?>
 <div id="header" style="width: 300px;">Scores</div>
 
@@ -51,7 +52,9 @@ $score = 1+$gameController->getGameResources ()->getScore ()["tech"] + $gameCont
 		</div>
 		<div style="clear: both"></div>
 	</div>
-	<div id="Diagram" style="height: 204px;"></div>
+	<div id="Diagram" style="height: 204px;">
+		<?php echo $textHistory; ?>
+	</div>
 </div>
 <div id="rightContent">
 	<div id="rightUp">
@@ -59,9 +62,9 @@ $score = 1+$gameController->getGameResources ()->getScore ()["tech"] + $gameCont
 			<!-- text for small right block here -->
 		</div>
 	</div>
+	
 	<div id="rightBottom">
-		<input type="button" value="Exit game" name="ExitGame"
-			class="pageButtons" style="margin-top: 90px;" />
+		<input type='button' value='<?php echo gettext('Exit game');?>' name='startMenu' class='pageButtons link' style="margin-top: 90px;" />
 	</div>
 </div>
 <div style="clear: both;"></div>

@@ -209,9 +209,9 @@ function createPyramid(){
 
 };  
 
-function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, kings){
+function updatePyramid(slaves, peasants, soldiers,  scribes,craftsmen, priests, kings){
 	
-	var total = Number(slaves) + Number(peasants) + Number(soldiers) + Number(craftsmen) + Number(scribes) + Number(priests) + Number(kings);
+	var total = Number(slaves) + Number(peasants) + Number(soldiers) + Number(scribes) + Number(craftsmen) + Number(priests) + Number(kings);
 	
 	//alert('slaves:'+slaves+', peasants:'+peasants+', soldier:'+soldiers+', craftsmen:'+craftsmen+', scribes:'+scribes+', priests:'+priests+', kings:'+kings+', total:'+total);
 	//Apply the theme
@@ -219,8 +219,8 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 	slaves = oneCheck(slaves, total);
 	peasants = oneCheck(peasants, total);
 	soldiers = oneCheck(soldiers, total);
-	craftsmen = oneCheck(craftsmen, total);
 	scribes = oneCheck(scribes, total);
+	craftsmen = oneCheck(craftsmen, total);
 	priests = oneCheck(priests, total);
 	kings = oneCheck(kings, total);
 	
@@ -240,13 +240,13 @@ function updatePyramid(slaves, peasants, soldiers, craftsmen, scribes, priests, 
 	        series: [{
 	            name: 'Population',
 	            data: [ 
-	            	['Slaves',   Number(slaves)],
-	                ['Peasants',       Number(peasants)],
-	                ['Soldiers', Number(soldiers)],
-	                ['Craftsmen',    Number(craftsmen)],
-	                ['Scribes',    Number(scribes)],
-					['Priests',    Number(priests)],
-					['Kings',    Number(kings)]
+	            	[word_slaves,   Number(slaves)],
+	                [word_peasants,       Number(peasants)],
+	                [word_soldiers, Number(soldiers)],
+	                [word_scribes,    Number(scribes)],
+	                [word_craftsmen,    Number(craftsmen)],
+					[word_priests,    Number(priests)],
+					[word_king,    Number(kings)]
 	            ]
 	        }]
 	    });

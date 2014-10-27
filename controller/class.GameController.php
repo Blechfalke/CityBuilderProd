@@ -14,7 +14,8 @@ class GameController {
 	private $population;
 	private $technology;
 	private $singleGameHistoric;
-	private $NextRoundPopupText;
+	private $nextRoundPopupText;
+	
 	public function __construct() {
 		$this->round = 0;
 		$this->buildings = new Building ();
@@ -22,6 +23,7 @@ class GameController {
 		$this->population = new Population ();
 		$this->technology = new Technology ();
 		$this->singleGameHistoric = new SingleGameHistoric ();
+		$this->nextRoundPopupText;
 	}
 	public function getRound() {
 		return $this->round;
@@ -40,6 +42,12 @@ class GameController {
 	}
 	public function getTechnology() {
 		return $this->technology;
+	}
+	public function getSingleGameHistoric() {
+		return $this->singleGameHistoric;
+	}
+	public function getNextRoundPopupText() {
+		return $this->nextRoundPopupText;
 	}
 	public function calculateRound() {
 		$conn = new MySQLConnector ();
@@ -133,7 +141,7 @@ class GameController {
 			$this->technology = $tech;
 		} else {
 			// EVERY OTHER ROUNDS
-			
+			$this->nextRoundPopupText = array();
 			$this->calcInvasion ();
 			$this->calcUnhappiness ();
 			$this->calcWealth ();
@@ -141,8 +149,8 @@ class GameController {
 			$this->calcBuildings ();
 			$this->calcFoodPop ();
 			$this->calcScore ();
+			//TODO vvv probably wrong Check it vvv
 			$this->technology = $tech;
-			
 			if ($this->population->getTotalPopulation () <= 0) {
 				// LOSING EVENT
 				
@@ -153,6 +161,7 @@ class GameController {
 				// CHECK THE SCORE AND STUFF
 			}
 		}
+		$this->nextRound ();
 	}
 	public function calcInvasion() {
 		// INVASION
@@ -160,6 +169,8 @@ class GameController {
 			if (($this->population->getSoldiers () / $this->population->getTotalPopulation () * 100.0) <= (2.5)) {
 				// TODO POPUP TEXT
 				echo "<script>project.alert('Invasion POPUP');</script>";
+				$this->nextRoundPopupText[] = "INVASION POPUP";
+				
 				$LostPop = ceil ( ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100 );
 				$LostWealth = ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100;
 				
@@ -230,6 +241,7 @@ class GameController {
 			$this->gameResources->setUnhappiness ( true );
 			// TODO POPUP TEXT
 			echo "<script>project.alert('Unhappiness POPUP');</script>";
+				$this->nextRoundPopupText[] = "Unhappiness POPUP";
 			// TODO ONLY FOR TESTING
 			echo ' the population is angry ';
 		}
@@ -252,6 +264,7 @@ class GameController {
 			
 			// TODO POPUP TEXT
 			echo "<script>project.alert('CARAVAN POPUP');</script>";
+				$this->nextRoundPopupText[] = "CARAVAN POPUP";
 			// TODO ONLY FOR TESTING
 			echo ' caravan sent';
 		}
@@ -262,6 +275,7 @@ class GameController {
 			$this->buildings->buildTemple ();
 			// TODO POPUP TEXT
 			echo "<script>project.alert('temple POPUP');</script>";
+				$this->nextRoundPopupText[] = "temple POPUP";
 			// TODO ONLY FOR TESTING
 			echo ' temple built';
 		}
@@ -269,6 +283,7 @@ class GameController {
 			$this->buildings->buildPalace ();
 			// TODO POPUP TEXT
 			echo "<script>project.alert('palace POPUP');</script>";
+				$this->nextRoundPopupText[] = "palace POPUP";
 			// TODO ONLY FOR TESTING
 			echo ' palace built';
 		}
@@ -276,6 +291,7 @@ class GameController {
 			$this->buildings->buildMonuments ();
 			// TODO POPUP TEXT
 			echo "<script>project.alert('monument POPUP');</script>";
+				$this->nextRoundPopupText[] = "monument POPUP";
 			// TODO ONLY FOR TESTING
 			echo ' monuments built';
 		}
@@ -314,6 +330,7 @@ class GameController {
 			
 			if (! $this->technology->getGranary () || $this->gameResources->getFood () < 0)
 				$this->gameResources->setFood ( 0 );
+			//TODO FOR TESTING
 			echo ' food remaining: ' . $this->gameResources->getFood ();
 			echo ' population: ' . $this->population->getTotalPopulation ();
 		}

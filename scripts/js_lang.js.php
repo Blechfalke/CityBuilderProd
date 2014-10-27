@@ -35,4 +35,12 @@ echo "var word_flavour_zone3 = '" . gettext('A desertic chain of mountains.') . 
 echo "var word_confirm_end_turn = '" . gettext('Are you sure?') . "';";
 echo "var word_yes = '" . gettext('Yes') . "';";
 echo "var word_cancel = '" . gettext('Cancel') . "';";
+
+echo "var word_king = '" . gettext('Kings') . "';";
+echo "var word_priests = '" . gettext('Priests') . "';";
+echo "var word_craftsmen = '" . gettext('Craftsmen') . "';";
+echo "var word_scribes = '" . gettext('Scribes') . "';";
+echo "var word_soldiers = '" . gettext('Soldiers') . "';";
+echo "var word_peasants = '" . gettext('Peasants') . "';";
+echo "var word_slaves = '" . gettext('Slaves') . "';";
 ?>
