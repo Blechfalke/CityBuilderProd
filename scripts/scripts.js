@@ -11,7 +11,7 @@ var i_total = 0;
 var backupValue;
 $(document).ready(function() {
 	// This will be the starting page of the Application
-	var pageName = "view/login.php";
+	var pageName = "view/splashScreen.php";
 	$("#wrapper").load(pageName);
 
 	// need to use delegation based event handlers here, because later links do
@@ -60,7 +60,7 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '.cityCircle', function() {
-		pageName = "controller/class.StartGameController.php"; // "view/CityManagement.php";
+		pageName = "controller/class.StartGameController.php";
 		$("#wrapper").load(pageName, {
 			source : 'placement',
 			zone : $(this).attr("id")

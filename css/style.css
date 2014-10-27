@@ -51,8 +51,9 @@ body {
 	font-size: 48px;
 	text-decoration: underline;
 	font-weight: 800;
-	width: 550px;
+	width: 100%;
 	margin: 0 auto;
+	text-align: center;
 	padding-top: 30px;
 }
 
@@ -276,4 +277,17 @@ body {
 	height: 40px;
 	font-family: Calibri;
 	font-size: 18px;
+}
+#progressbar{
+	width: 500px;
+	margin: 0 auto;
+	height: 30px;
+	border: 0;
+	border-radius: 30px;
+}
+.ui-progressbar-value{
+	display: block !important;
+	height: 100% !important;
+	border: none  !important;
+	border-radius: 30px !important;
 }
