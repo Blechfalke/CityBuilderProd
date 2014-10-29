@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-29 14:04+0100\n"
-"PO-Revision-Date: 2014-10-29 14:04+0100\n"
+"POT-Creation-Date: 2014-10-29 16:10+0100\n"
+"PO-Revision-Date: 2014-10-29 16:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgid ""
 "An enemy army has invaded your city and routed your too few soldiers. They "
 "loot a part of your wealth and take a part of your population as slaves."
 msgstr ""
-"Une armée ennemie vous envahi et réussit à vaincre votre modeste contingent "
+"Une armée ennemie vous envahit et réussit à vaincre votre modeste contingent "
 "de guerriers. Une partie de votre peuple est réduit en esclavage"
 
 #: C:\Program Files
@@ -310,135 +310,157 @@ msgstr "Non"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:48
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:103
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:104
 msgid "Kings"
 msgstr "Rois"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:49
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:109
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:110
 msgid "Priests"
 msgstr "Prêtres"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:50
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:115
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:116
 msgid "Craftsmen"
 msgstr "Artisans"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:51
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:121
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:122
 msgid "Scribes"
 msgstr "Scribes"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:52
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:129
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:130
 msgid "Soldiers"
 msgstr "Soldats"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:53
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:135
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:136
 msgid "Peasants"
 msgstr "Paysans"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:54
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:141
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:142
 msgid "Slaves"
 msgstr "Esclaves"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:33
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:34
 msgid "Management of the city"
 msgstr "Gestion de la ville"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:48
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:40
+msgid "Food"
+msgstr "Nourriture"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:42
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:33
+msgid "Wealth"
+msgstr "Richesses"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:49
 msgid "Choose one technology per turn"
 msgstr "Choisis une technologie par tour"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:54
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:55
 msgid "Assign the citizen to a social class"
 msgstr "Répartis les habitants"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:62
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:63
 msgid "Writing"
 msgstr "Ecriture"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:69
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:70
 msgid "Granary"
 msgstr "Grenier"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:76
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:77
 msgid "Pottery"
 msgstr "Poterie"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:89
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:90
 msgid "Total population"
 msgstr "Population totale"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:95
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:96
 msgid "Available population"
 msgstr "Population disponible"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:149
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:150
 msgid "Caravans"
 msgstr "Caravanes"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:165
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:166
 msgid "End  of turn"
 msgstr "Fin de tour"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:166
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:167
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/PlacementOfCity.php:39
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:74
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:89
 msgid "Exit game"
 msgstr "Sortir du jeu"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:27
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/PlacementOfCity.php:5
+msgid "Placement of the city"
+msgstr "Gestion de la ville"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Rules.php:13
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:21
+msgid "Rules"
+msgstr "Voir les règles"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Rules.php:96
+msgid "Return"
+msgstr "Retour"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:28
 msgid "Technology"
 msgstr "Technologie"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:31
-msgid "Wealth"
-msgstr "Argent"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:35
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:38
 msgid "Buildings"
 msgstr "Bâtiment"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:39
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:42
 msgid "Population"
 msgstr "Population"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:43
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:47
 msgid "Happiness"
 msgstr "Bonheur"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:48
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:53
 msgid "Total score"
 msgstr "Score total"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:56
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:64
 msgid ""
 "Your reign is an example to all your peers, who, following it, will "
 "accomplish great feats too. Your city will be remembered through the ages."
@@ -448,7 +470,7 @@ msgstr ""
 "mémoires"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:58
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:69
 msgid ""
 "At the end of your reign, you leave behind you a florishing city. But its "
 "small size and lack of prestige will condemn it to be forgotten."
@@ -457,7 +479,7 @@ msgstr ""
 "taille et son manque de prestige la condamne à sombrer dans l&#39;oubli"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:60
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:74
 msgid ""
 "Your reign is over. Your citizen flee the city. You will have to wait for "
 "archeology to appear before your city is found again."
@@ -487,14 +509,20 @@ msgid "Infinite turns mode"
 msgstr "Tours infinis"
 
 #: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/login.php:8
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:19
+msgid "City builders"
+msgstr "Bâtisseur de cité"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/splashScreen.php:4
+msgid "The Game is loading<br />Please Wait..."
+msgstr "Chargement du jeu<br /> Veuillez patienter..."
+
+#: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:20
 msgid "Launch the Game"
 msgstr "Lancer le jeu"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:21
-msgid "Rules"
-msgstr "Voir les règles"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:25
