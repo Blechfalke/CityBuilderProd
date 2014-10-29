@@ -52,7 +52,7 @@ body {
 	font-size: 48px;
 	text-decoration: underline;
 	font-weight: 800;
-	width: 100%;
+	width: auto;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 30px;
@@ -61,8 +61,9 @@ body {
 #mainButtonDiv {
 	width: 310px;
 	margin: 0 auto;
-	padding: 100px 0 0 0;
+	padding: 20px 0 0 0;
 }
+
 /*//////////////////////////Controles*/
 .mainButtons {
 	font-family: Calibri;
@@ -335,4 +336,25 @@ body {
 	height: 100% !important;
 	border: none  !important;
 	border-radius: 30px !important;
+}
+.lScore {
+	float: left;
+	width: auto;	
+	font-family:Papyrus;
+	font-size:18px;
+	font-weight:bold;
+	white-space: nowrap;
+}
+
+.eScore {
+	width: auto;
+	float: left;
+	text-aligt:left;
+	font-family:Papyrus;
+	font-size:18px;
+	font-weight:bold;
+}
+.pairControlScore{
+    width: 200px;
+	margin-left: 20px;	
 }

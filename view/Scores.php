@@ -23,31 +23,34 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 <div id="leftContent" style="padding-top: 150px;">
 
 	<div id="Controles">
-		<div class="pairControl">
-			<div id='scoreTech' style="background-color: white;" class="label hover"><?php echo gettext('Technology')?></div>
-			<div id='scoreTechNb' class="editor hover"><?php echo $technology; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scoreWealth' style="background-color: white;" class="label hover"><?php echo gettext('Wealth')?></div>
-			<div id='scoreWealthNb' class="editor hover"><?php echo $wealth; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scoreBuilding' style="background-color: white;" class="label hover"><?php echo gettext('Buildings')?></div>
-			<div id='scoreBuildingNb' class="editor hover"><?php echo $buildings; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scorePop' class="label hover"><?php echo gettext('Population')?></div>
-			<div id='scorePopNb' class=" editor hover"><?php echo $population; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scoreUnhappiness' style="background-color: white;" class="label hover"><?php echo gettext('Happiness')?></div>
-			<div id='scoreUnhappinessNb' class="editor hover"><?php echo $happiness; ?></div>
-		</div>
-		<div style="clear: both; width: 30px; height: 20px;"></div>
-		<div class="pairControl">
-			<div id='scoreTotal' style="background-color: white;" class="label hover"><?php echo gettext('Total score')?></div>
-			<div id='scoreTotalNb' class="editor hover"><?php echo $score; ?></div>
-		</div>
+		<table style='margin-left: 20px;'>
+	<tr>
+	<td id='scoreTech' class="lScore hover" style="width:150px !important;;"><?php echo gettext('Technology')?>.....................</td>
+	<td id='scoreTechNb' class="eScore hover"><?php echo $technology; ?></td>
+	</tr>
+	<tr>
+	<td id='scoreWealth' class="lScore hover"><?php echo gettext('Wealth')?>.............................</td>
+	<td id='scoreWealthNb' class="eScore hover"><?php echo $wealth; ?></td>
+	</tr>
+	<tr>
+	<td id='scoreBuilding' class="lScore hover"><?php echo gettext('Buildings')?>.........................</td>
+	<td id='scoreBuildingNb' class="eScore hover"><?php echo $buildings; ?></td>
+	</tr>
+	<tr>
+	<td id='scorePop' class="lScore hover"><?php echo gettext('Population')?>.......................</td>
+	<td id='scorePopNb' class="eScore hover"><?php echo $population; ?></td>
+	</tr>
+	<tr>
+	<td id='scoreUnhappiness' class="lScore hover"><?php echo gettext('Happiness')?>.....................</td>
+	<td id='scoreUnhappinessNb' class="eScore hover"><?php echo $happiness; ?></td>
+	</tr>
+	<tr>
+	<td id='scoreTotal' class="lScore hover"><?php echo gettext('Total score')?>.....................</td>
+	<td id='scoreTotalNb' class="eScore hover"><?php echo $score; ?></td>
+	</tr>
+	</table>
+	
+	
 		<div style="clear: both"></div>
 	</div>
 	<div id="Diagram" style="background:none;border:0;text-height: 204px;">

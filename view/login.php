@@ -4,8 +4,8 @@ header('Content-type: text/html; charset=UTF-8');
 $msg = isset($_SESSION['msg']) ? $_SESSION['msg'] : null;
 ?>
 <form>
+<div id="header"><h2 id='gameName'><?php echo gettext('City builders');?></h2></div>
     <div id='mainButtonDiv'>
-    <h2 id='gameName'><?php echo gettext('City builders');?></h2>
     <input type='text' name='Username' id='username' class='loginForm' placeholder='Username' value='maurice'/>
     <input type='password' name='Password' id='password' class='loginForm' placeholder='Password' value='test123'/>
     <select class='locale' name='locale' id='langdropdown'>

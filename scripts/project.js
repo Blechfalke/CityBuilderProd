@@ -15,7 +15,8 @@
 			position : {
 				my : "center",
 				at : "center",
-				of : window
+				collision: "flipfit",
+				of : "#wrapper"
 			},
 			width : width,
 			height : height,
@@ -57,7 +58,8 @@
 			position : {
 				my : "center",
 				at : "center",
-				of : window
+				collision: "flipfit",
+				of : "#wrapper"
 			},
 			width : 'auto',
 			height : 'auto',
@@ -92,7 +94,8 @@
 			position : {
 				my : "center",
 				at : "center",
-				of : window
+				collision: "flipfit",
+				of : "#wrapper"
 			},
 			width : 'auto',
 			height : 'auto',
@@ -124,18 +127,6 @@
 				}
 			} ]
 		};
-
-		/*
-		 * $(dialog).dialog({ buttons: [ { text: buttonYes, click: function() {
-		 * readInputs();
-		 * 
-		 * $("#wrapper").load('view/CityManagement.php', { kings : i_kings,
-		 * priests : i_priests, craftsmen : i_craftsmen, scribes : i_scribes,
-		 * soldiers : i_soldiers, peasants : i_peasants, slaves : i_slaves,
-		 * technology : i_technology }); $(this).dialog( "close" ); }} , { text:
-		 * buttonNo, click: function() { $( this ).dialog( "close" ); } } ] });
-		 */
-
 		var inside = "<div  style='width:450px;margin:0 15px;' >"
 				+ "<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >"
 				+ text + "</div> </div>"
@@ -160,7 +151,8 @@
 			position : {
 				my : "center",
 				at : "center",
-				of : window
+				collision: "flipfit",
+				of : "#wrapper"
 			},
 			width : 'auto',
 			height : 'auto',
