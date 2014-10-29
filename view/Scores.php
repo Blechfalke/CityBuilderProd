@@ -23,7 +23,6 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 <div id="leftContent" style="padding-top: 150px;">
 
 	<div id="Controles">
-<<<<<<< HEAD
 		<table style='margin-left: 20px;'>
 	<tr>
 	<td id='scoreTech' class="lScore hover" style="width:150px !important;;"><?php echo gettext('Technology')?>.....................</td>
@@ -50,40 +49,6 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 	<td id='scoreTotalNb' class="eScore hover"><?php echo $score; ?></td>
 	</tr>
 	</table>
-	
-	
-=======
-		<div class="pairControl">
-			<div id='scoreTech' style="background-color: white;"
-				class="label hover"><?php echo gettext('Technology')?></div>
-			<div id='scoreTechNb' class="editor hover"><?php echo $technology; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scoreWealth' style="background-color: white;"
-				class="label hover"><?php echo gettext('Wealth')?></div>
-			<div id='scoreWealthNb' class="editor hover"><?php echo $wealth; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scoreBuilding' style="background-color: white;"
-				class="label hover"><?php echo gettext('Buildings')?></div>
-			<div id='scoreBuildingNb' class="editor hover"><?php echo $buildings; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scorePop' class="label hover"><?php echo gettext('Population')?></div>
-			<div id='scorePopNb' class=" editor hover"><?php echo $population; ?></div>
-		</div>
-		<div class="pairControl">
-			<div id='scoreUnhappiness' style="background-color: white;"
-				class="label hover"><?php echo gettext('Happiness')?></div>
-			<div id='scoreUnhappinessNb' class="editor hover"><?php echo $happiness; ?></div>
-		</div>
-		<div style="clear: both; width: 30px; height: 20px;"></div>
-		<div class="pairControl">
-			<div id='scoreTotal' style="background-color: white;"
-				class="label hover"><?php echo gettext('Total score')?></div>
-			<div id='scoreTotalNb' class="editor hover"><?php echo $score; ?></div>
-		</div>
->>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
 		<div style="clear: both"></div>
 	</div>
 	<div
