@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-29 14:04+0100\n"
-"PO-Revision-Date: 2014-10-29 14:04+0100\n"
+"POT-Creation-Date: 2014-10-29 15:15+0100\n"
+"PO-Revision-Date: 2014-10-29 15:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -403,9 +403,22 @@ msgstr "Fin de tour"
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:166
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/PlacementOfCity.php:39
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:74
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Rules.php:96
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:73
 msgid "Exit game"
 msgstr "Sortir du jeu"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/PlacementOfCity.php:5
+#, fuzzy
+msgid "Placement of the city"
+msgstr "Gestion de la ville"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Rules.php:13
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:21
+msgid "Rules"
+msgstr "Voir les règles"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:27
@@ -487,14 +500,20 @@ msgid "Infinite turns mode"
 msgstr "Tours infinis"
 
 #: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/login.php:8
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:19
+msgid "City builders"
+msgstr "Bâtisseur de cité"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/splashScreen.php:4
+msgid "The Game is loading<br />Please Wait..."
+msgstr "Chargement du jeu<br /> Veuillez patienter..."
+
+#: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:20
 msgid "Launch the Game"
 msgstr "Lancer le jeu"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:21
-msgid "Rules"
-msgstr "Voir les règles"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:25
