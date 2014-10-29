@@ -57,6 +57,20 @@ class MySQLConnector {
 		
 		return $row [0];
 	}
+	public function getUsernameById($id) {
+		$query = "SELECT username FROM Users WHERE id_user='" . $id . "';";
+		$result = $this->_conn->query ( $query );
+		
+		if ($this->getError ())
+			trigger_error ( $this->getError () );
+		
+		$row = $result->fetch ();
+		
+		if (! $row)
+			return false;
+		
+		return $row [0];
+	}
 	public function setGameMode($newGameMode) {
 		$query = "UPDATE CurrentGameMode 
 					SET id_fk_CurrentGameMode=?
@@ -180,13 +194,13 @@ class MySQLConnector {
 				break;
 		}
 		$gameMode = $singleGameHistoric->getGameModeId ();
-		$user_id = $this->getIdByUsername ( $singleGameHistoric->getPlayerName () );
+		$user_id =  $singleGameHistoric->getPlayerId () ;
 		
 		$q = $this->_conn->prepare ( $query );
 		$q->execute ( array (
 				$city_type,
 				$gameMode,
-				$user_id
+				$user_id 
 		) );
 		// retrieve the last ID
 		$result = $this->_conn->query ( $queryID );
@@ -197,35 +211,84 @@ class MySQLConnector {
 			trigger_error ( $this->getError () );
 		return $idGame;
 	}
+	public function getGameHistoryFromID($id) {
+		// HAS NOT BEEN TESTED BEWARE!
+		$query = "SELECT city_type, id_gamemodes, Users_id_user FROM Game WHERE id_game = ?);";
+		$q = $this->_conn->prepare ( $query );
+		$result = $q->execute ( array (
+				$id 
+		) );
+		if ($result == null)
+			return null;
+		switch ($result [0]) {
+			case 2 :
+				$city_type = 'zone_2';
+				break;
+			case 3 :
+				$city_type = 'zone_3';
+				break;
+			default :
+				$city_type = 'zone_1';
+				break;
+		}
+		$idGameMode = $result [1];
+		$Users_id_user = $result [2];
+		$singleGameHistoric = new SingleGameHistoric($Users_id_user,$city_type,$idGameMode);
+		$query = "SELECT nb_total_pop,nb_kings,nb_priests,nb_scribes, nb_craftsmen, nb_soldiers, nb_peasants, nb_slaves, technology_used FROM Turns WHERE id_historical = ? ORDER BY nb_turns;";
+		$q = $this->_conn->prepare ( $query );
+		$result = $q->execute ( array (
+				$id 
+		) );
+		for($i = 0; $i < count ( $result ); $i ++) {
+			$popTotal = $result [i] [0];
+			$popKings = $result [i] [1];
+			$popPriests = $result [i] [2];
+			$popScribes = $result [i] [3];
+			$popCraftsmen = $result [i] [4];
+			$popSoldiers = $result [i] [5];
+			$popPeasants = $result [i] [6];
+			$popSlaves = $result [i] [7];
+			$technology = $result [i] [8];
+			$population = new Population();
+			$population->setTotalPopulation($popTotal);
+			$population->updatePopulation($popKings, $popPriests, $popCraftsmen, $popScribes, $popSoldiers, $popPeasants, $popSlaves);
+			$technology = new Technology();
+			$technology->updateTechnology($technology);
+			$singleGameHistoric->appendTurn( new Turn($population, $technology));
+		}
+		
+		if ($this->getError ())
+			trigger_error ( $this->getError () );
+		return $singleGameHistoric;
+	}
 	public function insertTurn($idGame, $DBtechnology, $turnNB, Turn $t) {
 		
-			// QUERY FOR EACH TURNS
-			$popTotal = $t->getPopulation ()->getTotalPopulation ();
-			$popKings = $t->getPopulation ()->getKings ();
-			$popPriests = $t->getPopulation ()->getPriests ();
-			$popCraftsmen = $t->getPopulation ()->getCraftsmen ();
-			$popScribes = $t->getPopulation ()->getScribes ();
-			$popSoldiers = $t->getPopulation ()->getSoldiers ();
-			$popPeasants = $t->getPopulation ()->getPeasants ();
-			$popSlaves = $t->getPopulation ()->getSlaves ();
-			
-			// EXECUTE QUERY FOR THE TURN
-			$query = "INSERT INTO Turns(id_historical, nb_total_pop, nb_kings, nb_priests, nb_scribes, nb_craftsmen, nb_soldiers, nb_peasants, nb_slaves, nb_turns, technology_used) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-			$q = $this->_conn->prepare ( $query );
-			$q->execute ( array (
-					$idGame,
-					$popTotal,
-					$popKings,
-					$popPriests,
-					$popScribes,
-					$popCraftsmen,
-					$popSoldiers,
-					$popPeasants,
-					$popSlaves,
-					$turnNB,
-					($DBtechnology==null)?'NONE':$DBtechnology 
-			) );
+		// QUERY FOR EACH TURNS
+		$popTotal = $t->getPopulation ()->getTotalPopulation ();
+		$popKings = $t->getPopulation ()->getKings ();
+		$popPriests = $t->getPopulation ()->getPriests ();
+		$popCraftsmen = $t->getPopulation ()->getCraftsmen ();
+		$popScribes = $t->getPopulation ()->getScribes ();
+		$popSoldiers = $t->getPopulation ()->getSoldiers ();
+		$popPeasants = $t->getPopulation ()->getPeasants ();
+		$popSlaves = $t->getPopulation ()->getSlaves ();
 		
+		// EXECUTE QUERY FOR THE TURN
+		$query = "INSERT INTO Turns(id_historical, nb_total_pop, nb_kings, nb_priests, nb_scribes, nb_craftsmen, nb_soldiers, nb_peasants, nb_slaves, nb_turns, technology_used) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+		$q = $this->_conn->prepare ( $query );
+		$q->execute ( array (
+				$idGame,
+				$popTotal,
+				$popKings,
+				$popPriests,
+				$popScribes,
+				$popCraftsmen,
+				$popSoldiers,
+				$popPeasants,
+				$popSlaves,
+				$turnNB,
+				($DBtechnology == null) ? 'NONE' : $DBtechnology 
+		) );
 		
 		if ($this->getError ())
 			trigger_error ( $this->getError () );

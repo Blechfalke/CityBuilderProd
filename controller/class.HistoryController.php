@@ -1,5 +1,6 @@
 <?php
 require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/controller/class.GameController.php';
 class HistoryController {
 	private $gameController;
@@ -32,19 +33,19 @@ class HistoryController {
 	public function getScTotal() {
 		return $this->scTotal;
 	}
-	public function __construct(SingleGameHistoric $singleGameHistoric) {
+	private function build(SingleGameHistoric $singleGameHistoric) {
 		$this->gameController = new GameController ();
 		$this->singleGameHistoric = $singleGameHistoric;
 		$this->textHistory = "";
-		$turnCount = 0;
+		
 		foreach ( $this->singleGameHistoric->getTurns () as $turn ) {
 			
 			$this->gameController->calculateRoundForScorePage ( $turn->getPopulation (), $turn->getTechnology (), $this->singleGameHistoric->getMapZone () );
-// 			$this->textHistory = $this->textHistory . "Turn " . $turnCount;
-// 			foreach ( $this->gameController->getNextRoundPopupText () as $textLine )
-// 				$this->textHistory = $this->textHistory . "<p>" . $textLine . "</p>";
-// 			$this->textHistory = $this->textHistory . "<hr />";
-			$turnCount ++;
+			// $this->textHistory = $this->textHistory . "Turn " . $turnCount;
+			// foreach ( $this->gameController->getNextRoundPopupText () as $textLine )
+			// $this->textHistory = $this->textHistory . "<p>" . $textLine . "</p>";
+			// $this->textHistory = $this->textHistory . "<hr />";
+			
 		}
 		
 		$this->scTechnology = $this->gameController->getGameResources ()->getScore ()["tech"];
@@ -53,6 +54,15 @@ class HistoryController {
 		$this->scPopulation = $this->gameController->getGameResources ()->getScore ()["population"];
 		$this->scHappiness = $this->gameController->getGameResources ()->getScore ()["happiness"];
 		$this->scTotal = 1 + $this->scTechnology + $this->scWealth + $this->scBuildings + $this->scPopulation + $this->scHappiness;
+	}
+	public function __construct($singleGameHistoricOrGameDbId) {
+		//if $singleGameHistoricOrGameDbId is int it's an ID>> we get a singleGameHistoric from the DB
+		if (is_int ( $singleGameHistoricOrGameDbId )) {
+			
+			$conn = new MySQLConnector ();
+			$singleGameHistoricOrGameDbId = $conn->getGameHistoryFromID ( $singleGameHistoricOrGameDbId );
+		}
+		$this->build ( $singleGameHistoricOrGameDbId );
 	}
 }
 

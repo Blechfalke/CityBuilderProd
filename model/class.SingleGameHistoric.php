@@ -1,16 +1,22 @@
 <?php
 class SingleGameHistoric {
-	private $playerName;
+	private $playerID;
 	private $mapZone;
 	private $gameModeId;
 	private $turns;
 
+	public function __construct($playerID, $mapZone,$gameModeId) {
+		$this->playerID = $playerID;
+		$this->mapZone = $mapZone;
+		$this->gameModeId = $gameModeId;
+	}
+	
 	public function appendTurn(Turn $turn){
 		$this->turns[] = $turn;
 	}
 	
-	public function getPlayerName() {
-		return $this->playerName;
+	public function getPlayerID() {
+		return $this->playerID;
 	}
 	public function getMapZone() {
 		return $this->mapZone;
@@ -21,8 +27,8 @@ class SingleGameHistoric {
 	public function getTurns(){
 		return $this->turns;
 	}
-	public function setPlayerName($playerName) {
-		$this->playerName = $playerName;
+	public function setPlayerID($playerName) {
+		$this->playerID = $playerName;
 	}
 	public function setMapZone($mapZone) {
 		$this->mapZone = $mapZone;

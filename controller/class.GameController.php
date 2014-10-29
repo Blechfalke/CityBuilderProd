@@ -17,22 +17,17 @@ class GameController {
 	private $nextRoundPopupText;
 	private $maxTurn;
 	private $gameDBId;
-	private $techstate;
+	
 	public function __construct() {
 		$this->round = 0;
 		$this->buildings = new Building ();
 		$this->gameResources = new GameResources ();
 		$this->population = new Population ();
 		$this->technology = new Technology ();
-		$this->singleGameHistoric = new SingleGameHistoric ();
+		$this->singleGameHistoric = null;
 		$this->nextRoundPopupText;
 		$this->maxTurn = 6;
 		$this->gameDBId = null;
-		$this->techstate = array (
-				'pottery' => False,
-				'granary' => False,
-				'writing' => False 
-		);
 	}
 	public function getRound() {
 		return $this->round;
@@ -69,10 +64,8 @@ class GameController {
 			// INITALISATION ROUND
 			// historic registration of the zone
 			$user = unserialize ( $_SESSION ['User'] );
-			$this->singleGameHistoric->setMapZone ( $_GET ['zone'] );
-			$this->singleGameHistoric->setPlayerName ( $user->username );
-			$this->singleGameHistoric->setGameModeId ( $conn->getGameMode () );
-			$this->calcScore ();
+			//$playerID, $mapZone,$gameModeId
+			$this->singleGameHistoric = new SingleGameHistoric ($conn->getIdByUsername($user->username), $_GET ['zone'],$conn->getGameMode () );
 			// 1: Block 2: map only 3: 5 turn 4: infinite
 			switch ($this->singleGameHistoric->getGameModeId ()) {
 				case 1 :
@@ -95,15 +88,15 @@ class GameController {
 			switch ($_GET ['zone']) {
 				case 'zone_1' :
 					$popT = 2000;
-					echo "<script>project.alert('" . gettext('You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.') . "');</script>";
+					echo "<script>project.alert('" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "');</script>";
 					break;
 				case 'zone_2' :
 					$popT = 1500;
-					echo "<script>project.alert('" . gettext('You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive') . "');</script>";
+					echo "<script>project.alert('" . gettext ( 'You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive' ) . "');</script>";
 					break;
 				case 'zone_3' :
 					$popT = 1200;
-					echo "<script>project.alert('" . gettext('You have chosen to found your city in the mountains.  A few water sources will help us gather the bare minimal we need.') . "');</script>";
+					echo "<script>project.alert('" . gettext ( 'You have chosen to found your city in the mountains.  A few water sources will help us gather the bare minimal we need.' ) . "');</script>";
 					break;
 				default :
 					$popT = 2000;
@@ -113,6 +106,7 @@ class GameController {
 			$this->gameResources->setFood ( $popT / 2 );
 			$this->gameResources->setWealth ( $popT / 4 );
 			$this->technology = new Technology ();
+			$this->calcScore ();
 			// registering and stuff
 			$turn = new Turn ( clone $this->population, clone $this->technology );
 			$this->singleGameHistoric->appendTurn ( $turn );
@@ -124,20 +118,14 @@ class GameController {
 			// historic registration (before the calculation, we want to register the choices of the user
 			$turn = new Turn ( clone $this->population, clone $this->technology );
 			$this->singleGameHistoric->appendTurn ( $turn );
-			$DBtechnology = 'NONE';
-			if (! $this->techstate ['pottery'] && $this->technology->getPottery ()) {
-				$DBtechnology = 'pottery';
-				$this->techstate ['pottery'] = True;
+			$DBtechnology = (isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "NONE");
+			if ($DBtechnology == 'pottery')
 				$this->nextRoundPopupText [] = gettext ( 'You have discovered the art of the pottery. Your craftsmen now generate more wealth.' );
-			} elseif (! $this->techstate ['granary'] && $this->technology->getGranary ()) {
-				$DBtechnology = 'granary';
-				$this->techstate ['granary'] = True;
+			elseif ($DBtechnology == 'granary')
 				$this->nextRoundPopupText [] = gettext ( 'You have discovered the granary. Your citizen are now able to store food.' );
-			} elseif (! $this->techstate ['writing'] && $this->technology->getGranary ()) {
-				$DBtechnology = 'writing';
-				$this->techstate ['writing'] = True;
+			elseif ($DBtechnology == 'writing')
 				$this->nextRoundPopupText [] = gettext ( 'You have discovered writing. This allows you to assign some of your citizens to become scribes to optimize the production.' );
-			}
+			
 			$conn->insertTurn ( $this->gameDBId, $DBtechnology, $this->round, $turn );
 			// echo 'GameHistoric'.$this->singleGameHistoric->getTurns()[0]->getPopulation()->getKings();
 			// echo print_r($this->singleGameHistoric->getTurns());
@@ -176,7 +164,6 @@ class GameController {
 		$this->nextRound ();
 	}
 	public function calculateRoundForScorePage(Population $pop, Technology $tech, $zone) {
-		// TODO I SHOULD ADD A WAY TO UNABLE THE POPUPS... I SHOULD...
 		$this->population = $pop;
 		
 		if (! $this->technology->getWriting ())

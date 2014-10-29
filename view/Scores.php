@@ -3,19 +3,24 @@ require_once '../config.php';
 
 require_once LOCATOR . '/controller/class.GameController.php';
 require_once LOCATOR . '/controller/class.HistoryController.php';
-
+$historyController;
 if (isset ( $_SESSION ['GameController'] )) {
 	$gameController = unserialize ( $_SESSION ['GameController'] );
+	$historyController = new historyController($gameController->getSingleGameHistoric());
 } else {
-	$gameController = new GameController ();
+	if(isset ($_POST ['game_ID'])){
+		// WATCH OUT >>NOTHING<< CALLED BY THE LINE BELOW HAS BEEN TESTED, YOU ENTER A WORLD OF PAIN AND SUFFERING BY EXECUTING THAT SINGLE LINE!
+		$historyController = new historyController($_POST ['game_ID']);
+	}
+	//$gameController = new GameController ();
 }
 
-$technology = $gameController->getGameResources ()->getScore ()["tech"];
-$wealth = $gameController->getGameResources ()->getScore ()["wealth"];
-$buildings = $gameController->getGameResources ()->getScore ()["building"];
-$population = $gameController->getGameResources ()->getScore ()["population"];
-$happiness = $gameController->getGameResources ()->getScore ()["happiness"];
-$score = 1 + $technology + $wealth + $buildings + $population + $happiness;
+$technology = $historyController->getScTechnology();
+$wealth = $historyController->getScWealth();
+$buildings = $historyController->getScBuildings();
+$population = $historyController->getScPopulation();
+$happiness = $historyController->getScHappiness();
+$score = $historyController->getScTotal();
 
 ?>
 <div id="header" style="width: 300px;">Scores</div>
