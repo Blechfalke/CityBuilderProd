@@ -20,6 +20,25 @@ $scribes = $population->getScribes();
 $soldiers = $population->getSoldiers();
 $peasants = $population->getPeasants();
 $slaves = $population->getSlaves();
+$dispatchedPop = $priests+$craftsmen+$scribes+$soldiers+$peasants+$slaves;
+$totalWoKings = $totalPopulation-$kings;
+if ($dispatchedPop != 0 && $dispatchedPop != $totalWoKings){
+	$priestsPC = $priests/$dispatchedPop;
+	$craftsmenPC = $craftsmen/$dispatchedPop;
+	$scribesPC = $scribes/$dispatchedPop;
+	$soldiersPC = $soldiers/$dispatchedPop;
+	$peasantsPC = $peasants/$dispatchedPop;
+	$slavesPC = $slaves/$dispatchedPop;
+	
+	$priests = floor($priestsPC*$totalWoKings);
+	$craftsmen = floor($craftsmenPC*$totalWoKings);
+	$scribes = floor($scribesPC*$totalWoKings);
+	$soldiers = floor($soldiersPC*$totalWoKings);
+	$peasants = floor($peasantsPC*$totalWoKings);
+	$slaves = floor($slavesPC*$totalWoKings);
+	$peasants = $peasants + ($totalWoKings-$priests-$craftsmen-$scribes-$soldiers-$peasants-$slaves);
+}
+
 $caravans = $gameController->getGameResources()->getCaravans();
 $wealth = $gameController->getGameResources()->getWealth();
 $food = $gameController->getGameResources()->getFood();

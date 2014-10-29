@@ -19,6 +19,13 @@ body {
 	background: url("images/papy.png") no-repeat;
 	margin: 10px 0 0 5px;
 }
+#leftContentScore {
+	width: 704px;
+	height: 480px;
+	float: left;
+	background: url("images/papy.png") no-repeat;
+	margin: 10px 0 0 5px;
+}
 
 #leftContentMap {
 	width: 704px;

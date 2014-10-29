@@ -20,7 +20,7 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 ?>
 <div id="header" style="width: 300px;">Scores</div>
 
-<div id="leftContent" style="padding-top: 150px;">
+<div id="leftContentScore" style="padding-top: 150px;">
 
 	<div id="Controles">
 		<table style='margin-left: 20px;'>

@@ -118,10 +118,10 @@ function updateAvailablePopulation(caller) {
 	if (available >= 0) {
 		$('#AvailablePopulation').val(available);
 	} else {
-		// project.alert('You can not assign any more people');
-		var maximum = available + Number(caller.val());
-		caller.val(maximum);
-		$('#AvailablePopulation').val(0);
+			// project.alert('You can not assign any more people');
+			var maximum = available + Number(caller.val());
+			caller.val(maximum);
+			$('#AvailablePopulation').val(0);
 	}
 
 	updatePyramid(i_slaves, i_peasants, i_soldiers, i_scribes, i_craftsmen,
