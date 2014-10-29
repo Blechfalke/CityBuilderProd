@@ -2,7 +2,7 @@
 require_once '../config.php';
 ?>
 
-<div id="header">Placement of the city</div>
+<div id="header"><?php echo gettext('Placement of the city');?></div>
 <div id="leftContentMap">
 	<img src="css/images/mapPap.png" border="0" width="704" height="587"
 		orgWidth="704" orgHeight="587" usemap="#imagemap" alt="" />

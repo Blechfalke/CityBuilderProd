@@ -221,37 +221,37 @@ function updateFlavourText(caller) {
 	case 'scoreTech':
 	case 'scoreTechNb':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/mountains_desc.png');
+				'css/images/flavourImages/tech_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_tech;
 		break;
 	case 'scoreWealth':
 	case 'scoreWealthNb':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/mountains_desc.png');
+				'css/images/flavourImages/wealth_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_wealth;
 		break;
 	case 'scoreBuilding':
 	case 'scoreBuildingNb':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/mountains_desc.png');
+				'css/images/flavourImages/building_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_building;
 		break;
 	case 'scorePop':
 	case 'scorePopNb':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/mountains_desc.png');
+				'css/images/flavourImages/citizen_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_pop;
 		break;
 	case 'scoreUnhappiness':
 	case 'scoreUnhappinessNb':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/mountains_desc.png');
+				'css/images/flavourImages/hapiness_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_unhappiness;
 		break;
 	case 'scoreTotal':
 	case 'scoreTotalNb':
 		$('#flavourImage').attr('src',
-				'css/images/flavourImages/mountains_desc.png');
+				'css/images/flavourImages/total_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_total;
 		break;
 	}

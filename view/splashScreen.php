@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div id="header">The Game is loading<br>Please Wait... </div>
+<div id="header"><?php echo gettext('The Game is loading<br />Please Wait...');?></div>
 <div id='progressbar'></div>
 
 
@@ -37,6 +37,12 @@
 	    	    					'css/images/flavourImages/slave_desc.png',
 	    	    					'css/images/flavourImages/soldier_desc.png',
 	    	    					'css/images/flavourImages/writing_desc.png',
+	    	    					'css/images/flavourImages/building_desc.png',
+	    	    					'css/images/flavourImages/citizen_desc.png',
+	    	    					'css/images/flavourImages/hapiness_desc.png',
+	    	    					'css/images/flavourImages/tech_desc.png',
+	    	    					'css/images/flavourImages/total_desc.png',
+	    	    					'css/images/flavourImages/wealth_desc.png',
 	    	    					'css/images/dialogs/caravan.png',
 	    	    					'css/images/dialogs/endbad.png',
 	    	    					'css/images/dialogs/endgood.png',

@@ -16,7 +16,7 @@ $user = unserialize($_SESSION ['User']);
 ?>
 
 <div id='mainButtonDiv'>
-	<h2 id='gameName'>City builders</h2>
+	<h2 id='gameName'><?php echo gettext('City builders');?></h2>
 	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='PlacementOfCity' class='mainButtons startGame' /> 
 	<input type='button' value='<?php echo gettext('Rules');?>' name='Rules' class='mainButtons link' /> 
 	<?php
