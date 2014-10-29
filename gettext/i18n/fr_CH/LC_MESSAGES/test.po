@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-29 15:15+0100\n"
-"PO-Revision-Date: 2014-10-29 15:31+0100\n"
+"POT-Creation-Date: 2014-10-29 15:58+0100\n"
+"PO-Revision-Date: 2014-10-29 15:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -403,8 +403,7 @@ msgstr "Fin de tour"
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:166
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/PlacementOfCity.php:39
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Rules.php:96
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:73
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:89
 msgid "Exit game"
 msgstr "Sortir du jeu"
 
@@ -421,37 +420,42 @@ msgid "Rules"
 msgstr "Voir les règles"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:27
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Rules.php:96
+msgid "Return"
+msgstr "Retour"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:28
 msgid "Technology"
 msgstr "Technologie"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:31
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:33
 msgid "Wealth"
 msgstr "Argent"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:35
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:38
 msgid "Buildings"
 msgstr "Bâtiment"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:39
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:42
 msgid "Population"
 msgstr "Population"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:43
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:47
 msgid "Happiness"
 msgstr "Bonheur"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:48
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:53
 msgid "Total score"
 msgstr "Score total"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:56
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:64
 msgid ""
 "Your reign is an example to all your peers, who, following it, will "
 "accomplish great feats too. Your city will be remembered through the ages."
@@ -461,7 +465,7 @@ msgstr ""
 "mémoires"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:58
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:69
 msgid ""
 "At the end of your reign, you leave behind you a florishing city. But its "
 "small size and lack of prestige will condemn it to be forgotten."
@@ -470,7 +474,7 @@ msgstr ""
 "taille et son manque de prestige la condamne à sombrer dans l&#39;oubli"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:60
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:74
 msgid ""
 "Your reign is over. Your citizen flee the city. You will have to wait for "
 "archeology to appear before your city is found again."
