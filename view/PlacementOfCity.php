@@ -1,6 +1,7 @@
 ﻿<?php 
 require_once '../config.php';
 ?>
+
 <div id="header">Placement of the city</div>
 <div id="leftContentMap">
 	<img src="css/images/mapPap.png" border="0" width="704" height="587"
@@ -35,8 +36,7 @@ require_once '../config.php';
 	</div>
 
 	<div id="rightBottom">
-		<input type="button" value="Exit game" name="ExitGame"
-			class="pageButtons" style="margin-top: 90px;" />
+		<input type='button' value='<?php echo gettext('Exit game');?>' name='startMenu' class='pageButtons link' style="margin-top: 90px;" />
 	</div>
 </div>
 <div style="clear: both;"></div>

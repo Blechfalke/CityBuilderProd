@@ -21,15 +21,15 @@ $soldiers = $population->getSoldiers();
 $peasants = $population->getPeasants();
 $slaves = $population->getSlaves();
 $caravans = $gameController->getGameResources()->getCaravans();
-$score = $gameController->getGameResources()->getScore();
+$wealth = $gameController->getGameResources()->getWealth();
 $availablePopulation = $totalPopulation - $kings -$priests - $craftsmen - $scribes - $soldiers - $peasants - $slaves;
 
 
 $_SESSION['GameController'] = serialize($gameController);
 
-if ($gameController->getRound() > 6) {
-	echo "<div>Game finished</div>";
-} else {
+// if ($gameController->getRound() > 6) {
+// 	echo "<div>Game finished</div>";
+// } else {
 	echo "<div id='header'>". gettext('Management of the city') ."</div>
 
         <div id='leftContent'>
@@ -38,7 +38,7 @@ if ($gameController->getRound() > 6) {
                     <div class='pairControl'>
                         <div style='background-color: white;' class='labelScore'>Score</div>
                         <div>
-                            <input type='text' class='editorScore' name='Score' id='Score' disabled value='$score'/>
+                            <input type='text' class='editorScore' name='Score' id='Score' disabled value='$wealth'/>
                         </div>
 		<div style='clear: both'></div>
                     </div>
@@ -162,8 +162,8 @@ if ($gameController->getRound() > 6) {
 		<p id='flavourText'> </p>
 	</div>
 	<div id='rightBottom'>
-	<input type='button' value='End  of turn' name='EndOfTurn' class='pageButtons' id='endTheTurn'/>
-	<input type='button' value='Exit game' name='startMenu' class='pageButtons link'/>
+	<input type='button' value='" . gettext('End  of turn') . "' name='EndOfTurn' class='pageButtons finishRound' id='endTheTurn'/>
+	<input type='button' value='" . gettext('Exit game') . "' name='startMenu' class='pageButtons' id='quitTheGame'/>
 	</div>
 	</div>
 	<div style='clear:both;'>
@@ -173,5 +173,5 @@ if ($gameController->getRound() > 6) {
 		createPyramid();
 		updatePyramid($slaves, $peasants, $soldiers, $craftsmen, $scribes, $priests, $kings);
   	</script>";
-}
+// }
 ?>

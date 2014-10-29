@@ -1,20 +1,25 @@
-<?php
-require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+<?php require_once '../config.php';
 
 require_once LOCATOR . '/model/class.User.php';
 
 if (isset($_SESSION ['GameController']))
 	unset($_SESSION ['GameController']);
 
+if (isset($_GET['msg'])){
+	$msg = $_GET['msg'];
+	if ($msg == "blocked") {
+		echo "<script>project.alert('Game blocked');</script>";
+	}
+}
+
 $user = unserialize($_SESSION ['User']);
 ?>
 
 <div id='mainButtonDiv'>
 	<h2 id='gameName'>City builders</h2>
-	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='PlacementOfCity' class='mainButtons link' /> 
+	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='PlacementOfCity' class='mainButtons startGame' /> 
 	<input type='button' value='<?php echo gettext('Rules');?>' name='Rules' class='mainButtons link' /> 
 	<?php
-	gettext('test');
 	if ($user->admin == 1) {
 		echo "<input type='button'
 			value='" . gettext('Game Modes') . "' name='GameModes' id='gameModes'

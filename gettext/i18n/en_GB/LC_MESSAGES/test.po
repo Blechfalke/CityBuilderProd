@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-20 15:48+0100\n"
-"PO-Revision-Date: 2014-10-20 15:49+0100\n"
+"POT-Creation-Date: 2014-10-24 10:23+0100\n"
+"PO-Revision-Date: 2014-10-24 10:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -14,23 +14,260 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/git/CityBuilderProd\n"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/login.php:17
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:4
+msgid ""
+"In Egypt, the king was called Pharaoh. He was considered as a god and "
+"possessed absolute power over the land."
+msgstr ""
+"In Egypt, the king was called Pharaoh. He was considered as a god and "
+"possessed absolute power over the land."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:6
+msgid ""
+"The priests take care of the cult of the numerous divinities of the egyptian "
+"religion."
+msgstr ""
+"In Egypt, the king was called Pharaoh. He was considered as a god and "
+"possessed absolute power over the land."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:8
+msgid ""
+"From argile, stone, ivory, bones, wood and metal, the artisanal production "
+"of ancient egypt shows a great quality and allow for a very florishing "
+"trading."
+msgstr ""
+"From argile, stone, ivory, bones, wood and metal, the artisanal production "
+"of ancient egypt shows a great quality and allow for a very florishing "
+"trading."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:11
+msgid ""
+"Specialists of writing in the antiquity, the role of scribes was primordial "
+"for the optimization of the production in antic societies."
+msgstr ""
+"Specialists of writing in the antiquity, the role of scribes was primordial "
+"for the optimization of the production in antic societies."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:13
+msgid ""
+"Being a soldier wasn&#39;t very popular in Egypt. The egyptians were mostly "
+"peasants. But in order to defend their recolts, they created an army that "
+"would soon become a professional one."
+msgstr ""
+"Being a soldier wasn&#39;t very popular in Egypt. The egyptians were mostly "
+"peasants. But in order to defend their recolts, they created an army that "
+"would soon become a professional one."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:16
+msgid ""
+"The peasants in antic egypt, like those of the rest of the world, had the "
+"essential task to exploit the soil to feed the population."
+msgstr ""
+"The peasants in antic egypt, like those of the rest of the world, had the "
+"essential task to exploit the soil to feed the population."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:18
+msgid ""
+"Slavery is a condition in which an individual has his freedom taken from "
+"him. He becomes the possession of another individual who can make him work "
+"without pay or sell him."
+msgstr ""
+"Slavery is a condition in which an individual has his freedom taken from "
+"him. He becomes the possession of another individual who can make him work "
+"without pay or sell him."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:21
+msgid ""
+"A granary is used to stock grains. It appeared around the neolithic "
+"revolution, 14,000 years before Christ."
+msgstr ""
+"A granary is used to stock grains. It appeared around the neolithic "
+"revolution, 14,000 years before Christ."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:23
+msgid ""
+"Writing appeared around the fourth millenial before Jesus Christ. First used "
+"for accounting, writing eventually became a mean for communication and "
+"thinking."
+msgstr ""
+"Writing appeared around the fourth millenial before Jesus Christ. First used "
+"for accounting, writing eventually became a mean for communication and "
+"thinking."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:26
+msgid ""
+"The invention of pottery comes from prehistory and would have happened in "
+"China around 20,000 years before Christ. Its use was mostly domestic and "
+"culinary."
+msgstr ""
+"The invention of pottery comes from prehistory and would have happened in "
+"China around 20,000 years before Christ. Its use was mostly domestic and "
+"culinary."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:29
+msgid ""
+"The egyptians had a very developped trading activity. They would exchange "
+"their manufactured products against raw materials from neighbooring cities. "
+"Those trades ensured Egypt prosperity."
+msgstr ""
+"The egyptians had a very developped trading activity. They would exchange "
+"their manufactured products against raw materials from neighbooring cities. "
+"Those trades ensured Egypt prosperity."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:32
+msgid "This place is very fertile due to the river that flows through it."
+msgstr "This place is very fertile due to the river that flows through it."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:33
+msgid "An arid desert lays for miles and miles away."
+msgstr "An arid desert lays for miles and miles away."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:34
+msgid "A desertic chain of mountains."
+msgstr "A desertic chain of mountains."
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:35
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:36
+msgid "Yes"
+msgstr "Yes"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/scripts/js_lang.js.php:37
+msgid "Cancel"
+msgstr "Cancel"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:33
+msgid "Management of the city"
+msgstr "Management of the city"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:48
+msgid "Choose one technology per turn"
+msgstr "Choose one technology per turn"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:54
+msgid "Assign the citizen to a social class"
+msgstr "Assign the citizen to a social class"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:62
+msgid "Writing"
+msgstr "Writing"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:69
+msgid "Granary"
+msgstr "Granary"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:76
+msgid "Pottery"
+msgstr "Pottery"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:89
+msgid "Total population"
+msgstr "Total population"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:95
+msgid "Available population"
+msgstr "Available population"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:103
+msgid "Kings"
+msgstr "Kings"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:109
+msgid "Priests"
+msgstr "Priests"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:115
+msgid "Craftsmen"
+msgstr "Craftsmen"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:121
+msgid "Scribes"
+msgstr "Scribes"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:129
+msgid "Soldiers"
+msgstr "Soldiers"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:135
+msgid "Peasants"
+msgstr "Peasants"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:141
+msgid "Slaves"
+msgstr "Slaves"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:149
+msgid "Caravans"
+msgstr "Caravans"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:165
+msgid "End  of turn"
+msgstr "End  of turn"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/CityManagement.php:166
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/PlacementOfCity.php:39
+msgid "Exit game"
+msgstr "Exit Game"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:24
+msgid "Technology"
+msgstr "Technology"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:28
+msgid "Wealth"
+msgstr "Wealth"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:32
+msgid "Buildings"
+msgstr "Buildings"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:36
+msgid "Population"
+msgstr "Population"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:40
+msgid "Happiness"
+msgstr "Happiness"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/Scores.php:45
+msgid "Total score"
+msgstr "Total score"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:6
+msgid "Block game"
+msgstr "Block game"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:7
+msgid "Placement only"
+msgstr "Placement only"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:8
+msgid "5 turns mode"
+msgstr "5 turns mode"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/gameModes.php:9
+msgid "Infinite turns mode"
+msgstr "Infinite turns mode"
+
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/login.php:16
 msgid "Login"
 msgstr "Login"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:14
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:13
 msgid "Launch the Game"
 msgstr "Launch the Game"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:15
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:14
 msgid "Rules"
 msgstr "Rules"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:20
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:18
 msgid "Game Modes"
 msgstr "Game Modes"
 
-#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:26
+#: /Applications/MAMP/htdocs/git/CityBuilderProd/view/startMenu.php:24
 msgid "Exit Game"
 msgstr "Exit Game"
 

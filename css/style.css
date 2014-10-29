@@ -9,7 +9,7 @@ body {
 	height: 760px;
 	background: url("images/background.jpg") no-repeat;
 	margin: 0 auto;
-	position:relative;
+	position: relative;
 }
 
 #leftContent {
@@ -25,8 +25,6 @@ body {
 	height: 587px;
 	float: left;
 	background: url("images/mapPap.png") no-repeat;
-	/*background-color:#FFD966;
-border: 1px solid black;*/
 	margin: 10px 0 0 5px;
 }
 
@@ -54,14 +52,14 @@ border: 1px solid black;*/
 	font-size: 48px;
 	text-decoration: underline;
 	font-weight: 800;
-	width: 550px;
+	width: 100%;
 	margin: 0 auto;
+	text-align: center;
 	padding-top: 30px;
 }
 
 #mainButtonDiv {
 	width: 310px;
-	height: 300px;
 	margin: 0 auto;
 	padding: 100px 0 0 0;
 }
@@ -234,13 +232,14 @@ border: 1px solid black;*/
 }
 
 .checkmark {
-	width: 68px;
-	height: 68px;
+	width: 70px;
+	height: 70px;
 	position: absolute;
-	bottom: 1;
-	left: 1;
+	bottom: 0px;
+	left: 0px;
 	z-index: 2;
 	visibility: hidden;
+	pointer-events: none;
 }
 
 #writing, #granary, #pottery, #continue {
@@ -266,6 +265,9 @@ border: 1px solid black;*/
 	width: 300px;
 }
 
+#flavourText{
+	font-size:13px;	
+}
 #errorMSG {
 	color: red;
 	background-color: #FFD966;
@@ -276,9 +278,10 @@ border: 1px solid black;*/
 	padding: 10px;
 	box-sizing: border-box;
 }
-#langdropdown{
-	width:300px;
-	height:40px;
+
+#langdropdown {
+	width: 300px;
+	height: 40px;
 	font-family: Calibri;
 	font-size:18px;
 }
@@ -318,4 +321,18 @@ border: 1px solid black;*/
 #ruleContant::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	font-size: 18px;
+}
+#progressbar{
+	width: 500px;
+	margin: 0 auto;
+	height: 30px;
+	border: 0;
+	border-radius: 30px;
+}
+.ui-progressbar-value{
+	display: block !important;
+	height: 100% !important;
+	border: none  !important;
+	border-radius: 30px !important;
 }

@@ -1,7 +1,6 @@
 <?php
-require_once 'config.php';
-require_once LOCATOR . '/controller/class.GameController.php';
-
+// require_once 'config.php';
+// require_once LOCATOR . '/controller/class.GameController.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 
@@ -21,13 +20,13 @@ require_once LOCATOR . '/controller/class.GameController.php';
 
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script src="scripts/lazyload.js"></script>
 	<script src="scripts/project.js"> </script>
 	<script src="scripts/scripts.js"> </script>
-	<script src="scripts/jquery-ui.js"></script>
 	<script src="scripts/lib/highchart.js"></script>
-	<script src="scripts/pyramid.js"></script>
-	<script src="scripts/project.js"></script>
 	<script src="http://code.highcharts.com/modules/funnel.js"></script>
-
+	<script src="scripts/pyramid.js"></script>
 </body>
 </html>

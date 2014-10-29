@@ -4,7 +4,7 @@ class GameResources {
 	private $food = 0;
 	private $caravans = 0;
 	private $unhappiness = true;
-	private $score = 1;
+	private $score = array();
 	
 	public function getWealth() {
 		return $this->wealth;
