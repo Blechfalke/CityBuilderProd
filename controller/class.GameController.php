@@ -16,6 +16,8 @@ class GameController {
 	private $singleGameHistoric;
 	private $nextRoundPopupText;
 	private $maxTurn;
+	private $gameDBId;
+	private $techstate;
 	public function __construct() {
 		$this->round = 0;
 		$this->buildings = new Building ();
@@ -25,6 +27,12 @@ class GameController {
 		$this->singleGameHistoric = new SingleGameHistoric ();
 		$this->nextRoundPopupText;
 		$this->maxTurn = 6;
+		$this->gameDBId = null;
+		$this->techstate = array (
+				'pottery' => False,
+				'granary' => False,
+				'writing' => False 
+		);
 	}
 	public function getRound() {
 		return $this->round;
@@ -64,6 +72,7 @@ class GameController {
 			$this->singleGameHistoric->setMapZone ( $_GET ['zone'] );
 			$this->singleGameHistoric->setPlayerName ( $user->username );
 			$this->singleGameHistoric->setGameModeId ( $conn->getGameMode () );
+			$this->calcScore ();
 			// 1: Block 2: map only 3: 5 turn 4: infinite
 			switch ($this->singleGameHistoric->getGameModeId ()) {
 				case 1 :
@@ -73,7 +82,7 @@ class GameController {
 					header ( 'Location: ../view/startMenu.php' );
 					break;
 				case 3 :
-					$this->maxTurn = 6;
+					$this->maxTurn = 5;
 					break;
 				case 4 :
 					$this->maxTurn = 999;
@@ -86,12 +95,15 @@ class GameController {
 			switch ($_GET ['zone']) {
 				case 'zone_1' :
 					$popT = 2000;
+					echo "<script>project.alert('" . gettext('You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.') . "');</script>";
 					break;
 				case 'zone_2' :
 					$popT = 1500;
+					echo "<script>project.alert('" . gettext('You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive') . "');</script>";
 					break;
 				case 'zone_3' :
 					$popT = 1200;
+					echo "<script>project.alert('" . gettext('You have chosen to found your city in the mountains.  A few water sources will help us gather the bare minimal we need.') . "');</script>";
 					break;
 				default :
 					$popT = 2000;
@@ -100,12 +112,33 @@ class GameController {
 			$this->population->setTotalPopulation ( $popT );
 			$this->gameResources->setFood ( $popT / 2 );
 			$this->gameResources->setWealth ( $popT / 4 );
-			$this->technology = new Technology();
+			$this->technology = new Technology ();
+			// registering and stuff
+			$turn = new Turn ( clone $this->population, clone $this->technology );
+			$this->singleGameHistoric->appendTurn ( $turn );
+			$this->gameDBId = $conn->insertGame ( clone $this->singleGameHistoric );
+			$conn->insertTurn ( $this->gameDBId, null, $this->round, $turn );
 		} else {
 			// EVERY OTHER ROUNDS
 			
 			// historic registration (before the calculation, we want to register the choices of the user
-			$this->singleGameHistoric->appendTurn ( new Turn ( clone $this->population, clone $this->technology ) );
+			$turn = new Turn ( clone $this->population, clone $this->technology );
+			$this->singleGameHistoric->appendTurn ( $turn );
+			$DBtechnology = 'NONE';
+			if (! $this->techstate ['pottery'] && $this->technology->getPottery ()) {
+				$DBtechnology = 'pottery';
+				$this->techstate ['pottery'] = True;
+				$this->nextRoundPopupText [] = gettext ( 'You have discovered the art of the pottery. Your craftsmen now generate more wealth.' );
+			} elseif (! $this->techstate ['granary'] && $this->technology->getGranary ()) {
+				$DBtechnology = 'granary';
+				$this->techstate ['granary'] = True;
+				$this->nextRoundPopupText [] = gettext ( 'You have discovered the granary. Your citizen are now able to store food.' );
+			} elseif (! $this->techstate ['writing'] && $this->technology->getGranary ()) {
+				$DBtechnology = 'writing';
+				$this->techstate ['writing'] = True;
+				$this->nextRoundPopupText [] = gettext ( 'You have discovered writing. This allows you to assign some of your citizens to become scribes to optimize the production.' );
+			}
+			$conn->insertTurn ( $this->gameDBId, $DBtechnology, $this->round, $turn );
 			// echo 'GameHistoric'.$this->singleGameHistoric->getTurns()[0]->getPopulation()->getKings();
 			// echo print_r($this->singleGameHistoric->getTurns());
 			$this->calcInvasion ();
@@ -116,30 +149,26 @@ class GameController {
 			$this->calcFoodPop ();
 			$this->calcScore ();
 			// TURN POPUP
-			$text = "";
-			$text = $text . "Turn " . $this->round;
+			$text = gettext ( "Turn" ) . " " . $this->round . "<hr />";
 			foreach ( $this->nextRoundPopupText as $textLine )
 				$text = $text . "<p>" . $textLine . "</p>";
-			$text = $text . "<hr />";
 			echo "<script>project.alert('" . $text . "');</script>";
-			$this->nextRoundPopupText =  array();
+			$this->nextRoundPopupText = array ();
 			
 			$this->technology->updateTechnology ( isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "" );
-			
 			if ($this->population->getTotalPopulation () <= 0) {
 				// LOSING EVENT
 				
 				// TODO POPUP TEXT
 				// echo "<script>project.alert('LOST');</script>";
 				// TODO ONLY FOR TESTING
-				echo '!!!!!!!!!!!!!!!!!! you\'ve lost !!!!!!!!!!!!!!!!!';
 				$this->round = 1000;
 			}
 			if ($this->round >= $this->maxTurn) {
 				// TODO POPUP TEXT
 				// echo "<script>project.alert('WIN POPUP');</script>";
 				
-				$conn->insertHistory ( clone $this->singleGameHistoric );
+				// $conn->insertHistory ( clone $this->singleGameHistoric );
 				
 				header ( 'Location: ../view/Scores.php' );
 			}
@@ -197,7 +226,7 @@ class GameController {
 				// TODO POPUP TEXT
 				// echo "<script>project.alert('Invasion POPUP');</script>";
 				
-				$this->nextRoundPopupText [] = gettext('Popup Invasion');
+				$this->nextRoundPopupText [] = gettext ( 'An enemy army has invaded your city and routed your too few soldiers. They loot a part of your wealth and take a part of your population as slaves.' );
 				
 				$LostPop = ceil ( ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100 );
 				$LostWealth = ((3 - $this->population->getSoldiers () / $this->population->getTotalPopulation () * 100) * 5) * $this->population->getTotalPopulation () / 100;
@@ -205,7 +234,7 @@ class GameController {
 				$this->population->setTotalPopulation ( $this->population->getTotalPopulation () - $LostPop );
 				$this->gameResources->setWealth ( $this->gameResources->getWealth () - $LostPop );
 				// TODO ONLY FOR TESTING
-				echo 'invasion pop lost: ' . $LostPop . ' wealth lost: ' . $LostWealth;
+				// echo 'invasion pop lost: ' . $LostPop . ' wealth lost: ' . $LostWealth;
 				$this->ClassesLossesFromInv ( $LostPop );
 			}
 	}
@@ -269,9 +298,9 @@ class GameController {
 			$this->gameResources->setUnhappiness ( true );
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('Unhappiness POPUP');</script>";
-			$this->nextRoundPopupText [] = gettext('Popup Unhappiness');
+			$this->nextRoundPopupText [] = gettext ( 'Your population is unhappy. You should quickly find the reason and act before the unrest takes its toll.' );
 			// TODO ONLY FOR TESTING
-			echo ' the population is angry ';
+			// echo ' the population is angry ';
 		}
 	}
 	public function calcWealth() {
@@ -283,7 +312,7 @@ class GameController {
 		$this->gameResources->setWealth ( $this->gameResources->getWealth () + $WealthProd );
 		
 		// TODO ONLY FOR TESTING
-		echo ' current wealth: ' . $this->gameResources->getWealth ();
+		// echo ' current wealth: ' . $this->gameResources->getWealth ();
 	}
 	public function calcCaravan() {
 		// CARAVAN CALCULATION
@@ -292,9 +321,9 @@ class GameController {
 			
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('CARAVAN POPUP');</script>";
-			$this->nextRoundPopupText [] = gettext('Popup Caravan');
+			$this->nextRoundPopupText [] = gettext ( 'Your first caravan has been sent to a neighbor city. Your wealth increase.' );
 			// TODO ONLY FOR TESTING
-			echo ' caravan sent';
+			// echo ' caravan sent';
 		}
 	}
 	public function calcBuildings() {
@@ -303,25 +332,25 @@ class GameController {
 			$this->buildings->buildTemple ();
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('temple POPUP');</script>";
-			$this->nextRoundPopupText [] = gettext('Popup Temple');
+			$this->nextRoundPopupText [] = gettext ( 'Your workers have built a temple to celebrate the glory of the city protecting god. Your own prestige greatly increases.' );
 			// TODO ONLY FOR TESTING
-			echo ' temple built';
+			// echo ' temple built';
 		}
 		if ($this->gameResources->getWealth () >= 850 && $this->population->getPeasants () >= 1500) {
 			$this->buildings->buildPalace ();
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('palace POPUP');</script>";
-			$this->nextRoundPopupText [] = gettext('Popup Palace');
+			$this->nextRoundPopupText [] = gettext ( 'Your workers have finished the construction of the palace. It will be your home and the center of your government.' );
 			// TODO ONLY FOR TESTING
-			echo ' palace built';
+			// echo ' palace built';
 		}
 		if ($this->gameResources->getWealth () >= 1150 && $this->population->getPeasants () >= 1900) {
 			$this->buildings->buildMonuments ();
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('monument POPUP');</script>";
-			$this->nextRoundPopupText [] = gettext('Popup Monuments');
+			$this->nextRoundPopupText [] = gettext ( 'To honor your souvenir, your workers have begun the construction of a pyramid. It will stay as the proof of your glory for all to admire.' );
 			// TODO ONLY FOR TESTING
-			echo ' monuments built';
+			// echo ' monuments built';
 		}
 	}
 	public function calcFoodPop() {
@@ -332,12 +361,12 @@ class GameController {
 				$scribesInfulence = 0.0277777778;
 			$foodProd = floor ( $this->population->getPeasants () * (($this->gameResources->getUnhappiness ()) ? 0.75 : 1) * (1.111111111 + $scribesInfulence) );
 			// TODO ONLY FOR TESTING
-			echo ' food produced: ' . $foodProd;
+			// echo ' food produced: ' . $foodProd;
 			
 			// FOOD CONSUMPTION
 			$foodCons = $this->population->getTotalPopulation ();
 			// TODO ONLY FOR TESTING
-			echo ' food consumed: ' . $foodCons;
+			// echo ' food consumed: ' . $foodCons;
 			// FOOD REMAINING
 			if ($this->technology->getGranary ())
 				$this->gameResources->setFood ( $this->gameResources->getFood () - $foodCons + $foodProd );
@@ -346,7 +375,7 @@ class GameController {
 				// TODO ONLY FOR TESTING
 				// POPULATION VARIATION
 			$PopVar = floor ( $this->gameResources->getFood () * 2 );
-			echo ' pop variation : ' . $PopVar;
+			// echo ' pop variation : ' . $PopVar;
 			$NewPop = $this->population->getTotalPopulation () + $PopVar;
 			if ($this->gameResources->getFood () < 0) {
 				if ($NewPop <= 0.5 * $this->population->getTotalPopulation ())
@@ -358,9 +387,9 @@ class GameController {
 			
 			if (! $this->technology->getGranary () || $this->gameResources->getFood () < 0)
 				$this->gameResources->setFood ( 0 );
-				// TODO FOR TESTING
-			echo ' food remaining: ' . $this->gameResources->getFood ();
-			echo ' population: ' . $this->population->getTotalPopulation ();
+			// TODO FOR TESTING
+			// echo ' food remaining: ' . $this->gameResources->getFood ();
+			// echo ' population: ' . $this->population->getTotalPopulation ();
 		}
 	}
 	public function calcScore() {

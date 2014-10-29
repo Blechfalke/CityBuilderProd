@@ -163,7 +163,7 @@ $_SESSION['GameController'] = serialize($gameController);
 	</div>
 	<div id='rightBottom'>
 	<input type='button' value='" . gettext('End  of turn') . "' name='EndOfTurn' class='pageButtons finishRound' id='endTheTurn'/>
-	<input type='button' value='" . gettext('Exit game') . "' name='startMenu' class='pageButtons link'/>
+	<input type='button' value='" . gettext('Exit game') . "' name='startMenu' class='pageButtons' id='quitTheGame'/>
 	</div>
 	</div>
 	<div style='clear:both;'>

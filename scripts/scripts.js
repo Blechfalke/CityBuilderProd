@@ -13,7 +13,7 @@ $(document).ready(function() {
 	// This will be the starting page of the Application
 	var pageName = "view/splashScreen.php";
 	$("#wrapper").load(pageName);
-	
+
 	// need to use delegation based event handlers here, because later links do
 	// not exist in the DOM yet
 	$(document).on('click', '.link', function() {
@@ -22,14 +22,16 @@ $(document).ready(function() {
 		// disable other buttons once we clicked on something to avoid bugs
 	});
 	$(document).on('click', '.mainButtons', function() {
-	$(".mainButtons").prop('disabled', true);
+		$(".mainButtons").prop('disabled', true);
 	});
-
 
 	$(document).on('click', '#endTheTurn', function() {
-		project.confirm(word_confirm_end_turn, word_yes, word_cancel);		
+		project.confirm(word_confirm_end_turn, word_yes, word_cancel);
 	});
-		
+	$(document).on('click', '#quitTheGame', function() {
+		project.quit(word_confirm_quit_game, word_yes, word_cancel);
+	});
+
 	$(document).on('click', '.login', function() {
 		pageName = "controller/class.loginController.php";
 		$("#wrapper").load(pageName, {
@@ -45,14 +47,14 @@ $(document).ready(function() {
 		pageName = "controller/class.LogoutController.php";
 		$("#wrapper").load(pageName);
 	});
-	
+
 	$(document).on('click', '.startGame', function() {
 		pageName = "controller/class.StartGameController.php";
 		$("#wrapper").load(pageName, {
-			source: 'startMenu'
+			source : 'startMenu'
 		});
 	});
-	
+
 	$(document).on('click', '.gameMode', function() {
 		pageName = "controller/class.gameModeController.php";
 		$("#wrapper").load(pageName, {
@@ -67,7 +69,7 @@ $(document).ready(function() {
 			zone : $(this).attr("id")
 		});
 		// disable other buttons once we clicked on something to avoid bugs
-  		$(".cityCircle").prop('disabled', true);
+		$(".cityCircle").prop('disabled', true);
 	});
 
 	$(document).on('change', '.editor', function() {
@@ -112,7 +114,7 @@ function updateAvailablePopulation(caller) {
 	readInputs();
 	var available = i_total - i_kings - i_priests - i_craftsmen - i_scribes
 			- i_soldiers - i_peasants - i_slaves;
-	//var id = '#' + idOfModifiedInputField;
+	// var id = '#' + idOfModifiedInputField;
 	if (available >= 0) {
 		$('#AvailablePopulation').val(available);
 	} else {
@@ -215,6 +217,42 @@ function updateFlavourText(caller) {
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/mountains_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_zone3;
+		break;
+	case 'scoreTech':
+	case 'scoreTechNb':
+		$('#flavourImage').attr('src',
+				'css/images/flavourImages/mountains_desc.png');
+		document.getElementById('flavourText').innerHTML = word_flavour_score_tech;
+		break;
+	case 'scoreWealth':
+	case 'scoreWealthNb':
+		$('#flavourImage').attr('src',
+				'css/images/flavourImages/mountains_desc.png');
+		document.getElementById('flavourText').innerHTML = word_flavour_score_wealth;
+		break;
+	case 'scoreBuilding':
+	case 'scoreBuildingNb':
+		$('#flavourImage').attr('src',
+				'css/images/flavourImages/mountains_desc.png');
+		document.getElementById('flavourText').innerHTML = word_flavour_score_building;
+		break;
+	case 'scorePop':
+	case 'scorePopNb':
+		$('#flavourImage').attr('src',
+				'css/images/flavourImages/mountains_desc.png');
+		document.getElementById('flavourText').innerHTML = word_flavour_score_pop;
+		break;
+	case 'scoreUnhappiness':
+	case 'scoreUnhappinessNb':
+		$('#flavourImage').attr('src',
+				'css/images/flavourImages/mountains_desc.png');
+		document.getElementById('flavourText').innerHTML = word_flavour_score_unhappiness;
+		break;
+	case 'scoreTotal':
+	case 'scoreTotalNb':
+		$('#flavourImage').attr('src',
+				'css/images/flavourImages/mountains_desc.png');
+		document.getElementById('flavourText').innerHTML = word_flavour_score_total;
 		break;
 	}
 

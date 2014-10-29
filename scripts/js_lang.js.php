@@ -29,10 +29,19 @@ echo "var word_flavour_pottery = '" . gettext('The invention of pottery comes fr
 echo "var word_flavour_caravans = '" .gettext('The egyptians had a very developped trading activity. ' .
 													'They would exchange their manufactured products against raw materials ' .
 													'from neighbooring cities. Those trades ensured Egypt prosperity.') . "';";
+
+echo "var word_flavour_score_tech = '" .gettext('0.5 points are given for every technology you discovered.') . "';";
+echo "var word_flavour_score_wealth = '" .gettext('0.5 points are given for every 500 wealth you possess.') . "';";
+echo "var word_flavour_score_building = '" .gettext('0.125 points are given for every building you built.') . "';";
+echo "var word_flavour_score_pop = '" .gettext('0.03125 points are given for every 50 citizen.') . "';";
+echo "var word_flavour_score_unhappiness = '" .gettext('0.5 points are given if your citizen are happy.') . "';";
+echo "var word_flavour_score_total = '" .gettext('The total score is calculated by additioning the other results.') . "';";
+
 echo "var word_flavour_zone1 = '" . gettext('This place is very fertile due to the river that flows through it.') . "';";
 echo "var word_flavour_zone2 = '" . gettext('An arid desert lays for miles and miles away.') . "';";
 echo "var word_flavour_zone3 = '" . gettext('A desertic chain of mountains.') . "';";
-echo "var word_confirm_end_turn = '" . gettext('Are you sure?') . "';";
+echo "var word_confirm_end_turn = '" . gettext('Do you want to end the turn?') . "';";
+echo "var word_confirm_quit_game = '" . gettext('Do you want to quit the game?') . "';";
 echo "var word_yes = '" . gettext('Yes') . "';";
 echo "var word_cancel = '" . gettext('Cancel') . "';";
 
