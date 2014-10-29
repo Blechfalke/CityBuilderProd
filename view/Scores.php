@@ -36,8 +36,8 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 			<div id='scoreBuildingNb' class="editor hover"><?php echo $buildings; ?></div>
 		</div>
 		<div class="pairControl">
-			<div id='scorePop' style="background-color: white;" class="label hover"><?php echo gettext('Population')?></div>
-			<div id='scorePopNb' class="editor hover"><?php echo $population; ?></div>
+			<div id='scorePop' class="label hover"><?php echo gettext('Population')?></div>
+			<div id='scorePopNb' class=" editor hover"><?php echo $population; ?></div>
 		</div>
 		<div class="pairControl">
 			<div id='scoreUnhappiness' style="background-color: white;" class="label hover"><?php echo gettext('Happiness')?></div>
@@ -50,7 +50,7 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 		</div>
 		<div style="clear: both"></div>
 	</div>
-	<div id="Diagram" style="height: 204px;">
+	<div id="Diagram" style="background:none;border:0;text-height: 204px;">
 		<?php
 		if ($score >= 5)
 			echo gettext ( 'Your reign is an example to all your peers, who, following it, will accomplish great feats too. Your city will be remembered through the ages.' );
@@ -64,11 +64,10 @@ $score = 1 + $technology + $wealth + $buildings + $population + $happiness;
 </div>
 <div id="rightContent">
 	<div id="rightUp">
-		<div id="textRightup">
 		<img src='css/images/blank.png' id='flavourImage' style='width:180px; height:150px;'/>
 		<p id='flavourText'> </p>
 		</div>
-	</div>
+	
 
 	<div id="rightBottom">
 		<input type='button' value='<?php echo gettext('Exit game');?>'
