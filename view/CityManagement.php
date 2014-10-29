@@ -36,12 +36,12 @@ $_SESSION['GameController'] = serialize($gameController);
         <div id='leftContent'>
             <div style='width: 652px;'>
                 <div style='margin-top: 45px; margin-left: 25px;'>
-                    <div class='pairControl'>
-			<div style='width:25%; float: left;text-align:right;padding-right:1px;'>". gettext('Food'). "</div>
-			<div style='width:25%; float: left; background:white;border:1px black solid;margin:-1px;'>$food</div>
-			<div style='width:20%; float: left;text-align:right;padding-right:1px;'>". gettext('Wealth'). "</div>
-			<div style='width:25%; float: left; background:white;border:1px black solid;margin:-1px;'>$wealth</div>
-		<div style='clear: both'></div>
+                    <div style='width: 350px;margin-left: 20px;'>
+						<div style='float: left;text-align:right;padding-right:2px;'>". gettext('Food'). "</div>
+						<div style='width:20%; float: left; background:white;border:1px black solid;margin:-1px;'>$food</div>
+						<div style='float: left;text-align:right;padding-right:2px;padding-left:10px;'>". gettext('Wealth'). "</div>
+						<div style='width:20%; float: left; background:white;border:1px black solid;margin:-1px;'>$wealth</div>
+						<div style='clear: both'></div>
                     </div>
                 </div>
                 <div style='float: left; margin: 10px 0 0 35px;'>
