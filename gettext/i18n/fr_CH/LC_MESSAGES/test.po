@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-27 13:54+0100\n"
-"PO-Revision-Date: 2014-10-27 13:55+0100\n"
+"POT-Creation-Date: 2014-10-29 12:59+0100\n"
+"PO-Revision-Date: 2014-10-29 13:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -14,6 +14,117 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: C:\\Program Files (x86)\\EasyPHP-"
 "DevServer-14.1VC11\\data\\localweb\\git\\CityBuilderProd\n"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:98
+msgid ""
+"You have chosen to found your city in the middle of fertile lands, irrigated "
+"by the river. The recolts will be aboundants."
+msgstr ""
+"Vous avez choisi de fonder votre cité dans une région fertile, irriguée par "
+"le fleuve. Les récoltes seront abondantes"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:102
+msgid ""
+"You have chosen to found your city in the desert. We have found a few "
+"oasises that should provide a bit of food to survive"
+msgstr ""
+"Vous avez choisi de fonder votre cité dans le désert. Les quelques oasis que "
+"vous avez trouvées vous permettent néanmoins de survivre."
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:106
+msgid ""
+"You have chosen to found your city in the mountains.  A few water sources "
+"will help us gather the bare minimal we need."
+msgstr ""
+"Vous avez choisi de fonder votre cité dans les montagnes. Vous subsistez "
+"difficilement grâce à quelques sources d'eau"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:131
+msgid ""
+"You have discovered the art of the pottery. Your craftsmen now generate more "
+"wealth."
+msgstr ""
+"Vous avez découvert la poterie. Vos marchands et artisans vous font gagner "
+"plus de richesses."
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:135
+msgid ""
+"You have discovered the granary. Your citizen are now able to store food."
+msgstr ""
+"Vous avez découvert le grenier. Ce bâtiment vous permet de stocker vos "
+"récoltes non distribuées"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:139
+msgid ""
+"You have discovered writing. This allows you to assign some of your citizens "
+"to become scribes to optimize the production."
+msgstr ""
+"Vous avez découvert l'écriture. Vous pouvez maintenant former des scribes "
+"qui optimiseront vos récoltes"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:152
+msgid "Turn"
+msgstr "Tour"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:229
+msgid ""
+"An enemy army has invaded your city and routed your too few soldiers. They "
+"loot a part of your wealth and take a part of your population as slaves."
+msgstr ""
+"Une armée ennemie vous envahi et réussit à vaincre votre modeste contingent "
+"de guerriers. Une partie de votre peuple est réduit en esclavage"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:301
+msgid ""
+"Your population is unhappy. You should quickly find the reason and act "
+"before the unrest takes its toll."
+msgstr ""
+"Votre peuple est mécontent. Modifier rapidement vos répartitions des tâches "
+"dans la pyramide sociale"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:324
+msgid ""
+"Your first caravan has been sent to a neighbor city. Your wealth increase."
+msgstr ""
+"Votre première caravane à été envoyée vers la cité voisine pour faire du "
+"commerce. Vos richesses augmentent"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:335
+msgid ""
+"Your workers have built a temple to celebrate the glory of the city "
+"protecting god. Your own prestige greatly increases."
+msgstr ""
+"Vos ouvriers ont bâti un temple à la gloire du dieu protecteur de votre "
+"cité. Votre prestige augmente"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:343
+msgid ""
+"Your workers have finished the construction of the palace. It will be your "
+"home and the center of your government."
+msgstr ""
+"Vos ouvriers ont terminé de bâtir votre palais. Ce sera votre demeure et le "
+"siège de votre gouvernement"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:351
+msgid ""
+"To honor your souvenir, your workers have begun the construction of a "
+"pyramid. It will stay as the proof of your glory for all to admire."
+msgstr ""
+"Afin d'honorer votre mémoire, vos ouvriers ont commencé la construction "
+"d'une pyramide. Le monument sera à la hauteur de votre gloire."
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:4
@@ -101,9 +212,10 @@ msgid ""
 "for accounting, writing eventually became a mean for communication and "
 "thinking."
 msgstr ""
-"L&#39;invention de l&#39;écriture date du Ive millénaire av. J.-C. D&#39;"
-"abord utilisée à des fins de comptabilité, elle finit par devenir un moyen "
-"de communication et de pensée."
+"La découverte de l'écriture permit l'apparition des scribes. L&#39;invention "
+"de l&#39;écriture date du Ive millénaire av. J.-C. D&#39;abord utilisée à "
+"des fins de comptabilité, elle finit par devenir un moyen de communication "
+"et de pensée."
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:26
@@ -130,34 +242,113 @@ msgstr ""
 "objets de bronze, enrichissaient l&#39;Égypte."
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:32
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:33
+msgid "0.5 points are given for every technology you discovered."
+msgstr "0.5 point accordé par technologie découverte"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:34
+msgid "0.5 points are given for every 500 wealth you possess."
+msgstr "0.5 point accordé par tranche de 500 de richesses"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:35
+msgid "0.125 points are given for every building you built."
+msgstr "0.125 point accordé par bâtiment"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:36
+msgid "0.03125 points are given for every 50 citizen."
+msgstr "0.03125 point accordé pour chaque tranche de 50 de population"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:37
+msgid "0.5 points are given if your citizen are happy."
+msgstr "0,5 point accordé si aucun mécontentement."
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:38
+msgid "The total score is calculated by additioning the other results."
+msgstr ""
+"Le score total se calcule sur l'addition des précédents résultats et sur un "
+"maximum de 6 points."
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:40
 msgid "This place is very fertile due to the river that flows through it."
 msgstr "Cette région est fertile grâce au fleuve qui y coule."
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:33
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:41
 msgid "An arid desert lays for miles and miles away."
 msgstr "Un désert aride s&#39;étend à perte de vue."
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:34
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:42
 msgid "A desertic chain of mountains."
 msgstr "Une chaîne de montagnes désertique."
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:35
-msgid "Are you sure?"
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:43
+msgid "Do you want to end the turn?"
+msgstr "Voulez-vous vraiment terminer votre tour?"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:44
+msgid "Do you want to quit the game?"
 msgstr "Voulez-vous vraiment quitter le jeu?"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:36
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:45
 msgid "Yes"
 msgstr "Oui"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:37
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:46
 msgid "Cancel"
 msgstr "Non"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:48
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:103
+msgid "Kings"
+msgstr "Rois"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:49
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:109
+msgid "Priests"
+msgstr "Prêtres"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:50
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:115
+msgid "Craftsmen"
+msgstr "Artisans"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:51
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:121
+msgid "Scribes"
+msgstr "Scribes"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:52
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:129
+msgid "Soldiers"
+msgstr "Soldats"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:53
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:135
+msgid "Peasants"
+msgstr "Paysans"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:54
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:141
+msgid "Slaves"
+msgstr "Esclaves"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:33
@@ -200,41 +391,6 @@ msgid "Available population"
 msgstr "Population disponible"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:103
-msgid "Kings"
-msgstr "Rois"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:109
-msgid "Priests"
-msgstr "Prêtres"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:115
-msgid "Craftsmen"
-msgstr "Artisans"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:121
-msgid "Scribes"
-msgstr "Scribes"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:129
-msgid "Soldiers"
-msgstr "Soldats"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:135
-msgid "Peasants"
-msgstr "Paysans"
-
-#: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:141
-msgid "Slaves"
-msgstr "Esclaves"
-
-#: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:149
 msgid "Caravans"
 msgstr "Caravanes"
@@ -247,38 +403,68 @@ msgstr "Fin de tour"
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/CityManagement.php:166
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/PlacementOfCity.php:39
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:74
 msgid "Exit game"
 msgstr "Sortir du jeu"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:28
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:27
 msgid "Technology"
 msgstr "Technologie"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:32
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:31
 msgid "Wealth"
 msgstr "Argent"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:36
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:35
 msgid "Buildings"
 msgstr "Bâtiment"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:40
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:39
 msgid "Population"
 msgstr "Population"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:44
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:43
 msgid "Happiness"
 msgstr "Bonheur"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:49
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:48
 msgid "Total score"
 msgstr "Score total"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:56
+msgid ""
+"Your reign is an example to all your peers, who, following it, will "
+"accomplish great feats too. Your city will be remembered through the ages."
+msgstr ""
+"Votre règne est un exemple pour vos successeurs qui, comme vous, "
+"accompliront de grandes choses. Votre civilisation restera gravée dans les "
+"mémoires"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:58
+msgid ""
+"At the end of your reign, you leave behind you a florishing city. But its "
+"small size and lack of prestige will condemn it to be forgotten."
+msgstr ""
+"A la fin de votre règne, vous laissez une cité florissante. Mais sa petite "
+"taille et son manque de prestige la condamne à sombrer dans l'oubli"
+
+#: C:\Program Files
+#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:60
+msgid ""
+"Your reign is over. Your citizen flee the city. You will have to wait for "
+"archeology to appear before your city is found again."
+msgstr ""
+"Votre règne est enfin fini, les habitants désertent la cité. Il faudra "
+"attendre les débuts de l'archéologie pour que l'on attente parler de votre "
+"civilisation"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/gameModes.php:6
@@ -301,11 +487,6 @@ msgid "Infinite turns mode"
 msgstr "Tours infinis"
 
 #: C:\Program Files
-#: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/login.php:16
-msgid "Login"
-msgstr "Connecté"
-
-#: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:20
 msgid "Launch the Game"
 msgstr "Lancer le jeu"
@@ -324,6 +505,12 @@ msgstr "Mode de jeu"
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/startMenu.php:31
 msgid "Exit Game"
 msgstr "Quitter le jeu"
+
+#~ msgid "Are you sure?"
+#~ msgstr "Voulez-vous vraiment quitter le jeu?"
+
+#~ msgid "Login"
+#~ msgstr "Connecté"
 
 #~ msgid "Launch"
 #~ msgstr "Spiel starten"
