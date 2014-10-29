@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-29 12:59+0100\n"
-"PO-Revision-Date: 2014-10-29 13:26+0100\n"
+"POT-Creation-Date: 2014-10-29 13:26+0100\n"
+"PO-Revision-Date: 2014-10-29 13:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -40,7 +40,7 @@ msgid ""
 "will help us gather the bare minimal we need."
 msgstr ""
 "Vous avez choisi de fonder votre cité dans les montagnes. Vous subsistez "
-"difficilement grâce à quelques sources d'eau"
+"difficilement grâce à quelques sources d&#39;eau"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:131
@@ -65,8 +65,8 @@ msgid ""
 "You have discovered writing. This allows you to assign some of your citizens "
 "to become scribes to optimize the production."
 msgstr ""
-"Vous avez découvert l'écriture. Vous pouvez maintenant former des scribes "
-"qui optimiseront vos récoltes"
+"Vous avez découvert l&#39;écriture. Vous pouvez maintenant former des "
+"scribes qui optimiseront vos récoltes"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:152
@@ -123,7 +123,7 @@ msgid ""
 "To honor your souvenir, your workers have begun the construction of a "
 "pyramid. It will stay as the proof of your glory for all to admire."
 msgstr ""
-"Afin d'honorer votre mémoire, vos ouvriers ont commencé la construction "
+"Afin d&#39;honorer votre mémoire, vos ouvriers ont commencé la construction "
 "d'une pyramide. Le monument sera à la hauteur de votre gloire."
 
 #: C:\Program Files
@@ -270,8 +270,8 @@ msgstr "0,5 point accordé si aucun mécontentement."
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:38
 msgid "The total score is calculated by additioning the other results."
 msgstr ""
-"Le score total se calcule sur l'addition des précédents résultats et sur un "
-"maximum de 6 points."
+"Le score total se calcule sur l&#39;addition des précédents résultats et sur "
+"un maximum de 6 points."
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:40
