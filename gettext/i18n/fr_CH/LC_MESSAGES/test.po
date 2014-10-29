@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
-"POT-Creation-Date: 2014-10-29 13:26+0100\n"
-"PO-Revision-Date: 2014-10-29 13:48+0100\n"
+"POT-Creation-Date: 2014-10-29 14:04+0100\n"
+"PO-Revision-Date: 2014-10-29 14:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -124,7 +124,7 @@ msgid ""
 "pyramid. It will stay as the proof of your glory for all to admire."
 msgstr ""
 "Afin d&#39;honorer votre mémoire, vos ouvriers ont commencé la construction "
-"d'une pyramide. Le monument sera à la hauteur de votre gloire."
+"d&#39;une pyramide. Le monument sera à la hauteur de votre gloire."
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:4
@@ -212,10 +212,10 @@ msgid ""
 "for accounting, writing eventually became a mean for communication and "
 "thinking."
 msgstr ""
-"La découverte de l'écriture permit l'apparition des scribes. L&#39;invention "
-"de l&#39;écriture date du Ive millénaire av. J.-C. D&#39;abord utilisée à "
-"des fins de comptabilité, elle finit par devenir un moyen de communication "
-"et de pensée."
+"La découverte de l&#39;écriture permit l&#39;apparition des scribes. L&#39;"
+"invention de l&#39;écriture date du Ive millénaire av. J.-C. D&#39;abord "
+"utilisée à des fins de comptabilité, elle finit par devenir un moyen de "
+"communication et de pensée."
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:26
@@ -454,7 +454,7 @@ msgid ""
 "small size and lack of prestige will condemn it to be forgotten."
 msgstr ""
 "A la fin de votre règne, vous laissez une cité florissante. Mais sa petite "
-"taille et son manque de prestige la condamne à sombrer dans l'oubli"
+"taille et son manque de prestige la condamne à sombrer dans l&#39;oubli"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/Scores.php:60
@@ -463,8 +463,8 @@ msgid ""
 "archeology to appear before your city is found again."
 msgstr ""
 "Votre règne est enfin fini, les habitants désertent la cité. Il faudra "
-"attendre les débuts de l'archéologie pour que l'on attente parler de votre "
-"civilisation"
+"attendre les débuts de l&#39;archéologie pour que l&#39;on attente parler de "
+"votre civilisation"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/view/gameModes.php:6
