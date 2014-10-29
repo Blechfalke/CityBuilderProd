@@ -22,6 +22,7 @@ $peasants = $population->getPeasants();
 $slaves = $population->getSlaves();
 $caravans = $gameController->getGameResources()->getCaravans();
 $wealth = $gameController->getGameResources()->getWealth();
+$food = $gameController->getGameResources()->getFood();
 $availablePopulation = $totalPopulation - $kings -$priests - $craftsmen - $scribes - $soldiers - $peasants - $slaves;
 
 
@@ -36,10 +37,10 @@ $_SESSION['GameController'] = serialize($gameController);
             <div style='width: 652px;'>
                 <div style='margin-top: 45px; margin-left: 25px;'>
                     <div class='pairControl'>
-                        <div style='background-color: white;' class='labelScore'>Score</div>
-                        <div>
-                            <input type='text' class='editorScore' name='Score' id='Score' disabled value='$wealth'/>
-                        </div>
+			<div style='width:25%; float: left;text-align:right;padding-right:1px;'>". gettext('Food'). "</div>
+			<div style='width:25%; float: left; background:white;border:1px black solid;margin:-1px;'>$food</div>
+			<div style='width:20%; float: left;text-align:right;padding-right:1px;'>". gettext('Wealth'). "</div>
+			<div style='width:25%; float: left; background:white;border:1px black solid;margin:-1px;'>$wealth</div>
 		<div style='clear: both'></div>
                     </div>
                 </div>
