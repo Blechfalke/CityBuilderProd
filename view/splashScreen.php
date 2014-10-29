@@ -62,7 +62,10 @@
 	    	    					'css/images/dialogs/ramparts.png',
 	    	    					'css/images/dialogs/temple.png',
 	    	    					'css/images/dialogs/unhappiness.png',
-	    	    					'css/images/dialogs/writing.png');
+	    	    					'css/images/dialogs/writing.png',
+	    	    					'css/images/end/end_bad.png',
+	    	    					'css/images/end/end_good.png',
+	    	    					'css/images/end/end_med.png');
 
     preloadImages();
     

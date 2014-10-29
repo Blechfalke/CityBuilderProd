@@ -93,7 +93,7 @@
         <div style="clear:both;"></div>
         <div id='backButton'>
 <!--     <input type='button' value='Back' name='Rules' class='mainButtons link' />  -->
-    <input type='button' value='<?php echo gettext('Exit game');?>' name='startMenu'  class='mainButtons link'  />
+    <input type='button' value='<?php echo gettext('Return');?>' name='startMenu'  class='mainButtons link'  />
     </div>
     </div>
     
