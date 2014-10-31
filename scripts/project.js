@@ -78,7 +78,7 @@
 		var createdDialog = dialog.dialog(options);
 		return createdDialog;
 	};
-	project.confirm = function(text, buttonYes, buttonNo, target) {
+	project.confirm = function(text, buttonYes, buttonNo, target, targetArray) {
 		var dialogId = 'dialog-' + project.guid();
 		var dialog = $('#' + dialogId);
 		if ($('#' + dialogId).length == 0) {
@@ -106,16 +106,7 @@
 				click : function() {
 					readInputs();
 
-					$("#wrapper").load('view/' + target + '.php', {
-						kings : i_kings,
-						priests : i_priests,
-						craftsmen : i_craftsmen,
-						scribes : i_scribes,
-						soldiers : i_soldiers,
-						peasants : i_peasants,
-						slaves : i_slaves,
-						technology : i_technology
-					});
+					$("#wrapper").load(target, targetArray);
 					i_technology = null;
 					$(this).dialog("close");
 					$(".pageButtons").prop('disabled', true);

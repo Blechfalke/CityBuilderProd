@@ -1,5 +1,13 @@
 ﻿<?php 
 require_once '../config.php';
+
+
+if (isset($_GET['msg'])){
+	$msg = $_GET['msg'];
+	if ($msg == "blocked") {
+		echo "<script>project.alert('Game blocked');</script>";
+	}
+}
 ?>
 
 <div id="header"><?php echo gettext('Placement of the city');?></div>
