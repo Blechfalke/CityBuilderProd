@@ -1,5 +1,5 @@
 <?php
-require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
+require_once 'controllerconfig.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/controller/class.GameController.php';
 class HistoryController {
