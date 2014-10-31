@@ -3,57 +3,57 @@ require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/controller/class.GameController.php';
 class HistoryController {
-	private $gameController;
-	private $singleGameHistoric;
-	private $textHistory;
-	private $scTechnology;
-	private $scWealth;
-	private $scBuildings;
-	private $scPopulation;
-	private $scHappiness;
-	private $scTotal;
+	private $_gameController;
+	private $_singleGameHistoric;
+	private $_textHistory;
+	private $_scTechnology;
+	private $_scWealth;
+	private $_scBuildings;
+	private $_scPopulation;
+	private $_scHappiness;
+	private $_scTotal;
 	public function getTextHistory() {
-		return $this->textHistory;
+		return $this->_textHistory;
 	}
 	public function getScTechnology() {
-		return $this->scTechnology;
+		return $this->_scTechnology;
 	}
 	public function getScWealth() {
-		return $this->scWealth;
+		return $this->_scWealth;
 	}
 	public function getScBuildings() {
-		return $this->scBuildings;
+		return $this->_scBuildings;
 	}
 	public function getScPopulation() {
-		return $this->scPopulation;
+		return $this->_scPopulation;
 	}
 	public function getScHappiness() {
-		return $this->scHappiness;
+		return $this->_scHappiness;
 	}
 	public function getScTotal() {
-		return $this->scTotal;
+		return $this->_scTotal;
 	}
-	private function build(SingleGameHistoric $singleGameHistoric) {
+	private function _build(SingleGameHistoric $singleGameHistoric) {
 		$this->gameController = new GameController ();
 		$this->singleGameHistoric = $singleGameHistoric;
-		$this->textHistory = "";
+		$this->_textHistory = "";
 		
 		foreach ( $this->singleGameHistoric->getTurns () as $turn ) {
 			
 			$this->gameController->calculateRoundForScorePage ( $turn->getPopulation (), $turn->getTechnology (), $this->singleGameHistoric->getMapZone () );
-			// $this->textHistory = $this->textHistory . "Turn " . $turnCount;
+			// $this->_textHistory = $this->_textHistory . "Turn " . $turnCount;
 			// foreach ( $this->gameController->getNextRoundPopupText () as $textLine )
-			// $this->textHistory = $this->textHistory . "<p>" . $textLine . "</p>";
-			// $this->textHistory = $this->textHistory . "<hr />";
+			// $this->_textHistory = $this->_textHistory . "<p>" . $textLine . "</p>";
+			// $this->_textHistory = $this->_textHistory . "<hr />";
 			
 		}
 	 	$scoresArray = $this->gameController->getGameResources ()->getScore();
-		$this->scTechnology = $scoresArray["tech"];
-		$this->scWealth = $scoresArray["wealth"];
-		$this->scBuildings = $scoresArray["building"];
-		$this->scPopulation = $scoresArray["population"];
-		$this->scHappiness = $scoresArray["happiness"];
-		$this->scTotal = 1 + $this->scTechnology + $this->scWealth + $this->scBuildings + $this->scPopulation + $this->scHappiness;
+		$this->_scTechnology = $scoresArray["tech"];
+		$this->_scWealth = $scoresArray["wealth"];
+		$this->_scBuildings = $scoresArray["building"];
+		$this->_scPopulation = $scoresArray["population"];
+		$this->_scHappiness = $scoresArray["happiness"];
+		$this->_scTotal = 1 + $this->_scTechnology + $this->_scWealth + $this->_scBuildings + $this->_scPopulation + $this->_scHappiness;
 	}
 	public function __construct($singleGameHistoricOrGameDbId) {
 		//if $singleGameHistoricOrGameDbId is int it's an ID>> we get a singleGameHistoric from the DB
@@ -62,7 +62,7 @@ class HistoryController {
 			$conn = new MySQLConnector ();
 			$singleGameHistoricOrGameDbId = $conn->getGameHistoryFromID ( $singleGameHistoricOrGameDbId );
 		}
-		$this->build ( $singleGameHistoricOrGameDbId );
+		$this->_build ( $singleGameHistoricOrGameDbId );
 	}
 }
 
