@@ -203,16 +203,19 @@ function updateFlavourText(caller) {
 				'css/images/flavourImages/caravan_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_caravans;
 		break;
+	case 'zoneOne':
 	case 'zone_1':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/fertile_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_zone1;
 		break;
+	case 'zoneTwo':
 	case 'zone_2':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/desert_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_zone2;
 		break;
+	case 'zoneThree':
 	case 'zone_3':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/mountains_desc.png');
