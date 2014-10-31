@@ -30,27 +30,27 @@ $score = $historyController->getScTotal();
 	<div id="Controles">
 		<table style='margin-left: 20px;'>
 	<tr>
-	<td id='scoreTech' class="lScore hover"><span class="filler"><span class="floating_text"><?php echo gettext('Technology')?></span>&nbsp;</span></td>
+	<td id='scoreTech' class="lScore hover"><?php echo gettext('Technology')?> .....................................</td>
 	<td id='scoreTechNb' class="eScore hover"><?php echo $technology; ?></td>
 	</tr>
 	<tr>
-	<td id='scoreWealth' class="lScore hover"><span class="filler"><span class="floating_text"><?php echo gettext('Wealth')?></span></span></td>
+	<td id='scoreWealth' class="lScore hover"><?php echo gettext('Wealth')?> .....................................</td>
 	<td id='scoreWealthNb' class="eScore hover"><?php echo $wealth; ?></td>
 	</tr>
 	<tr>
-	<td id='scoreBuilding' class="lScore hover"><span class="filler"><span class="floating_text"><?php echo gettext('Buildings')?></span></span></td>
+	<td id='scoreBuilding' class="lScore hover"><?php echo gettext('Buildings')?> .....................................</td>
 	<td id='scoreBuildingNb' class="eScore hover"><?php echo $buildings; ?></td>
 	</tr>
 	<tr>
-	<td id='scorePop' class="lScore hover"><span class="filler"><span class="floating_text"><?php echo gettext('Population')?></span></span></td>
+	<td id='scorePop' class="lScore hover"><?php echo gettext('Population')?> .....................................</td>
 	<td id='scorePopNb' class="eScore hover"><?php echo $population; ?></td>
 	</tr>
 	<tr>
-	<td id='scoreUnhappiness' class="lScore hover"><span class="filler"><span class="floating_text"><?php echo gettext('Happiness')?></span></span></td>
+	<td id='scoreUnhappiness' class="lScore hover"><?php echo gettext('Happiness')?> .....................................</td>
 	<td id='scoreUnhappinessNb' class="eScore hover"><?php echo $happiness; ?></td>
 	</tr>
 	<tr>
-	<td id='scoreTotal' class="lScore hover"><span class="filler"><span class="floating_text"><?php echo gettext('Total score')?></span></span></td>
+	<td id='scoreTotal' class="lScore hover"><?php echo gettext('Total score')?> .....................................</td>
 	<td id='scoreTotalNb' class="eScore hover"><?php echo $score; ?></td>
 	</tr>
 	</table>

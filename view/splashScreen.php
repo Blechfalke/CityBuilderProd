@@ -93,8 +93,6 @@
 	}
 
 	function imagesLoaded() {
-// 		var pageName = "view/login.php";
-// 		$("#wrapper").load(pageName);
 		$.ajax({
 		    type: 'GET',
 		    url: 'view/login.php',

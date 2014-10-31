@@ -136,12 +136,16 @@ class GameController {
 			$this->calcBuildings ();
 			$this->calcFoodPop ();
 			$this->calcScore ();
+<<<<<<< HEAD
 			// TURN POPUP
 			$text = gettext ( "Turn" ) . " " . $this->_round . "<hr />";
 			foreach ( $this->_nextRoundPopupText as $textLine )
 				$text = $text . "<p>" . $textLine . "</p>";
 			echo "<script>project.alert('" . $text . "');</script>";
 			$this->_nextRoundPopupText = array ();
+=======
+			
+>>>>>>> branch 'master' of https://github.com/Blechfalke/CityBuilderProd
 			
 			$this->_technology->updateTechnology ( isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "" );
 			if ($this->_population->getTotalPopulation () <= 0) {
@@ -159,7 +163,14 @@ class GameController {
 				// $conn->insertHistory ( clone $this->_singleGameHistoric );
 				
 				header ( 'Location: ../view/Scores.php' );
+				exit();
 			}
+			// TURN POPUP
+			$text = gettext ( "Turn" ) . " " . $this->round . "<hr />";
+			foreach ( $this->nextRoundPopupText as $textLine )
+				$text = $text . "<p>" . $textLine . "</p>";
+			echo "<script>project.alert('" . $text . "');</script>";
+			$this->nextRoundPopupText = array ();
 		}
 		$this->nextRound ();
 	}
