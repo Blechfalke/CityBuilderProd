@@ -23,7 +23,7 @@ if ($source == 'startMenu') {
 		case 2 :
 		case 3 :
 		case 4 :
-			header('Location: ../view/PlacementOfCity.php');
+			header('Location: ../view/placementOfCity.php');
 			exit;
 			break;
 	}
@@ -31,13 +31,13 @@ if ($source == 'startMenu') {
 if ($source == 'placement'){
 	switch ($result) {
 		case 2 :
-			header('Location: ../view/PlacementOfCity.php?msg=blocked');
+			header('Location: ../view/placementOfCity.php?msg=blocked');
 			break;
 		case 3 :
-			header('Location: ../view/CityManagement.php?gameMode=3&zone=' .$_POST['zone']);			
+			header('Location: ../view/cityManagement.php?gameMode=3&zone=' .$_POST['zone']);			
 			break;
 		case 4 :
-			header('Location: ../view/CityManagement.php?gameMode=4&zone='.$_POST['zone']);
+			header('Location: ../view/cityManagement.php?gameMode=4&zone='.$_POST['zone']);
 			break;
 	}
 }
