@@ -92,7 +92,7 @@ class GameController {
 			if ($this->_population->getTotalPopulation () <= 0) 
 				$this->_round = 1000;
 			if ($this->_round >= $this->_maxTurn) {
-				header ( 'Location: ../view/Scores.php' );
+				header ( 'Location: ../view/scores.php' );
 				exit();
 			}
 			// TURN POPUP
