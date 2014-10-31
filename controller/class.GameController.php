@@ -136,12 +136,7 @@ class GameController {
 			$this->calcBuildings ();
 			$this->calcFoodPop ();
 			$this->calcScore ();
-			// TURN POPUP
-			$text = gettext ( "Turn" ) . " " . $this->round . "<hr />";
-			foreach ( $this->nextRoundPopupText as $textLine )
-				$text = $text . "<p>" . $textLine . "</p>";
-			echo "<script>project.alert('" . $text . "');</script>";
-			$this->nextRoundPopupText = array ();
+			
 			
 			$this->technology->updateTechnology ( isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "" );
 			if ($this->population->getTotalPopulation () <= 0) {
@@ -159,7 +154,14 @@ class GameController {
 				// $conn->insertHistory ( clone $this->singleGameHistoric );
 				
 				header ( 'Location: ../view/Scores.php' );
+				exit();
 			}
+			// TURN POPUP
+			$text = gettext ( "Turn" ) . " " . $this->round . "<hr />";
+			foreach ( $this->nextRoundPopupText as $textLine )
+				$text = $text . "<p>" . $textLine . "</p>";
+			echo "<script>project.alert('" . $text . "');</script>";
+			$this->nextRoundPopupText = array ();
 		}
 		$this->nextRound ();
 	}
