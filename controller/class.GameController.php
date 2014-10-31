@@ -137,7 +137,6 @@ class GameController {
 			$this->calcBuildings ();
 			$this->calcFoodPop ();
 			$this->calcScore ();
-			// TODO vvv probably wrong Check it vvv
 			$this->_technology = $tech;
 			if ($this->_population->getTotalPopulation () <= 0) {
 				// LOSING EVENT
@@ -205,8 +204,6 @@ class GameController {
 		// INVASION
 		if ($this->_population->getTotalPopulation () != 0)
 			if (($this->_population->getSoldiers () / $this->_population->getTotalPopulation () * 100.0) <= (2.5)) {
-				// TODO POPUP TEXT
-				// echo "<script>project.alert('Invasion POPUP');</script>";
 				
 				$this->_nextRoundPopupText [] = gettext ( 'An enemy army has invaded your city and routed your too few soldiers. They loot a part of your wealth and take a part of your population as slaves.' );
 				
@@ -215,8 +212,6 @@ class GameController {
 				
 				$this->_population->setTotalPopulation ( $this->_population->getTotalPopulation () - $LostPop );
 				$this->_gameResources->setWealth ( $this->_gameResources->getWealth () - $LostPop );
-				// TODO ONLY FOR TESTING
-				// echo 'invasion pop lost: ' . $LostPop . ' wealth lost: ' . $LostWealth;
 				$this->ClassesLossesFromInv ( $LostPop );
 			}
 	}
@@ -281,8 +276,7 @@ class GameController {
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('Unhappiness POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'Your population is unhappy. You should quickly find the reason and act before the unrest takes its toll.' );
-			// TODO ONLY FOR TESTING
-			// echo ' the population is angry ';
+
 		}
 	}
 	public function calcWealth() {
@@ -293,47 +287,29 @@ class GameController {
 		$WealthProd = $this->_population->getCraftsmen () * (10 + $potmod);
 		$currWealth = $this->_gameResources->getWealth () + $WealthProd;
 		$this->_gameResources->setWealth (($currWealth<0)?0:$currWealth);
-		
-		// TODO ONLY FOR TESTING
-		// echo ' current wealth: ' . $this->_gameResources->getWealth ();
 	}
 	public function calcCaravan() {
 		// CARAVAN CALCULATION
 		if ($this->_gameResources->getWealth () >= 550) {
 			$this->_gameResources->incCaravans ();
-			
-			// TODO POPUP TEXT
-			// echo "<script>project.alert('CARAVAN POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'Your first caravan has been sent to a neighbor city. Your wealth increase.' );
-			// TODO ONLY FOR TESTING
-			// echo ' caravan sent';
+
 		}
 	}
 	public function calcBuildings() {
 		// BUILDING
 		if ($this->_population->getPriests () >= 10 && $this->_gameResources->getWealth () >= 550 && $this->_population->getPeasants () >= 1000) {
 			$this->_buildings->buildTemple ();
-			// TODO POPUP TEXT
-			// echo "<script>project.alert('temple POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'Your workers have built a temple to celebrate the glory of the city protecting god. Your own prestige greatly increases.' );
-			// TODO ONLY FOR TESTING
-			// echo ' temple built';
+
 		}
 		if ($this->_gameResources->getWealth () >= 850 && $this->_population->getPeasants () >= 1500) {
 			$this->_buildings->buildPalace ();
-			// TODO POPUP TEXT
-			// echo "<script>project.alert('palace POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'Your workers have finished the construction of the palace. It will be your home and the center of your government.' );
-			// TODO ONLY FOR TESTING
-			// echo ' palace built';
-		}
+			}
 		if ($this->_gameResources->getWealth () >= 1150 && $this->_population->getPeasants () >= 1900) {
 			$this->_buildings->buildMonuments ();
-			// TODO POPUP TEXT
-			// echo "<script>project.alert('monument POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'To honor your souvenir, your workers have begun the construction of a pyramid. It will stay as the proof of your glory for all to admire.' );
-			// TODO ONLY FOR TESTING
-			// echo ' monuments built';
 		}
 	}
 	public function calcFoodPop() {
@@ -343,13 +319,8 @@ class GameController {
 			if ($scribesInfulence > 0.0277777778)
 				$scribesInfulence = 0.0277777778;
 			$foodProd = floor ( $this->_population->getPeasants () * (($this->_gameResources->getUnhappiness ()) ? 0.75 : 1) * (1.111111111 + $scribesInfulence) );
-			// TODO ONLY FOR TESTING
-			// echo ' food produced: ' . $foodProd;
-			
 			// FOOD CONSUMPTION
 			$foodCons = $this->_population->getTotalPopulation ();
-			// TODO ONLY FOR TESTING
-			// echo ' food consumed: ' . $foodCons;
 			// FOOD REMAINING
 			if ($this->_technology->getGranary ())
 				$this->_gameResources->setFood ( $this->_gameResources->getFood () - $foodCons + $foodProd );
@@ -370,9 +341,6 @@ class GameController {
 			
 			if (! $this->_technology->getGranary () || $this->_gameResources->getFood () < 0)
 				$this->_gameResources->setFood ( 0 );
-			// TODO FOR TESTING
-			// echo ' food remaining: ' . $this->_gameResources->getFood ();
-			// echo ' population: ' . $this->_population->getTotalPopulation ();
 		}
 	}
 	public function calcScore() {
@@ -398,10 +366,10 @@ class GameController {
 		$score ['building'] = ($this->_buildings->getTemple () + $this->_buildings->getPalace () + $this->_buildings->getMonuments ()) * 0.125;
 		$score ['building'] = ($score ['building'] > 0.5) ? 0.5 : $score ['building'];
 		// POP
-		$score ['population'] = $this->_population->getTotalPopulation () / 50 * 0.03125;
+		$score ['population'] = round(($this->_population->getTotalPopulation () / 50 * 0.03125),5);
 		$score ['population'] = ($score ['population'] > 1.5) ? 1.5 : $score ['population'];
 		// UNHAPPINESS
-		$score ['population'] = ($this->_gameResources->getUnHappiness ()) ? 0 : 0.5;
+		$score ['happiness'] = ($this->_gameResources->getUnHappiness ()) ? 0 : 0.5;
 		$this->_gameResources->setScore ( $score );
 	}
 }
