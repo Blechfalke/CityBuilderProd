@@ -78,7 +78,7 @@
 		var createdDialog = dialog.dialog(options);
 		return createdDialog;
 	};
-	project.confirm = function(text, buttonYes, buttonNo) {
+	project.confirm = function(text, buttonYes, buttonNo, target, targetArray) {
 		var dialogId = 'dialog-' + project.guid();
 		var dialog = $('#' + dialogId);
 		if ($('#' + dialogId).length == 0) {
@@ -106,16 +106,7 @@
 				click : function() {
 					readInputs();
 
-					$("#wrapper").load('view/CityManagement.php', {
-						kings : i_kings,
-						priests : i_priests,
-						craftsmen : i_craftsmen,
-						scribes : i_scribes,
-						soldiers : i_soldiers,
-						peasants : i_peasants,
-						slaves : i_slaves,
-						technology : i_technology
-					});
+					$("#wrapper").load(target, targetArray);
 					i_technology = null;
 					$(this).dialog("close");
 					$(".pageButtons").prop('disabled', true);
@@ -127,55 +118,6 @@
 				}
 			} ]
 		};
-		var inside = "<div  style='width:450px;margin:0 15px;' >"
-				+ "<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >"
-				+ text + "</div> </div>"
-		dialog.html(inside);
-		var createdDialog = dialog.dialog(options);
-		return createdDialog;
-	};
-
-	project.quit = function(text, buttonYes, buttonNo) {
-		var dialogId = 'dialog-' + project.guid();
-		var dialog = $('#' + dialogId);
-		if ($('#' + dialogId).length == 0) {
-			dialog = $(
-					'<div id="' + dialogId + '" style="display:none;"></div>')
-					.appendTo('body');
-		}
-		var options = {
-			close : function(event, ui) {
-				dialog.remove();
-			},
-			modal : true,
-			position : {
-				my : "center",
-				at : "center",
-				collision: "flipfit",
-				of : "#wrapper"
-			},
-			width : 'auto',
-			height : 'auto',
-			draggable : false,
-			resizable : false,
-			buttons : [ {
-				text : buttonYes,
-				click : function() {
-					readInputs();
-
-					$("#wrapper").load('view/Scores.php');
-					i_technology = null;
-					$(this).dialog("close");
-					$(".pageButtons").prop('disabled', true);
-				}
-			}, {
-				text : buttonNo,
-				click : function() {
-					$(this).dialog("close");
-				}
-			} ]
-		};
-
 		var inside = "<div  style='width:450px;margin:0 15px;' >"
 				+ "<div id='alert' style='width:430px; background-color:white; border: 1px solid black;text-align:center;padding:10px;' >"
 				+ text + "</div> </div>"

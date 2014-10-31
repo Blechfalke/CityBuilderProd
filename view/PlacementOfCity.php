@@ -1,20 +1,28 @@
 ﻿<?php 
 require_once '../config.php';
+
+
+if (isset($_GET['msg'])){
+	$msg = $_GET['msg'];
+	if ($msg == "blocked") {
+		echo "<script>project.alert('Game blocked');</script>";
+	}
+}
 ?>
 
 <div id="header"><?php echo gettext('Placement of the city');?></div>
 <div id="leftContentMap">
 	<img src="css/images/mapPap.png" border="0" width="704" height="587"
 		orgWidth="704" orgHeight="587" usemap="#imagemap" alt="" />
-	<div class="cityCircle hover" id="zone_1"
+	<div class="cityCircle hover" id="zone_1" onclick="handlePlacement($(this))"
 		style="top: 230px; left: 190px;"></div>
-	<div class="cityCircle hover" id="zone_2"
+	<div class="cityCircle hover" id="zone_2" onclick="handlePlacement($(this))"
 		style="top: 550px; left: 200px;"></div>
-	<div class="cityCircle hover" id="zone_2"
+	<div class="cityCircle hover" id="zone_2" onclick="handlePlacement($(this))"
 		style="top: 415px; left: 420px;"></div>
-	<div class="cityCircle hover" id="zone_3"
+	<div class="cityCircle hover" id="zone_3" onclick="handlePlacement($(this))"
 		style="top: 230px; left: 490px;"></div>
-	<!-- <map name="imagemap">
+	<map name="imagemap">
 				<area shape="rect" coords="702,585,704,587" alt="Image Map"
 					style="outline: none;" title="Image Map"
 					href="http://www.image-maps.com/index.php?aff=mapped_users_34341" />
@@ -24,10 +32,10 @@ require_once '../config.php';
 				<area class="hover" id="zoneOne" shape="poly"
 					coords="100,132,127,113,145,116,154,104,193,94,234,88,262,94,272,83,341,93,340,142,156,173"
 					style="outline: none;" target="_self" />
-				<area class="hover" id="zoneTwo"
+				<area class="hover" id="zoneTwo" shape="poly"
 					coords="34,148,44,558,659,556,660,462,381,241,416,216,391,186,373,170,379,161,398,164,416,181,437,196,461,135,505,101,603,68,586,40,595,27,545,21,518,27,500,61,417,88,397,90,343,95,332,138,161,169,106,130,67,147"
 					style="outline: none;" target="_self" />
-			</map> -->
+			</map>
 </div>
 <div id="rightContent">
 	<div id='rightUp'>

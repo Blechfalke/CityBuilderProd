@@ -9,100 +9,131 @@ var i_slaves = 0;
 var i_total = 0;
 
 var backupValue;
-$(document).ready(function() {
-	// This will be the starting page of the Application
-	var pageName = "view/splashScreen.php";
-	$("#wrapper").load(pageName);
+$(document).ready(
+		function() {
+			// This will be the starting page of the Application
+			var pageName = "view/splashScreen.php";
+			$("#wrapper").load(pageName);
 
-	// need to use delegation based event handlers here, because later links do
-	// not exist in the DOM yet
-	$(document).on('click', '.link', function() {
-		pageName = "view/" + $(this).attr("name") + ".php";
-		$("#wrapper").load(pageName);
-		// disable other buttons once we clicked on something to avoid bugs
-	});
-	$(document).on('click', '.mainButtons', function() {
-		$(".mainButtons").prop('disabled', true);
-	});
+			// need to use delegation based event handlers here, because later
+			// links do
+			// not exist in the DOM yet
+			$(document).on('click', '.link', function() {
+				pageName = "view/" + $(this).attr("name") + ".php";
+				$("#wrapper").load(pageName);
+				// disable other buttons once we clicked on something to avoid
+				// bugs
+			});
+			$(document).on('click', '.mainButtons', function() {
+				$(".mainButtons").prop('disabled', true);
+			});
 
-	$(document).on('click', '#endTheTurn', function() {
-		project.confirm(word_confirm_end_turn, word_yes, word_cancel);
-	});
-	$(document).on('click', '#quitTheGame', function() {
-		project.quit(word_confirm_quit_game, word_yes, word_cancel);
-	});
+			$(document).on(
+					'click',
+					'#endTheTurn',
+					function() {
+						var targetArray = {
+							kings : i_kings,
+							priests : i_priests,
+							craftsmen : i_craftsmen,
+							scribes : i_scribes,
+							soldiers : i_soldiers,
+							peasants : i_peasants,
+							slaves : i_slaves,
+							technology : i_technology
+						};
+						project.confirm(word_confirm_end_turn, word_yes,
+								word_cancel, "view/CityManagement.php",
+								targetArray);
+					});
+			$(document).on(
+					'click',
+					'#quitTheGame',
+					function() {
 
-	$(document).on('click', '.login', function() {
-		pageName = "controller/class.loginController.php";
-		$("#wrapper").load(pageName, {
-			username : $('#username').val(),
-			password : $('#password').val(),
-			locale : $('.locale').val()
+						var targetArray = null;
+						project.confirm(word_confirm_quit_game, word_yes,
+								word_cancel, "view/Scores.php", targetArray);
+					});
+
+			$(document).on('click', '.login', function() {
+				pageName = "controller/class.loginController.php";
+				$("#wrapper").load(pageName, {
+					username : $('#username').val(),
+					password : $('#password').val(),
+					locale : $('.locale').val()
+				});
+				LazyLoad.js("scripts/js_lang.js.php", "");
+				// disable other buttons once we clicked on something to avoid
+				// bugs
+			});
+
+			$(document).on('click', '.logout', function() {
+				pageName = "controller/class.LogoutController.php";
+				$("#wrapper").load(pageName);
+			});
+
+			$(document).on('click', '.startGame', function() {
+				pageName = "controller/class.StartGameController.php";
+				$("#wrapper").load(pageName, {
+					source : 'startMenu'
+				});
+			});
+
+			$(document).on('click', '.gameMode', function() {
+				pageName = "controller/class.gameModeController.php";
+				$("#wrapper").load(pageName, {
+					newMode : $(this).attr("id")
+				});
+			});
+
+			$(document).on('change', '.editor', function() {
+				updateAvailablePopulation();
+			});
+
+			$(document).on('focus', '.editor', function() {
+				backupValue = $(this).val();
+				updateFlavourText($(this));
+			});
+
+			$(document).on(
+					'keypress',
+					'.editor',
+					function(e) {
+						// if the letter is not digit then don't type anything
+						if (e.which != 8 && e.which != 0
+								&& (e.which < 48 || e.which > 57))
+							return false;
+					});
+
+			$(document).on('click', '.technology.clickable', function() {
+				$('.technology.clickable').css('border', 'none');
+				if (i_technology == $(this).attr('id')) {
+					$(this).css('border', 'none');
+					i_technology = null;
+				} else {
+					$(this).css('border', '2px solid black');
+					i_technology = $(this).attr('id');
+				}
+
+			});
+
+			$(document).on('mouseover', '.hover', function() {
+				updateFlavourText($(this));
+			});
 		});
-		LazyLoad.js("scripts/js_lang.js.php", "");
-		// disable other buttons once we clicked on something to avoid bugs
-	});
 
-	$(document).on('click', '.logout', function() {
-		pageName = "controller/class.LogoutController.php";
-		$("#wrapper").load(pageName);
-	});
+function handlePlacement(caller) {
+	var targetArray = {
+		source : 'placement',
+		zone : caller.attr("id")
+	};
+	project.confirm(word_confirm_map_choice, word_yes, word_cancel,
+			"controller/class.StartGameController.php", targetArray);
 
-	$(document).on('click', '.startGame', function() {
-		pageName = "controller/class.StartGameController.php";
-		$("#wrapper").load(pageName, {
-			source : 'startMenu'
-		});
-	});
-
-	$(document).on('click', '.gameMode', function() {
-		pageName = "controller/class.gameModeController.php";
-		$("#wrapper").load(pageName, {
-			newMode : $(this).attr("id")
-		});
-	});
-
-	$(document).on('click', '.cityCircle', function() {
-		pageName = "controller/class.StartGameController.php";
-		$("#wrapper").load(pageName, {
-			source : 'placement',
-			zone : $(this).attr("id")
-		});
-		// disable other buttons once we clicked on something to avoid bugs
-		$(".cityCircle").prop('disabled', true);
-	});
-
-	$(document).on('change', '.editor', function() {
-		updateAvailablePopulation();
-	});
-
-	$(document).on('focus', '.editor', function() {
-		backupValue = $(this).val();
-		updateFlavourText($(this));
-	});
-
-	$(document).on('keypress', '.editor', function(e) {
-		// if the letter is not digit then don't type anything
-		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57))
-			return false;
-	});
-
-	$(document).on('click', '.technology.clickable', function() {
-		$('.technology.clickable').css('border', 'none');
-		if (i_technology == $(this).attr('id')) {
-			$(this).css('border', 'none');
-			i_technology = null;
-		} else {
-			$(this).css('border', '2px solid black');
-			i_technology = $(this).attr('id');
-		}
-
-	});
-
-	$(document).on('mouseover', '.hover', function() {
-		updateFlavourText($(this));
-	});
-});
+	// disable other buttons once we clicked on something to avoid bugs
+	$(".cityCircle").prop('disabled', true);
+}
 
 function updateTechnology() {
 	$('.developed').each(function() {
@@ -118,10 +149,10 @@ function updateAvailablePopulation(caller) {
 	if (available >= 0) {
 		$('#AvailablePopulation').val(available);
 	} else {
-			// project.alert('You can not assign any more people');
-			var maximum = available + Number(caller.val());
-			caller.val(maximum);
-			$('#AvailablePopulation').val(0);
+		// project.alert('You can not assign any more people');
+		var maximum = available + Number(caller.val());
+		caller.val(maximum);
+		$('#AvailablePopulation').val(0);
 	}
 
 	updatePyramid(i_slaves, i_peasants, i_soldiers, i_scribes, i_craftsmen,
@@ -203,16 +234,19 @@ function updateFlavourText(caller) {
 				'css/images/flavourImages/caravan_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_caravans;
 		break;
+	case 'zoneOne':
 	case 'zone_1':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/fertile_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_zone1;
 		break;
+	case 'zoneTwo':
 	case 'zone_2':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/desert_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_zone2;
 		break;
+	case 'zoneThree':
 	case 'zone_3':
 		$('#flavourImage').attr('src',
 				'css/images/flavourImages/mountains_desc.png');
@@ -220,8 +254,8 @@ function updateFlavourText(caller) {
 		break;
 	case 'scoreTech':
 	case 'scoreTechNb':
-		$('#flavourImage').attr('src',
-				'css/images/flavourImages/tech_desc.png');
+		$('#flavourImage')
+				.attr('src', 'css/images/flavourImages/tech_desc.png');
 		document.getElementById('flavourText').innerHTML = word_flavour_score_tech;
 		break;
 	case 'scoreWealth':
