@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php';
+require_once 'controllerconfig.php';
 session_unset();
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.User.php';
