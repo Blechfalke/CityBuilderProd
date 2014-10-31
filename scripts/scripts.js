@@ -24,6 +24,7 @@ $(document).ready(
 				// disable other buttons once we clicked on something to avoid
 				// bugs
 			});
+
 			$(document).on('click', '.mainButtons', function() {
 				$(".mainButtons").prop('disabled', true);
 			});
@@ -68,6 +69,22 @@ $(document).ready(
 				// bugs
 			});
 
+			// Call the register form from the login page
+			$(document).on('click', '.register', function() {
+				pageName = "view/register.php";
+				$("#wrapper").load(pageName);
+			});
+			
+			// Try to register a new user
+			$(document).on('click', '.registerNow', function() {
+				pageName = "controller/registerController.php";
+				$("#wrapper").load(pageName, {
+					username : $('#username').val(),
+					password : $('#password').val(),
+					repassword : $('#repassword').val(),
+				});
+			});
+			
 			$(document).on('click', '.logout', function() {
 				pageName = "controller/class.LogoutController.php";
 				$("#wrapper").load(pageName);

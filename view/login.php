@@ -3,7 +3,6 @@ require_once '../config.php';
 header('Content-type: text/html; charset=UTF-8');
 $msg = isset($_SESSION['msg']) ? $_SESSION['msg'] : null;
 ?>
-<form>
 <div id="header">Bâtisseur de cité</div>
     <div id='mainButtonDiv'>
     <input type='text' name='Username' id='username' class='loginForm' placeholder='Username' value='maurice'/>
@@ -17,4 +16,4 @@ $msg = isset($_SESSION['msg']) ? $_SESSION['msg'] : null;
 	<input type='button' value='Login' name='Login' class='mainButtons login'/>
     <?php if ($msg != null)
     	  	echo "<p id='errorMSG'>$msg</p>";?>    
-</div></form> 
+</div>
