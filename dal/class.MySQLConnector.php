@@ -31,11 +31,8 @@ class MySQLConnector {
 		return false;
 	}
 	public function checkCredentials($username, $password) {
-		$query = "SELECT * FROM Users WHERE username=? AND password=?;";
-		$q = $this->_conn->prepare ( $query );
-		$result = $q->execute ( array (
-				$username,
-				sha1 ( $password )) );
+		$query = "SELECT * FROM Users WHERE username='" . $username . "' AND password='" . sha1 ( $password ) . "';";
+		$result = $this->_conn->query ( $query );
 		
 		if ($this->getError ())
 			trigger_error ( $this->getError () );
@@ -50,11 +47,8 @@ class MySQLConnector {
 		return $user;
 	}
 	public function getIdByUsername($username) {
-		$query = "SELECT id_user FROM Users WHERE username=?;";
-		$q = $this->_conn->prepare ( $query );
-		$result = $q->execute ( array (
-				$username) );
-		
+		$query = "SELECT id_user FROM Users WHERE username='" . $username . "';";
+		$result = $this->_conn->query ( $query );
 		
 		if ($this->getError ())
 			trigger_error ( $this->getError () );
@@ -67,10 +61,8 @@ class MySQLConnector {
 		return $row [0];
 	}
 	public function getUsernameById($id) {
-		$query = "SELECT username FROM Users WHERE id_user=?;";
-		$q = $this->_conn->prepare ( $query );
-		$result = $q->execute ( array (
-				$id) );
+		$query = "SELECT username FROM Users WHERE id_user='" . $id . "';";
+		$result = $this->_conn->query ( $query );
 		
 		if ($this->getError ())
 			trigger_error ( $this->getError () );
