@@ -26,10 +26,10 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '#endTheTurn', function() {
-		project.confirm(word_confirm_end_turn, word_yes, word_cancel);
+		project.confirm(word_confirm_end_turn, word_yes, word_cancel, "CityManagement");
 	});
 	$(document).on('click', '#quitTheGame', function() {
-		project.quit(word_confirm_quit_game, word_yes, word_cancel);
+		project.confirm(word_confirm_quit_game, word_yes, word_cancel, "Scores");
 	});
 
 	$(document).on('click', '.login', function() {
