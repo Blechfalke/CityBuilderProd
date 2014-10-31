@@ -33,6 +33,7 @@ $(document).ready(
 					'click',
 					'#endTheTurn',
 					function() {
+						readInputs();
 						var targetArray = {
 							kings : i_kings,
 							priests : i_priests,
@@ -74,7 +75,7 @@ $(document).ready(
 				pageName = "view/register.php";
 				$("#wrapper").load(pageName);
 			});
-			
+
 			// Try to register a new user
 			$(document).on('click', '.registerNow', function() {
 				pageName = "controller/registerController.php";
@@ -84,7 +85,7 @@ $(document).ready(
 					repassword : $('#repassword').val(),
 				});
 			});
-			
+
 			$(document).on('click', '.logout', function() {
 				pageName = "controller/logoutController.php";
 				$("#wrapper").load(pageName);
