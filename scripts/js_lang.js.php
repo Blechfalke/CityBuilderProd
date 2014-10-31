@@ -42,6 +42,7 @@ echo "var word_flavour_zone2 = '" . gettext('An arid desert lays for miles and m
 echo "var word_flavour_zone3 = '" . gettext('A desertic chain of mountains.') . "';";
 echo "var word_confirm_end_turn = '" . gettext('Do you want to end the turn?') . "';";
 echo "var word_confirm_quit_game = '" . gettext('Do you want to quit the game?') . "';";
+echo "var word_confirm_map_choice = '" . gettext('Are you sure you want to choose that place to found your city ?') . "';";
 echo "var word_yes = '" . gettext('Yes') . "';";
 echo "var word_cancel = '" . gettext('Cancel') . "';";
 
