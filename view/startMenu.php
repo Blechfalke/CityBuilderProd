@@ -17,12 +17,12 @@ $user = unserialize($_SESSION ['User']);
 <div id="header"><?php echo gettext('City builders');?></div>
 <div id='mainButtonDiv'>
 	
-	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='PlacementOfCity' class='mainButtons startGame' /> 
+	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='placementOfCity' class='mainButtons startGame' /> 
 	<input type='button' value='<?php echo gettext('Rules');?>' name='Rules' class='mainButtons link' /> 
 	<?php
 	if ($user->admin == 1) {
 		echo "<input type='button'
-			value='" . gettext('Game Modes') . "' name='GameModes' id='gameModes'
+			value='" . gettext('Game Modes') . "' name='gameModes' id='gameModes'
 			class='mainButtons link' />";
 	} else {
 		echo "<div style='height:50px;margin:20px 0;'></div>";

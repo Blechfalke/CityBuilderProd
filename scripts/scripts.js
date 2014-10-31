@@ -44,7 +44,7 @@ $(document).ready(
 							technology : i_technology
 						};
 						project.confirm(word_confirm_end_turn, word_yes,
-								word_cancel, "view/CityManagement.php",
+								word_cancel, "view/cityManagement.php",
 								targetArray);
 					});
 			$(document).on(
@@ -54,11 +54,11 @@ $(document).ready(
 
 						var targetArray = null;
 						project.confirm(word_confirm_quit_game, word_yes,
-								word_cancel, "view/Scores.php", targetArray);
+								word_cancel, "view/scores.php", targetArray);
 					});
 
 			$(document).on('click', '.login', function() {
-				pageName = "controller/class.loginController.php";
+				pageName = "controller/loginController.php";
 				$("#wrapper").load(pageName, {
 					username : $('#username').val(),
 					password : $('#password').val(),
@@ -86,19 +86,19 @@ $(document).ready(
 			});
 			
 			$(document).on('click', '.logout', function() {
-				pageName = "controller/class.LogoutController.php";
+				pageName = "controller/logoutController.php";
 				$("#wrapper").load(pageName);
 			});
 
 			$(document).on('click', '.startGame', function() {
-				pageName = "controller/class.StartGameController.php";
+				pageName = "controller/startGameController.php";
 				$("#wrapper").load(pageName, {
 					source : 'startMenu'
 				});
 			});
 
 			$(document).on('click', '.gameMode', function() {
-				pageName = "controller/class.gameModeController.php";
+				pageName = "controller/gameModeController.php";
 				$("#wrapper").load(pageName, {
 					newMode : $(this).attr("id")
 				});
@@ -146,7 +146,7 @@ function handlePlacement(caller) {
 		zone : caller.attr("id")
 	};
 	project.confirm(word_confirm_map_choice, word_yes, word_cancel,
-			"controller/class.StartGameController.php", targetArray);
+			"controller/startGameController.php", targetArray);
 
 	// disable other buttons once we clicked on something to avoid bugs
 	$(".cityCircle").prop('disabled', true);
