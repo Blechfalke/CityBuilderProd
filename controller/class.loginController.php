@@ -20,7 +20,6 @@ try {
 		}
 		
 		header("location: ../view/startMenu.php");
-// 		exit();
 	}
 } catch (Exception $e) {
 	$_SESSION ['msg'] = $e->getMessage();

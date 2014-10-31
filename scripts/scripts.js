@@ -62,16 +62,6 @@ $(document).ready(function() {
 		});
 	});
 
-	$(document).on('click', '.cityCircle', function() {
-		pageName = "controller/class.StartGameController.php";
-		$("#wrapper").load(pageName, {
-			source : 'placement',
-			zone : $(this).attr("id")
-		});
-		// disable other buttons once we clicked on something to avoid bugs
-		$(".cityCircle").prop('disabled', true);
-	});
-
 	$(document).on('change', '.editor', function() {
 		updateAvailablePopulation();
 	});
@@ -103,6 +93,16 @@ $(document).ready(function() {
 		updateFlavourText($(this));
 	});
 });
+
+function handlePlacement(caller){
+	pageName = "controller/class.StartGameController.php";
+	$("#wrapper").load(pageName, {
+		source : 'placement',
+		zone : caller.attr("id")
+	});
+	// disable other buttons once we clicked on something to avoid bugs
+	$(".cityCircle").prop('disabled', true);
+}
 
 function updateTechnology() {
 	$('.developed').each(function() {

@@ -6,13 +6,13 @@ require_once '../config.php';
 <div id="leftContentMap">
 	<img src="css/images/mapPap.png" border="0" width="704" height="587"
 		orgWidth="704" orgHeight="587" usemap="#imagemap" alt="" />
-	<div class="cityCircle hover" id="zone_1"
+	<div class="cityCircle hover" id="zone_1" onclick="handlePlacement($(this))"
 		style="top: 230px; left: 190px;"></div>
-	<div class="cityCircle hover" id="zone_2"
+	<div class="cityCircle hover" id="zone_2" onclick="handlePlacement($(this))"
 		style="top: 550px; left: 200px;"></div>
-	<div class="cityCircle hover" id="zone_2"
+	<div class="cityCircle hover" id="zone_2" onclick="handlePlacement($(this))"
 		style="top: 415px; left: 420px;"></div>
-	<div class="cityCircle hover" id="zone_3"
+	<div class="cityCircle hover" id="zone_3" onclick="handlePlacement($(this))"
 		style="top: 230px; left: 490px;"></div>
 	<!-- <map name="imagemap">
 				<area shape="rect" coords="702,585,704,587" alt="Image Map"

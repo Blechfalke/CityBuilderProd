@@ -47,12 +47,12 @@ class HistoryController {
 			// $this->textHistory = $this->textHistory . "<hr />";
 			
 		}
-		
-		$this->scTechnology = $this->gameController->getGameResources ()->getScore ()["tech"];
-		$this->scWealth = $this->gameController->getGameResources ()->getScore ()["wealth"];
-		$this->scBuildings = $this->gameController->getGameResources ()->getScore ()["building"];
-		$this->scPopulation = $this->gameController->getGameResources ()->getScore ()["population"];
-		$this->scHappiness = $this->gameController->getGameResources ()->getScore ()["happiness"];
+	 	$scoresArray = $this->gameController->getGameResources ()->getScore();
+		$this->scTechnology = $scoresArray["tech"];
+		$this->scWealth = $scoresArray["wealth"];
+		$this->scBuildings = $scoresArray["building"];
+		$this->scPopulation = $scoresArray["population"];
+		$this->scHappiness = $scoresArray["happiness"];
 		$this->scTotal = 1 + $this->scTechnology + $this->scWealth + $this->scBuildings + $this->scPopulation + $this->scHappiness;
 	}
 	public function __construct($singleGameHistoricOrGameDbId) {

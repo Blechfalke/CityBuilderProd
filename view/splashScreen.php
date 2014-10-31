@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<div id="header"><?php echo gettext('The Game is loading<br />Please Wait...');?></div>
+<div id="header">Loading...</div>
 <div id='progressbar'></div>
 
 
