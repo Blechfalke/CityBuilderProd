@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CityBuilderProd\n"
 "POT-Creation-Date: 2014-11-03 15:01+0100\n"
-"PO-Revision-Date: 2014-11-03 15:01+0100\n"
+"PO-Revision-Date: 2014-11-03 15:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -84,8 +84,8 @@ msgid ""
 "Your workers have built a rampart to establish the limits of the city and "
 "protect you from the outside dangers."
 msgstr ""
-"Vos ouvriers ont bâti un temple à la gloire du dieu protecteur de votre "
-"cité. Votre prestige augmente "
+"Vos ouvriers ont bâti un rempart pour délimiter le territoire de la cité et "
+"se protéger des dangers du monde extérieur."
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/controller/class.GameController.php:218
@@ -315,7 +315,7 @@ msgstr "Voulez-vous vraiment quitter le jeu?"
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:45
 msgid "Are you sure you want to choose that place to found your city ?"
-msgstr "Voulez-vous vraiment choisir cet emplacement pour fonder votre cité"
+msgstr "Voulez-vous vraiment choisir cet emplacement pour fonder votre cité ?"
 
 #: C:\Program Files
 #: (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\git\CityBuilderProd/scripts/js_lang.js.php:46
