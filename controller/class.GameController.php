@@ -17,7 +17,6 @@ class GameController {
 	private $_nextRoundPopupText;
 	private $_maxTurn;
 	private $_gameDBId;
-	
 	public function __construct() {
 		$this->_round = 0;
 		$this->_buildings = new Building ();
@@ -54,7 +53,6 @@ class GameController {
 		return $this->_nextRoundPopupText;
 	}
 	public function calculateRound() {
-
 		$conn = new MySQLConnector ();
 		$this->_population->updatePopulation ( isset ( $_POST ['kings'] ) ? $_POST ['kings'] : 0, isset ( $_POST ['priests'] ) ? $_POST ['priests'] : 0, isset ( $_POST ['craftsmen'] ) ? $_POST ['craftsmen'] : 0, isset ( $_POST ['scribes'] ) ? $_POST ['scribes'] : 0, isset ( $_POST ['soldiers'] ) ? $_POST ['soldiers'] : 0, isset ( $_POST ['peasants'] ) ? $_POST ['peasants'] : 0, isset ( $_POST ['slaves'] ) ? $_POST ['slaves'] : 0 );
 		
@@ -62,7 +60,7 @@ class GameController {
 			$this->_population->setScribes ( 0 );
 		
 		if ($this->_round == 0) {
-			$this->initGame();
+			$this->initGame ();
 		} else {
 			// EVERY OTHER ROUNDS
 			
@@ -87,13 +85,12 @@ class GameController {
 			$this->calcFoodPop ();
 			$this->calcScore ();
 			
-			
 			$this->_technology->updateTechnology ( isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "" );
-			if ($this->_population->getTotalPopulation () <= 0) 
+			if ($this->_population->getTotalPopulation () <= 0)
 				$this->_round = 1000;
 			if ($this->_round >= $this->_maxTurn) {
 				header ( 'Location: ../view/scores.php' );
-				exit();
+				exit ();
 			}
 			// TURN POPUP
 			$text = gettext ( "Turn" ) . " " . $this->_round . "<hr />";
@@ -124,8 +121,8 @@ class GameController {
 					break;
 			}
 			$this->_population->setTotalPopulation ( $popT );
-			$this->_gameResources->setFood ( $popT / 2 );
-			$this->_gameResources->setWealth ( $popT / 4 );
+			$this->_gameResources->setFood ( $popT * 0.02 );
+			$this->_gameResources->setWealth ( 0 );
 			$this->_technology = $tech;
 		} else {
 			// EVERY OTHER ROUNDS
@@ -146,13 +143,13 @@ class GameController {
 		}
 		$this->nextRound ();
 	}
-	public function initGame(){
+	public function initGame() {
 		$conn = new MySQLConnector ();
 		// INITALISATION ROUND
 		// historic registration of the zone
 		$user = unserialize ( $_SESSION ['User'] );
 		// $playerID, $mapZone,$gameModeId
-		$this->_singleGameHistoric = new SingleGameHistoric ($conn->getIdByUsername($user->username), $_GET ['zone'],$conn->getGameMode () );
+		$this->_singleGameHistoric = new SingleGameHistoric ( $conn->getIdByUsername ( $user->username ), $_GET ['zone'], $conn->getGameMode () );
 		// 1: Block 2: map only 3: 5 turn 4: infinite
 		switch ($this->_singleGameHistoric->getGameModeId ()) {
 			case 1 :
@@ -171,27 +168,40 @@ class GameController {
 				header ( 'Location: ../view/startMenu.php' );
 				break;
 		}
+		$textStartPopup = "";
 		// Zone infulence
 		switch ($_GET ['zone']) {
 			case 'zone_1' :
 				$popT = 2000;
-				echo "<script>project.alert('" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "');</script>";
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "</p>";
+				// $textStartPopup = "<img src='../css/images/dialogs/placefertile.png' />".gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' );
 				break;
 			case 'zone_2' :
 				$popT = 1500;
-				echo "<script>project.alert('" . gettext ( 'You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive' ) . "');</script>";
+				// $textStartPopup = "<img src='../css/images/dialogs/placefertile.png' />".gettext ( 'You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive' ) ;
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive' ) . "</p>";
 				break;
 			case 'zone_3' :
 				$popT = 1200;
-				echo "<script>project.alert('" . gettext ( 'You have chosen to found your city in the mountains.  A few water sources will help us gather the bare minimal we need.' ) . "');</script>";
+				// $textStartPopup = "<img src='css/images/dialogs/ramparts.png' />". gettext ( 'You have chosen to found your city in the mountains. A few water sources will help us gather the bare minimal we need.' ) ;
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the mountains.  A few water sources will help us gather the bare minimal we need.' ) . "</p>";
 				break;
 			default :
 				$popT = 2000;
+				// $textStartPopup = "<img src='css/images/dialogs/placefertile.png' />".gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' );
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "</p>";
 				break;
 		}
+		// $textStartPopup = $textStartPopup . "<tr><td style='width:150px'><img src='css/images/dialogs/ramparts.png' /></td><td>" . gettext ( "A new rampart as been built" ) . "</td></tr>";
+		// $textStartPopup = $textStartPopup . "" . gettext ( "Your workers have built a rampart to establish the limits of the city and protect you from the outside dangers." ) . "";
+		$textStartPopup = $textStartPopup . "<p>" . gettext ( "Your workers have built a rampart to establish the limits of the city and protect you from the outside dangers." ) . "</p>";
+		// echo "<script>project.alert('$textStartPopup');</script>";
+		// echo "<script>project.alert('<table><tr><td><img src='css/images/dialogs/ramparts.png' /></td></tr></table>')</script>";
+		// echo "<script>project.alert('<table><tr><td>".LOCATOR."</td></tr><tr><td>".LOCATOR."</td></tr></table>')</script>";
+		echo "<script>project.alert('$textStartPopup');</script>";
 		$this->_population->setTotalPopulation ( $popT );
-		$this->_gameResources->setFood ( $popT / 2 );
-		$this->_gameResources->setWealth ( $popT / 4 );
+		$this->_gameResources->setFood ( $popT * 0.02 );
+		$this->_gameResources->setWealth ( 0 );
 		$this->_technology = new Technology ();
 		$this->calcScore ();
 		// registering and stuff
@@ -276,7 +286,6 @@ class GameController {
 			// TODO POPUP TEXT
 			// echo "<script>project.alert('Unhappiness POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'Your population is unhappy. You should quickly find the reason and act before the unrest takes its toll.' );
-
 		}
 	}
 	public function calcWealth() {
@@ -286,28 +295,26 @@ class GameController {
 			$potmod = 2;
 		$WealthProd = $this->_population->getCraftsmen () * (10 + $potmod);
 		$currWealth = $this->_gameResources->getWealth () + $WealthProd;
-		$this->_gameResources->setWealth (($currWealth<0)?0:$currWealth);
+		$this->_gameResources->setWealth ( ($currWealth < 0) ? 0 : $currWealth );
 	}
 	public function calcCaravan() {
 		// CARAVAN CALCULATION
 		if ($this->_gameResources->getWealth () >= 550) {
 			$this->_gameResources->incCaravans ();
 			$this->_nextRoundPopupText [] = gettext ( 'Your first caravan has been sent to a neighbor city. Your wealth increase.' );
-
 		}
 	}
 	public function calcBuildings() {
 		// BUILDING
-		if ($this->_population->getPriests () >= 10 && $this->_gameResources->getWealth () >= 550 && $this->_population->getPeasants () >= 1000) {
+		if ($this->_population->getPriests () >= 10 && $this->_gameResources->getWealth () >= 550 && $this->_population->getPeasants () >= 1000 && $this->_buildings->getTemple() == 0) {
 			$this->_buildings->buildTemple ();
 			$this->_nextRoundPopupText [] = gettext ( 'Your workers have built a temple to celebrate the glory of the city protecting god. Your own prestige greatly increases.' );
-
 		}
-		if ($this->_gameResources->getWealth () >= 850 && $this->_population->getPeasants () >= 1500) {
+		if ($this->_gameResources->getWealth () >= 850 && $this->_population->getPeasants () >= 1500 && $this->_buildings->getTemple() == 0) {
 			$this->_buildings->buildPalace ();
 			$this->_nextRoundPopupText [] = gettext ( 'Your workers have finished the construction of the palace. It will be your home and the center of your government.' );
-			}
-		if ($this->_gameResources->getWealth () >= 1150 && $this->_population->getPeasants () >= 1900) {
+		}
+		if ($this->_gameResources->getWealth () >= 1150 && $this->_population->getPeasants () >= 1900 && $this->_buildings->getMonuments() == 0) {
 			$this->_buildings->buildMonuments ();
 			$this->_nextRoundPopupText [] = gettext ( 'To honor your souvenir, your workers have begun the construction of a pyramid. It will stay as the proof of your glory for all to admire.' );
 		}
@@ -363,10 +370,10 @@ class GameController {
 		$score ['wealth'] = ceil ( ($this->_gameResources->getWealth () / 500.0 * 0.2) * 2 ) / 2;
 		$score ['wealth'] = ($score ['wealth'] > 1) ? 1 : $score ['wealth'];
 		// BUILDING
-		$score ['building'] = ($this->_buildings->getTemple () + $this->_buildings->getPalace () + $this->_buildings->getMonuments ()) * 0.125;
+		$score ['building'] = (($this->_buildings->getTemple () + $this->_buildings->getPalace () + $this->_buildings->getMonuments ()) * 0.125)+0.125;
 		$score ['building'] = ($score ['building'] > 0.5) ? 0.5 : $score ['building'];
 		// POP
-		$score ['population'] = round(($this->_population->getTotalPopulation () / 50 * 0.03125),5);
+		$score ['population'] = round ( ($this->_population->getTotalPopulation () / 50 * 0.03125), 5 );
 		$score ['population'] = ($score ['population'] > 1.5) ? 1.5 : $score ['population'];
 		// UNHAPPINESS
 		$score ['happiness'] = ($this->_gameResources->getUnHappiness ()) ? 0 : 0.5;

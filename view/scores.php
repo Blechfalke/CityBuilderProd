@@ -12,7 +12,7 @@ if (isset ( $_SESSION ['GameController'] )) {
 	$buildings = $scoreArray ['building'];
 	$population = $scoreArray ['population'];
 	$happiness = $scoreArray ['happiness'];
-	$score = 1 + $technology + $wealth + $buildings + $population + $happiness;
+	$score = ceil ( (1 + $technology + $wealth + $buildings + $population + $happiness)* 2 ) / 2;
 } else {
 	if (isset ( $_POST ['game_ID'] )) {
 		// WATCH OUT >>NOTHING<< CALLED BY THE LINE BELOW HAS BEEN TESTED, YOU ENTER A WORLD OF PAIN AND SUFFERING BY EXECUTING THAT SINGLE LINE!

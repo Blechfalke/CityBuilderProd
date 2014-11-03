@@ -1,12 +1,25 @@
 ﻿<?php
 require_once '../config.php';
 
-if (isset($_GET ['msg'])) {
-	$msg = $_GET ['msg'];
-	if ($msg == "blocked") {
-		echo "<script>project.alert('Game blocked');</script>";
+if (isset ( $_GET ['msg'] ))
+	if ($_GET ['msg'] == 'blocked') {
+		$msg = $_GET ['msg'];
+		switch ($_GET ['zone']) {
+			case 'zone_1' :
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "</p>";
+				break;
+			case 'zone_2' :
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the desert. We have found a few oasises that should provide a bit of food to survive' ) . "</p>";
+				break;
+			case 'zone_3' :
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the mountains.  A few water sources will help us gather the bare minimal we need.' ) . "</p>";
+				break;
+			default :
+				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "</p>";
+				break;
+		}
+		echo "<script>project.alert('$textStartPopup');</script>";
 	}
-}
 ?>
 
 <div id="header"><?php echo gettext('Placement of the city');?></div>

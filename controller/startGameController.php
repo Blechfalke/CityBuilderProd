@@ -31,7 +31,7 @@ if ($source == 'startMenu') {
 if ($source == 'placement'){
 	switch ($result) {
 		case 2 :
-			header('Location: ../view/placementOfCity.php?msg=blocked');
+			header('Location: ../view/placementOfCity.php?msg=blocked&zone=' .$_POST['zone']);
 			break;
 		case 3 :
 			header('Location: ../view/cityManagement.php?gameMode=3&zone=' .$_POST['zone']);			
