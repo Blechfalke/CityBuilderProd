@@ -18,7 +18,7 @@ $user = unserialize($_SESSION ['User']);
 <div id='mainButtonDiv'>
 	
 	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='placementOfCity' class='mainButtons startGame' /> 
-	<input type='button' value='<?php echo gettext('Rules');?>' name='Rules' class='mainButtons link' /> 
+	<input type='button' value='<?php echo gettext('Rules');?>' name='rules' class='mainButtons link' /> 
 	<?php
 	if ($user->admin == 1) {
 		echo "<input type='button'
