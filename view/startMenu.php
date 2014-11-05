@@ -14,7 +14,7 @@ if (isset($_GET['msg'])){
 
 $user = unserialize($_SESSION ['User']);
 ?>
-<div id="header"><?php echo gettext('City builders');?></div>
+<div id="header" style="padding: 100px 0 50px 0;"><?php echo gettext('City builders');?></div>
 <div id='mainButtonDiv'>
 	
 	<input type='button' value='<?php echo gettext('Launch the Game');?>' name='placementOfCity' class='mainButtons startGame' /> 

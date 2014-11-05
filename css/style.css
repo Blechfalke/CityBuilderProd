@@ -2,12 +2,13 @@
 body {
 	font-family: Calibri;
 	margin: 0;
+	background: url("images/background.jpg") no-repeat;
+	background-size: cover;
 }
 
 #wrapper {
 	width: 1024px;
-	height: 720px;
-	background: url("images/background.jpg") no-repeat;
+	height: 720px;	
 	margin: 0 auto;
 	position: relative;
 }
