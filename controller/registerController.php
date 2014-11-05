@@ -3,6 +3,12 @@ require_once 'controllerconfig.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.User.php';
 
+/**
+ * 
+ * the register controller is used to 
+ * 
+ */
+
 $username = $_POST ['username'];
 $password = $_POST ['password'];
 $repassword = $_POST ['repassword'];

@@ -3,7 +3,11 @@ require_once 'controllerconfig.php';
 session_unset();
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.User.php';
-
+/**
+ * 
+ * the login controller is called when someone log in (obviously)
+ * 
+ */
 // Retrieve login information from form
 $username = $_POST ['username'];
 $password = $_POST ['password'];

@@ -2,6 +2,14 @@
 require_once 'controllerconfig.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/controller/class.GameController.php';
+
+/**
+ * 
+ * The History controller can be used to calculate the outcome of a game with the historic extracted from the database
+ * 
+ * It's not implemented.
+ *
+ */
 class HistoryController {
 	private $_gameController;
 	private $_singleGameHistoric;
@@ -41,10 +49,6 @@ class HistoryController {
 		foreach ( $this->singleGameHistoric->getTurns () as $turn ) {
 			
 			$this->gameController->calculateRoundForScorePage ( $turn->getPopulation (), $turn->getTechnology (), $this->singleGameHistoric->getMapZone () );
-			// $this->_textHistory = $this->_textHistory . "Turn " . $turnCount;
-			// foreach ( $this->gameController->getNextRoundPopupText () as $textLine )
-			// $this->_textHistory = $this->_textHistory . "<p>" . $textLine . "</p>";
-			// $this->_textHistory = $this->_textHistory . "<hr />";
 			
 		}
 	 	$scoresArray = $this->gameController->getGameResources ()->getScore();
@@ -56,7 +60,6 @@ class HistoryController {
 		$this->_scTotal = 1 + $this->_scTechnology + $this->_scWealth + $this->_scBuildings + $this->_scPopulation + $this->_scHappiness;
 	}
 	public function __construct($singleGameHistoricOrGameDbId) {
-		//if $singleGameHistoricOrGameDbId is int it's an ID>> we get a singleGameHistoric from the DB
 		if (is_int ( $singleGameHistoricOrGameDbId )) {
 			
 			$conn = new MySQLConnector ();

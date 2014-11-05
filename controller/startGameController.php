@@ -1,7 +1,11 @@
 <?php
 require_once 'controllerconfig.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
-
+/**
+ * 
+ * this controller verify of the user is allowed to play (related the game mode)
+ * 
+ */
 
 $source = isset($_POST ['source']) ? $_POST ['source'] : 'startMenu';
 
