@@ -108,8 +108,11 @@ body {
 
 .register {
 	padding-right: 10px;
-	color: black;
+	color: white;
 	float: right;
+	font-size:24px; 
+	font-weight: bold;
+	font-style:italic;
 }
 
 .pageButtons:hover {
@@ -301,7 +304,7 @@ body {
 }
 
 #langdropdown {
-	width: 150px;
+	width: 300px;
 	height: 40px;
 	font-family: Calibri;
 	font-size: 18px;
