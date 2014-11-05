@@ -1,7 +1,12 @@
 ﻿<?php 
 require_once '../config.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
-
+/**
+ * CityManager Group 3
+ *
+ * The game mode is the page where the user select what kind of game he wanna play
+ *
+ * */
 $conn = new MySQLConnector();
 
 $result = $conn->getGameMode();

@@ -1,4 +1,11 @@
 <?php require_once '../config.php';
+
+/**
+ * CityManager Group 3
+ *
+ * The rules pages with all the rules for playing the game
+ *
+ * */
 ?>
 
 <div id="header"><?php echo gettext('Rules');?></div>

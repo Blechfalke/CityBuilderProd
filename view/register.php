@@ -1,5 +1,13 @@
 <?php
 require_once '../config.php';
+
+/**
+ * CityManager Group 3
+ *
+ * The register page to register as a User
+ *
+ * */
+
 header('Content-type: text/html; charset=UTF-8');
 $msg = isset($_GET['msgRegister']) ? $_GET['msgRegister'] : null;
 ?>

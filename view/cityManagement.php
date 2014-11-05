@@ -14,7 +14,7 @@ if (isset($_SESSION['GameController'])) {
 	$gameController = new GameController();
 }
 
-
+// Affectation of all data to the variable
 $gameController->calculateRound();
 $population = $gameController->getPopulation();
 $technology = $gameController->getTechnology();

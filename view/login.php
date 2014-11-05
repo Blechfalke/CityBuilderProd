@@ -1,5 +1,12 @@
 <?php
 require_once '../config.php';
+/**
+ * CityManager Group 3
+ *
+ * The login page is used to connect the user to the game with his account
+ *
+ */
+
 header('Content-type: text/html; charset=UTF-8');
 $msg = isset($_SESSION['msg']) ? $_SESSION['msg'] : null;
 ?>

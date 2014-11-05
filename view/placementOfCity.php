@@ -1,6 +1,13 @@
 ﻿<?php
 require_once '../config.php';
 
+/**
+ * CityManager Group 3
+ *
+ * The placement city let the user select where he want to put his city on a map
+ *
+ * */
+
 if (isset ( $_GET ['msg'] ))
 	if ($_GET ['msg'] == 'blocked') {
 		$msg = $_GET ['msg'];
@@ -35,6 +42,7 @@ if (isset ( $_GET ['msg'] ))
 	<div class="cityCircle hover" id="zone_3"
 		onclick="handlePlacement($(this))" style="top: 230px; left: 490px;"></div>
 	<map name="imagemap">
+	<!--  This will create somes shape on the image and put the selection zone where we want to put it -->
 		<area shape="rect" coords="702,585,704,587" alt="Image Map"
 			style="outline: none;" title="Image Map"
 			href="http://www.image-maps.com/index.php?aff=mapped_users_34341" />
