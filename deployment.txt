@@ -1,3 +1,7 @@
+Admin login information:
+adminpyramid
+admin_pyramid_42
+
 Deployment: procedure.
 Some paths must be adapted depending on the environment.
 
