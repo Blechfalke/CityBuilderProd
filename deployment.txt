@@ -1,0 +1,12 @@
+Deployment: procedure.
+Some paths must be adapted depending on the environment.
+
+the config.php is creating a "LOCATOR" global constant that is containing the path to the base folder of the game.
+
+If the game is not put in the root folder of the server, you must add the path after the '$_SERVER ['DOCUMENT_ROOT']'
+e.g.:
+define('LOCATOR', $_SERVER ['DOCUMENT_ROOT']. '/game/');
+
+the files "controller/controllerconfig.php" and "dal/class.MySQLConnector.php" must be edited in the same way.
+e.g.:
+require_once ($_SERVER ['DOCUMENT_ROOT'] . '/game/');
