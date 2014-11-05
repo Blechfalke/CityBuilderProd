@@ -78,6 +78,7 @@
 		var createdDialog = dialog.dialog(options);
 		return createdDialog;
 	};
+	//target is the page to access and target array consists the data for the post.
 	project.confirm = function(text, buttonYes, buttonNo, target, targetArray) {
 		var dialogId = 'dialog-' + project.guid();
 		var dialog = $('#' + dialogId);
@@ -105,7 +106,7 @@
 				text : buttonYes,
 				click : function() {
 					readInputs();
-
+					
 					$("#wrapper").load(target, targetArray);
 					i_technology = null;
 					$(this).dialog("close");

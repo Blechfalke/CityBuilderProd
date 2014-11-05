@@ -24,7 +24,9 @@ $(document).ready(
 				// disable other buttons once we clicked on something to avoid
 				// bugs
 			});
-
+			////////////////////////////////////////////////////
+			//the buttons functionality/////////////////////////
+			///////////////////////////////////////////////////
 			$(document).on('click', '.mainButtons', function() {
 				$(".mainButtons").prop('disabled', true);
 			});
@@ -123,7 +125,7 @@ $(document).ready(
 								&& (e.which < 48 || e.which > 57))
 							return false;
 					});
-
+			// change the element style after click 
 			$(document).on('click', '.technology.clickable', function() {
 				$('.technology.clickable').css('border', 'none');
 				if (i_technology == $(this).attr('id')) {
@@ -135,12 +137,12 @@ $(document).ready(
 				}
 
 			});
-
+			//show information on mouse over
 			$(document).on('mouseover', '.hover', function() {
 				updateFlavourText($(this));
 			});
 		});
-
+//choose a place for a town
 function handlePlacement(caller) {
 	var targetArray = {
 		source : 'placement',
@@ -309,16 +311,4 @@ function updateFlavourText(caller) {
 	}
 
 }
-
-// window.onbeforeunload = function (e) {
-// e = e || window.event;
-//
-// // For IE and Firefox prior to version 4
-// if (e) {
-// e.returnValue = 'Sure?';
-// }
-//
-// // For Safari
-// return 'Sure?';
-// };
 
