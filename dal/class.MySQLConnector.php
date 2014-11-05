@@ -200,7 +200,7 @@ class MySQLConnector {
 	// trigger_error ( $this->getError () );
 	// }
 	public function insertGame(SingleGameHistoric $singleGameHistoric) {
-		$query = "INSERT INTO Game(city_type, id_gamemodes, Users_id_user) VALUES(?, ?, ?);";
+		$query = "INSERT INTO Game(city_type, id_gamemodes, Users_id_user,date) VALUES(?, ?, ?,CURRENT_DATE);";
 		$queryID = "SELECT @@IDENTITY";
 		switch ($singleGameHistoric->getmapZone()) {
 			case 'zone_2' :
