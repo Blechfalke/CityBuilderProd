@@ -74,7 +74,7 @@ class GameController {
 		} else {
 			// EVERY OTHER ROUNDS
 			
-			// historic registration (before the calculation, we want to register the choices of the user
+			// historic registration (before the calculation, we want to register the choices of the user, not the outcome
 			$turn = new Turn ( clone $this->_population, clone $this->_technology );
 			$this->_singleGameHistoric->appendTurn ( $turn );
 			$DBtechnology = (isset ( $_POST ['technology'] ) ? $_POST ['technology'] : "NONE");
@@ -164,13 +164,13 @@ class GameController {
 		$this->nextRound ();
 	}
 	public function initGame() {
+		// GAME INITIALISATION
 		$conn = new MySQLConnector ();
-		// INITALISATION ROUND
-		// historic registration of the zone
 		$user = unserialize ( $_SESSION ['User'] );
-		// $playerID, $mapZone,$gameModeId
+		// gameHistoric instance creation
 		$this->_singleGameHistoric = new SingleGameHistoric ( $conn->getIdByUsername ( $user->username ), $_GET ['zone'], $conn->getGameMode () );
-		// 1: Block 2: map only 3: 5 turn 4: infinite
+		
+		// GAMEMODE CHECKER
 		switch ($this->_singleGameHistoric->getGameModeId ()) {
 			case 1 :
 				header ( 'Location: ../view/startMenu.php' );
@@ -189,7 +189,8 @@ class GameController {
 				break;
 		}
 		$textStartPopup = "";
-		// Zone infulence
+		
+		// ZONE INFLUENCE
 		switch ($_GET ['zone']) {
 			case 'zone_1' :
 				$popT = 2000;
@@ -208,14 +209,19 @@ class GameController {
 				$textStartPopup = "<p>" . gettext ( 'You have chosen to found your city in the middle of fertile lands, irrigated by the river. The recolts will be aboundants.' ) . "</p>";
 				break;
 		}
+		
+		// STARTING POPUP
 		$textStartPopup = $textStartPopup . "<p>" . gettext ( "Your workers have built a rampart to establish the limits of the city and protect you from the outside dangers." ) . "</p>";
 		echo "<script>project.alert('$textStartPopup');</script>";
+		
+		//GAME RESOURCES INITIALISATION
 		$this->_population->setTotalPopulation ( $popT );
 		$this->_gameResources->setFood ( $popT * 0.02 );
 		$this->_gameResources->setWealth ( 0 );
 		$this->_technology = new Technology ();
 		$this->calcScore ();
-		// registering and stuff
+		
+		// REGISTRATION / DATABASE
 		$turn = new Turn ( clone $this->_population, clone $this->_technology );
 		$this->_singleGameHistoric->appendTurn ( $turn );
 		$this->_gameDBId = $conn->insertGame ( clone $this->_singleGameHistoric );
@@ -247,7 +253,7 @@ class GameController {
 				$this->_population->getPriests (),
 				$this->_population->getKings () 
 		);
-		$array = $this->ClassesLosses ( $array, 0, $LostPop );
+		$array = $this->_ClassesLosses ( $array, 0, $LostPop );
 		$this->_population->setSoldiers ( $array [0] );
 		$this->_population->setPeasants ( $array [1] );
 		$this->_population->setSlaves ( $array [2] );
@@ -267,7 +273,7 @@ class GameController {
 				$this->_population->getSoldiers (),
 				$this->_population->getKings () 
 		);
-		$array = $this->ClassesLosses ( $array, 0, $LostPop );
+		$array = $this->_ClassesLosses ( $array, 0, $LostPop );
 		$this->_population->setSlaves ( $array [0] );
 		$this->_population->setPeasants ( $array [1] );
 		$this->_population->setCraftsmen ( $array [2] );
@@ -276,14 +282,14 @@ class GameController {
 		$this->_population->setSoldiers ( $array [5] );
 		$this->_population->setKings ( $array [6] );
 	}
-	private function ClassesLosses($array, $class, $LostPop) {
+	private function _ClassesLosses($array, $class, $LostPop) {
 		// Class losses algorithm
 		if ($array [$class] < $LostPop) {
 			$LostPop = $LostPop - $array [$class];
 			$array [$class] = 0;
 			$class ++;
 			if ($class < count ( $array ))
-				$array = $this->ClassesLosses ( $array, $class, $LostPop );
+				$array = $this->_ClassesLosses ( $array, $class, $LostPop );
 		} else {
 			$array [$class] = $array [$class] - $LostPop;
 		}
@@ -294,8 +300,6 @@ class GameController {
 		$this->_gameResources->setUnhappiness ( false );
 		if (($this->_population->getKings () != 1) or ($this->_population->getPriests () / $this->_population->getTotalPopulation () * 100.0 <= 0.25) or ($this->_population->getSlaves () / $this->_population->getTotalPopulation () * 100.0 <= 2.0)) {
 			$this->_gameResources->setUnhappiness ( true );
-			// TODO POPUP TEXT
-			// echo "<script>project.alert('Unhappiness POPUP');</script>";
 			$this->_nextRoundPopupText [] = gettext ( 'Your population is unhappy. You should quickly find the reason and act before the unrest takes its toll.' );
 		}
 	}
@@ -316,7 +320,7 @@ class GameController {
 		}
 	}
 	public function calcBuildings() {
-		// BUILDING
+		// BUILDINGS
 		if ($this->_population->getPriests () >= 10 && $this->_gameResources->getWealth () >= 550 && $this->_population->getPeasants () >= 1000 && $this->_buildings->getTemple () == 0) {
 			$this->_buildings->buildTemple ();
 			$this->_nextRoundPopupText [] = gettext ( 'Your workers have built a temple to celebrate the glory of the city protecting god. Your own prestige greatly increases.' );
@@ -337,17 +341,18 @@ class GameController {
 			if ($scribesInfulence > 0.0277777778)
 				$scribesInfulence = 0.0277777778;
 			$foodProd = floor ( $this->_population->getPeasants () * (($this->_gameResources->getUnhappiness ()) ? 0.75 : 1) * (1.111111111 + $scribesInfulence) );
+			
 			// FOOD CONSUMPTION
 			$foodCons = $this->_population->getTotalPopulation ();
+			
 			// FOOD REMAINING
 			if ($this->_technology->getGranary ())
 				$this->_gameResources->setFood ( $this->_gameResources->getFood () - $foodCons + $foodProd );
 			else
 				$this->_gameResources->setFood ( $foodProd - $foodCons );
-				// TODO ONLY FOR TESTING
-				// POPULATION VARIATION
+			
+			// POPULATION VARIATION
 			$PopVar = floor ( $this->_gameResources->getFood () * 2 );
-			// echo ' pop variation : ' . $PopVar;
 			$NewPop = $this->_population->getTotalPopulation () + $PopVar;
 			if ($this->_gameResources->getFood () < 0) {
 				if ($NewPop <= 0.5 * $this->_population->getTotalPopulation ())
@@ -370,6 +375,7 @@ class GameController {
 				'population' => 0,
 				'happiness' => 0 
 		);
+		
 		// TECH
 		if ($this->_technology->getGranary ())
 			$score ['tech'] += 0.5;
@@ -377,15 +383,19 @@ class GameController {
 			$score ['tech'] += 0.5;
 		if ($this->_technology->getWriting ())
 			$score ['tech'] += 0.5;
-			// WEALTH
+		
+		// WEALTH
 		$score ['wealth'] = ceil ( ($this->_gameResources->getWealth () / 500.0 * 0.2) * 2 ) / 2;
 		$score ['wealth'] = ($score ['wealth'] > 1) ? 1 : $score ['wealth'];
+		
 		// BUILDING
 		$score ['building'] = (($this->_buildings->getTemple () + $this->_buildings->getPalace () + $this->_buildings->getMonuments ()) * 0.125) + 0.125;
 		$score ['building'] = ($score ['building'] > 0.5) ? 0.5 : $score ['building'];
+		
 		// POP
 		$score ['population'] = round ( ($this->_population->getTotalPopulation () / 50 * 0.03125), 5 );
 		$score ['population'] = ($score ['population'] > 1.5) ? 1.5 : $score ['population'];
+		
 		// UNHAPPINESS
 		$score ['happiness'] = ($this->_gameResources->getUnHappiness ()) ? 0 : 0.5;
 		$this->_gameResources->setScore ( $score );
