@@ -68,8 +68,6 @@ $(document).ready(
 					locale : $('.locale').val()
 				});
 				LazyLoad.js("scripts/js_lang.js.php", "");
-				// disable other buttons once we clicked on something to avoid
-				// bugs
 			});
 
 			// Call the register form from the login page
@@ -88,11 +86,13 @@ $(document).ready(
 				});
 			});
 
+			// Click on the logout button from the startmenu
 			$(document).on('click', '.logout', function() {
 				pageName = "controller/logoutController.php";
 				$("#wrapper").load(pageName);
 			});
-
+			
+			// click on the Launch button from the startmenu
 			$(document).on('click', '.startGame', function() {
 				pageName = "controller/startGameController.php";
 				$("#wrapper").load(pageName, {
@@ -100,6 +100,7 @@ $(document).ready(
 				});
 			});
 
+			// click on a new game mode on the gamemodes pages
 			$(document).on('click', '.gameMode', function() {
 				pageName = "controller/gameModeController.php";
 				$("#wrapper").load(pageName, {
@@ -107,15 +108,19 @@ $(document).ready(
 				});
 			});
 
+			// change the available population and pyramid on input changes
 			$(document).on('change', '.editor', function() {
 				updateAvailablePopulation();
 			});
 
+			// When entering an input field we need to save the current value
+			// to update the availablepopulation properly
 			$(document).on('focus', '.editor', function() {
 				backupValue = $(this).val();
 				updateFlavourText($(this));
 			});
 
+			// Only allow numbers to be entered in the input fields
 			$(document).on(
 					'keypress',
 					'.editor',
@@ -142,6 +147,7 @@ $(document).ready(
 				updateFlavourText($(this));
 			});
 		});
+
 //choose a place for a town
 function handlePlacement(caller) {
 	var targetArray = {
@@ -155,21 +161,22 @@ function handlePlacement(caller) {
 	$(".cityCircle").prop('disabled', true);
 }
 
+// Display the checkmark on a developed technology
 function updateTechnology() {
 	$('.developed').each(function() {
 		$(this).prev().css('visibility', 'visible');
 	});
 }
 
+// change the availablePopulation right after numbers are entered in the input fields
 function updateAvailablePopulation(caller) {
 	readInputs();
 	var available = i_total - i_kings - i_priests - i_craftsmen - i_scribes
 			- i_soldiers - i_peasants - i_slaves;
-	// var id = '#' + idOfModifiedInputField;
 	if (available >= 0) {
 		$('#AvailablePopulation').val(available);
 	} else {
-		// project.alert('You can not assign any more people');
+		// If the entered population exceeds the available, set it to maximum and available to 0
 		var maximum = available + Number(caller.val());
 		caller.val(maximum);
 		$('#AvailablePopulation').val(0);

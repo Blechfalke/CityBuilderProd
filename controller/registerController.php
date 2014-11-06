@@ -23,6 +23,7 @@ try {
 	// First check, if the user exists
 	$result = $conn->getIdByUsername($GLOBALS ['username']);
 	
+	// If we receive no result, the username does not exist yet
 	if ($result)
 		throw new Exception('Username already taken!');
 	
@@ -32,17 +33,16 @@ try {
 	if ($password == '')
 		throw new Exception('Please define a password!');
 	
+	// Create the User in the database
 	$result = $conn->createUser($username, $password);
 	
 	if ($result) {
 		$msg = 'User created';
-		header("location:../view/register.php?msgRegister=$msg&username=$username");
 	}else{
 		$msg = 'Error creating the User';
-		header("location:../view/register.php?msgRegister=$msg&username=$username");
 	}
 } catch (Exception $e) {
 	$msg = $e->getMessage();
-	header("location:../view/register.php?msgRegister=$msg&username=$username");
-	exit();
 }
+// Redirect to the same page and display the errormsg
+header("location:../view/register.php?msgRegister=$msg&username=$username");

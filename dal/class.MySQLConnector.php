@@ -2,6 +2,10 @@
 require_once ($_SERVER ['DOCUMENT_ROOT'] . '/git/CityBuilderProd/config.php');
 require_once LOCATOR . '/model/class.User.php';
 require_once LOCATOR . '/model/class.SingleGameHistoric.php';
+
+/*
+ * This class is used to handle all Database Requests (Select, Insert, Update)
+ */
 class MySQLConnector {
 	// const HOST = 'localhost';
 	// const PORT = '8889';
@@ -29,6 +33,9 @@ class MySQLConnector {
 		return false;
 	}
 
+	/*
+	 * Validate the Username and Password upon login
+	 */
 	public function checkCredentials($username, $password) {
 		$query = "SELECT * FROM Users WHERE username='" . $username . "' AND password='" . sha1($password) . "';";
 		$result = $this->_conn->query($query);
@@ -46,6 +53,9 @@ class MySQLConnector {
 		return $user;
 	}
 
+	/*
+	 * Get the ID of a user based on the unique username
+	 */
 	public function getIdByUsername($username) {
 		$query = "SELECT id_user FROM Users WHERE username='" . $username . "';";
 		$result = $this->_conn->query($query);
@@ -61,6 +71,9 @@ class MySQLConnector {
 		return $row [0];
 	}
 
+	/*
+	 * Get the username of a user based on the ID
+	 */
 	public function getUsernameById($id) {
 		$query = "SELECT username FROM Users WHERE id_user='" . $id . "';";
 		$result = $this->_conn->query($query);
@@ -76,6 +89,10 @@ class MySQLConnector {
 		return $row [0];
 	}
 
+	/*
+	 * Create a new user in the database, default they do not have admin rights
+	 * An admin can only be created when setting the admin value in the database by hand
+	 */
 	public function createUser($username, $password){
 		$query = "INSERT INTO Users(username, password, admin) VALUES(?, ?, ?);";
 		$q = $this->_conn->prepare($query);
@@ -90,6 +107,9 @@ class MySQLConnector {
 		return true;
 	}
 	
+	/*
+	 * Set the new game mode, when an admin changed it from the menu
+	 */
 	public function setGameMode($newGameMode) {
 		$query = "UPDATE CurrentGameMode 
 					SET id_fk_CurrentGameMode=?
@@ -106,6 +126,9 @@ class MySQLConnector {
 		return true;
 	}
 
+	/*
+	 * Retrieve the current game mode, to check whether the game is blocked, placement only, 5 turn or infinite
+	 */
 	public function getGameMode() {
 		$query = "SELECT id_fk_CurrentGameMode FROM CurrentGameMode
 					WHERE id='1'";
@@ -199,6 +222,10 @@ class MySQLConnector {
 	// if ($this->getError ())
 	// trigger_error ( $this->getError () );
 	// }
+	
+	/*
+	 * Create a new game in the database, for the history
+	 */
 	public function insertGame(SingleGameHistoric $singleGameHistoric) {
 		$query = "INSERT INTO Game(city_type, id_gamemodes, Users_id_user,date) VALUES(?, ?, ?,CURRENT_DATE);";
 		$queryID = "SELECT @@IDENTITY";
@@ -232,6 +259,9 @@ class MySQLConnector {
 		return $idGame;
 	}
 
+	/*
+	 * Retrieve the history of a game
+	 */
 	public function getGameHistoryFromID($id) {
 		// HAS NOT BEEN TESTED BEWARE!
 		$query = "SELECT city_type, id_gamemodes, Users_id_user FROM Game WHERE id_game = ?);";

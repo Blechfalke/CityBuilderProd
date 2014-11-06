@@ -302,6 +302,7 @@ body {
 	line-height: 30px;
 	padding: 10px;
 	box-sizing: border-box;
+	display:inline-block;
 }
 
 #langdropdown {

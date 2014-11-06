@@ -4,9 +4,7 @@ session_unset();
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 require_once LOCATOR . '/model/class.User.php';
 /**
- * 
  * the login controller is called when someone log in (obviously)
- * 
  */
 // Retrieve login information from form
 $username = $_POST ['username'];
@@ -19,8 +17,8 @@ try {
 		$_SESSION ['User'] = serialize($result);
 		
 		// Set the Language
-		if (isset($_POST['locale'])) {
-			$_SESSION['locale'] = $_POST['locale'];			
+		if (isset($_POST ['locale'])) {
+			$_SESSION ['locale'] = $_POST ['locale'];
 		}
 		
 		header("location: ../view/startMenu.php");
@@ -38,9 +36,9 @@ function validateData() {
 	if (empty($GLOBALS ['password']))
 		throw new Exception('Password is empty!');
 		
-		// check credentials
 	$conn = new MySQLConnector();
 	
+	// check credentials
 	$result = $conn->checkCredentials($GLOBALS ['username'], $GLOBALS ['password']);
 	
 	if (! $result)

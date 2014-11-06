@@ -1,7 +1,7 @@
 <?php
 
 /**
- * this controller is used to check the game mode
+ * this controller is used to set a new game mode
  */
 require_once 'controllerconfig.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
