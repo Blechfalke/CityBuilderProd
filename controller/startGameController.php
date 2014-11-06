@@ -3,7 +3,7 @@ require_once 'controllerconfig.php';
 require_once LOCATOR . '/dal/class.MySQLConnector.php';
 /**
  * 
- * this controller verify of the user is allowed to play (related the game mode)
+ * this controller verify if the user is allowed to play (related the game mode)
  * 
  */
 

@@ -5,7 +5,7 @@ require_once LOCATOR . '/model/class.User.php';
 
 /**
  * 
- * the register controller is used to 
+ * the register controller is used to handle the logic behind the registration (password check, database check, database storing)
  * 
  */
 
