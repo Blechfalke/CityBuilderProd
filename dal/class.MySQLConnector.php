@@ -12,11 +12,15 @@ class MySQLConnector {
 	// const DBNAME = 'pyramidgame';
 	// const USER = 'pyramidgame';
 	// const PWD = 'test123';
+	
 	const HOST = 'db4free.net';
 	const PORT = '3306';
 	const DBNAME = 'pyramiddb';
+	// const DBNAME = 'groupe3';
 	const USER = 'pyramidaccess';
+	// const USER = 'groupe3';
 	const PWD = 'pyramidAccess605';
+	// const PWD = '28Omdg!6';
 	private $_conn;
 
 	public function __construct() {

@@ -2,6 +2,8 @@ Admin login information:
 adminpyramid
 admin_pyramid_42
 
+Database info must be edited in the dal/MySQLConnector.php file
+
 Deployment: procedure.
 Some paths must be adapted depending on the environment.
 
